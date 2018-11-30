@@ -1,0 +1,146 @@
+#body{
+    background-image: url('back.jpg');
+}
+
+#atas{
+	width: 100%;
+	display: inline-table;
+	background-color: white;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+#atasleft{
+	width: 20%;
+	float: left;
+}
+
+#atasright{
+	width: 80%;
+	float: left;
+	text-align: right;
+	font-size: 20px;
+	color: white;
+}
+#navbar{
+    width: 80%;
+	float: left;
+	text-align: left; 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 50%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#navbar ul li {
+    float: left;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 20px;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 8px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #ff66cc;
+}
+button {
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    padding: 10px 10px;
+    margin-left: 10px;
+    margin: 5px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+#judul{
+    margin:60px;
+    padding-left: 10px;
+    text-align: center;
+    width: 90%;
+    background-color: lightblue;
+    border: 3px solid #dbb13b;
+    border-radius: 10px;
+    display: inline-table;
+    float: left;
+}
+#penyumbangan{
+    width: 100%;
+    display: inline-table;;
+    float: left;
+    background-color: #2d325a;
+}
+
+#judulform{
+    margin: 2% 5% 2% 5%;
+    text-align: center;
+    width: 90%;
+    background-color: lightblue;
+    border: 3px solid #dbb13b;
+    border-radius: 10px;
+    display: inline-table;
+    float: left;
+}
+
+#formya{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    width: 90%;
+    background-color: #2d325a;
+}
+input{
+    width: 130%;
+    font-size: 10px;
+    padding: 15px;
+    border: 2px solid #2d325a;
+    border-radius: 5px;
+    margin: 3% 0% 3% 0%;
+    font-size: 20px;
+}
+form{
+    background-color: lightblue;
+    width: 80%;
+    padding-left: 5%;
+    border: 3px solid #dbb13b;
+    border-radius: 10px;
+}
+table{
+    background-color: lightblue;
+    border-color: pink;
+}
+th{
+    font-size: 20px;
+    height: 20px;
+    padding: 5px;
+}
+td{
+    text-align: left;
+    font-size: 20px;
+}
+#selamat{
+    padding: 10px;
+}
+#ucapan{
+
+}
