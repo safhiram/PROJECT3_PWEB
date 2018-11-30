@@ -1,0 +1,128 @@
+#atas{
+	width: 100%;
+	display: inline-table;
+	background-color: white;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+#atasleft{
+	width: 20%;
+	float: left;
+}
+
+#atasright{
+	width: 80%;
+	float: left;
+	text-align: right;
+	font-size: 20px;
+	color: white;
+}
+#navbar{
+    width: 80%;
+	float: left;
+	text-align: left; 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 50%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#navbar ul li {
+    float: left;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 20px;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 8px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #ff66cc;
+}
+button {
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    padding: 10px 10px;
+    margin-left: 10px;
+    margin: 5px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+#isi{
+    width: 100%;
+    display: inline-table;
+    float: left;
+}
+#judul{
+    margin:60px;
+    padding-left: 10px;
+    text-align: center;
+    width: 70%;
+    background-color: lightblue;
+    border: 3px solid #dbb13b;
+    border-radius: 10px;
+    display: inline-table;
+    float: left;
+}
+#reservasi{
+    display: inline-table;
+    width: 100%;
+    float: left;
+    padding-left:50px;
+    padding-top: 20px;
+    background-color: #2d325a;
+}
+#gambar{
+    width: 30%;
+    background-color: lightblue;
+    border: 3px solid #dbb13b;
+    border-radius: 60px;
+    display: inline-table;
+    float: left;
+}
+#tulisan
+{
+    width: 65%;
+    background-color: lightblue;
+    border: 3px solid #dbb13b;
+    border-radius: 60px;
+    display: inline-table;
+    float: left;
+    margin:60px;
+    padding: 30px;
+}
+#isi{
+    width: 65%;
+    display: inline-table;
+    float: left;
+}
+#reservasi1{
+    display: inline-table;
+    width: 100%;
+    float: left;
+    padding-left:50px;
+    padding-top: 20px;
+    background-color: #0a0e29;
+}

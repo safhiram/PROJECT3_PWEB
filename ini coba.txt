@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 ayo kerja
 
 yaaaaaaaaa
+=======
+ayo kerja
+>>>>>>> master
