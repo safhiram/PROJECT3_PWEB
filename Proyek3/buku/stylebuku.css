@@ -1,0 +1,114 @@
+#atas{
+	width: 100%;
+	display: inline-table;
+	background-color: white;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+#atasleft{
+	width: 20%;
+	float: left;
+}
+
+#atasright{
+	width: 80%;
+	float: left;
+	text-align: right;
+	font-size: 20px;
+	color: white;
+}
+#navbar{
+    width: 80%;
+	float: left;
+	text-align: left; 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 50%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#navbar ul li {
+    float: left;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 20px;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 8px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #ff66cc;
+}
+button {
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    padding: 10px 10px;
+    margin-left: 10px;
+    margin: 5px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+#kembali{
+    width: 100%;
+    display: inline-table;
+    float: left;
+}
+#kembali1{
+    width: 50%;
+    display: inline-table;
+    float: left;
+}
+
+#kembali2{
+    width: 50%;
+    display: inline-table;
+    float: left;
+    text-align: right;
+    font-size: 30px;
+}
+#deskripsi{
+    width: 100%;
+    display: inline-table;
+    float: left;
+    background-image: url('back.png');
+}
+#deskripsi1{
+    width: 48%;
+    height: 370px;
+    display: inline-table;
+    float: left;
+    background-color: #dbb13b;
+    padding-top:2%;
+    padding-left: 2%;
+}
+#gambar{
+    width: 50%;
+    height: 370px;
+    display: inline-table;
+    float: left;
+    text-align: center;
+    background-color: lightblue;
+    padding-top:2%;
+}
