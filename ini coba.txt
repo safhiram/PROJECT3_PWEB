@@ -1,7 +1,3 @@
 <<<<<<< HEAD
-ayo kerja
-
-yaaaaaaaaa
-=======
-ayo kerja
+he di private project e mbak mas e
 >>>>>>> master
