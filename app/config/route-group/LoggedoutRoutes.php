@@ -10,7 +10,7 @@ class LoggedoutRoutes extends RouterGroup
             'controller'=>'loggedout',
         ]);
         $this->addGet(
-            '/kategori',    //tampilan kategori buku sblm login
+            '/koleksi',    //tampilan kategori buku sblm login
             [
             'action'=>'cat',
             ]
@@ -25,6 +25,12 @@ class LoggedoutRoutes extends RouterGroup
             '/sumbang',     //tampilan form jadwal bertemu&menyumbang buku
             [
             'action'=>'charity',
+            ]
+        );
+        $this->addPost(
+            '/sumbang',     //tampilan form jadwal bertemu&menyumbang buku
+            [
+            'action'=>'call',
             ]
         );
     }

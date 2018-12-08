@@ -1,34 +1,35 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>HomePage</title>
+    <title>booKesma &middot; Pinjam-Sumbang Buku Akademik Informatika ITS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="main.js"></script>
+    <!-- Icon -->
+	<link rel="icon" type="icon/image" href="img/jpgpng/favicon.png">
+    <!-- adding bootstrap css-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+    <!-- adding bootstrap theme css-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-theme.css" />
+    <!-- external page css -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/show.css" />
 </head>
 <body>
-<div id="header">
-		<div id="atas">
-			<div id="atasleft">
-			<a href="#">
-			<img src="download.png" alt="Youtube" style="width: 200px;height: 60px;"></a>
-		</div>
-
-
-		<div id="atasright">
-        		
-        <div id="navbar">
-		<ul>
-			<li><a id="" href="#">Kategori Buku</a></li>
-  			<li><a id="" href="#">Bagaimana?</a></li>
-		</ul>
-	    </div>
-			<a href=""><button style="width:auto;">Login</button></a>
-            <a href=""><button style="width:auto;">Daftar</button></a>
-		</div>
-</div>
+    <div class="topnav" id="top-nav">
+        <a class="home" href="<?=$this->url->getBaseUri()?>">
+            <img src="img/svg/logo.svg" alt="booKesma">
+        </a>
+        <a href="<?=$this->url->getBaseUri().'login'?>">Masuk</a>
+        <a href="<?=$this->url->getBaseUri().'register'?>">Daftar</a>
+        <a href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
+        <a href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
+        <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a href="javascript:void(0);" class="icon" onclick="navbar()">
+            <img src="img/svg/hamburger-menu.svg" alt="menu">
+        </a>
+    </div>
+<!-- <div id="header">
 <div id="isi">
     <div id="isikanan">
         <h2>BUKU?</h2>
@@ -36,12 +37,12 @@
         <p>Mahasiswa identik dengan buku yang selalu menemaninya setiap hari</p>
     </div>
     <div id="isikiri">
-        <img src="ambiz-introduction.jpg" style="width: 100%;">
+        <img src="img/jpgpng/ambiz-introduction.jpg" style="width: 100%;">
     </div>
 </div>
 <div id="isi2">
     <div id="isikanan2">
-        <img src="isi2.jpg" style="width: 100%;">
+        <img src="img/jpgpng/isi2.jpg" style="width: 100%;">
     </div>
     <div id="isikiri2">
         <h2>BUKU?</h2>
@@ -52,42 +53,42 @@
 <div id="kategori">
     <h1>KATEGORI BUKU</h1>
     <div id="kolom">
-        <img src="isi2.jpg" style="width: 100%;">
+        <img src="img/jpgpng/isi2.jpg" style="width: 100%;">
         <button>Semester 1</button>
     </div>
     <div id="kolom">
-        <img src="isi2.jpg" style="width: 100%;">
+        <img src="img/jpgpng/isi2.jpg" style="width: 100%;">
         <button>Semester 2</button>
     </div>
     <div id="kolom">
-        <img src="isi2.jpg" style="width: 100%;">
+        <img src="img/jpgpng/isi2.jpg" style="width: 100%;">
         <button>Semester 3</button>
     </div>
     <div id="kolom">
-        <img src="isi2.jpg" style="width: 100%;">
+        <img src="img/jpgpng/isi2.jpg" style="width: 100%;">
         <button>Semester 4</button>
     </div>
     <div id="kolom">
-        <img src="isi2.jpg" style="width: 100%;">
+        <img src="img/jpgpng/isi2.jpg" style="width: 100%;">
         <button>Semester 5</button>
     </div>
     <div id="kolom">
-        <img src="isi2.jpg" style="width: 100%;">
+        <img src="img/jpgpng/isi2.jpg" style="width: 100%;">
         <button>Semester 6</button>
     </div>
 </div>
 <div id="bagaimana">
     <h1>BAGAIMANA ?</h1>
     <div id="kolombagaimana">
-        <img src="isi2.jpg" style="width: 100%;">
+        <img src="img/jpgpng/isi2.jpg" style="width: 100%;">
         <button>Reservasi</button>
     </div>
     <div id="kolombagaimana">
-        <img src="isi2.jpg" style="width: 100%;">
+        <img src="img/jpgpng/isi2.jpg" style="width: 100%;">
         <button>Peminjaman</button>
     </div>
     <div id="kolombagaimana">
-        <img src="isi2.jpg" style="width: 100%;">
+        <img src="img/jpgpng/isi2.jpg" style="width: 100%;">
         <button>Penyumbangan</button>
     </div>
 </div>
@@ -96,16 +97,21 @@
     </div>
     <div id="kolomfooter">
         <h1>Our Media Social</h1>
-        <a href="#"><img src="icon-facebook.png" style="width: 5%;"></a>
-        <a href="#"><img src="icon-mail.png" style="width: 5%;"></a>
-        <a href="#"><img src="icon-twitter.png" style="width: 5%;"></a>
+        <a href="#"><img src="img/jpgpng/icon-facebook.png" style="width: 5%;"></a>
+        <a href="#"><img src="img/jpgpng/icon-mail.png" style="width: 5%;"></a>
+        <a href="#"><img src="img/jpgpng/icon-twitter.png" style="width: 5%;"></a>
         <br><br>
         <h3>Kategori Buku</h3>
         <h3>Bagaimana?</h3><br>
     </div>
     <div id="kolomfooter">
     </div>
-</div>
-
+</div> -->
+<!-- adding bootstrap -->
+<script src="js/bootstrap.js"></script>
+<!-- adding jquery -->
+<script src="js/jquery-3.3.1.js"></script>
+<!-- adding external script -->
+<script src="js/show.js"></script>
 </body>
 </html>

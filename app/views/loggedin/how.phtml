@@ -1,0 +1,99 @@
+<!-- generate dynamic base url -->
+<?php
+    use Phalcon\Mvc\Url;
+    $url = new Url();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bagaimana? &middot; booKesma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Icon -->
+	<link rel="icon" type="icon/image" href="img/jpgpng/favicon.png">
+    <!-- adding bootstrap css-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+    <!-- adding bootstrap theme css-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-theme.css" />
+    <!-- external page css -->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/how.css" />
+</head>
+<body>
+    <div class="topnav" id="top-nav">
+        <a class="home" href="<?=$this->url->getBaseUri()?>">
+            <img src="img/svg/logo.svg" alt="booKesma">
+        </a>
+        <a href="<?=$this->url->getBaseuri().'user'?>"><?php echo $name = "User"?></a>
+        <a href="<?=$this->url->getBaseuri().'user/koleksi'?>">Koleksi</a>
+        <a class="active" href="<?=$this->url->getBaseuri().'user/bagaimana'?>">Bagaimana</a>
+        <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a href="javascript:void(0);" class="icon" onclick="navbar()">
+            <img src="img/svg/hamburger-menu.svg" alt="menu">
+        </a>
+    </div>
+<div id="isi">
+	<div id="judul">
+		<h1>BAGAIMANA?</h1>
+	</div>
+</div>
+<div id="reservasi">
+	<div id="gambar">
+		<img src="img/jpgpng/reservasiicon.png">
+	</div>
+	<div id="isi">
+		<div id="judul">
+			<h1>RESERVASI</h1>
+		</div>
+		<div id="tulisan">
+			Untuk Reservasi kalian bisa mengisi form untuk login terlebih dahulu. Setelah itu, kalian bisa memilih buku sesuai keinginan. Jika terdapat masalah dalam hal pengisian data. Harap hubungi KESMA HMTC.
+		</div>
+	</div>
+</div>
+<div id="reservasi1">
+	<div id="isi">
+		<div id="judul">
+			<h1>PENYUMBANGAN</h1>
+		</div>
+		<div id="tulisan">
+			Untuk Penyumbangan kalian bisa login terlebih dahulu. Setelah itu, kalian bisa mengisi form Penyumbangan dan mengisi jadwal janjian dengan pengurus KESMA. Jika terdapat masalah dalam hal pengisian data. Harap hubungi KESMA HMTC.
+		</div>
+	</div>
+	<div id="gambar">
+		<img src="img/jpgpng/nyumbangicon.png">
+	</div>
+</div>
+<div id="reservasi">
+	<div id="gambar">
+		<img src="img/jpgpng/borrowicon.png">
+	</div>
+	<div id="isi">
+		<div id="judul">
+			<h1>PENGEMBALIAN</h1>
+		</div>
+		<div id="tulisan">
+			Untuk Peminjaman kalian bisa mengisi form untuk login terlebih dahulu. Setelah itu, kalian bisa memilih buku sesuai keinginan. Silahkan ambil buku sesuai jadwal janjian dengan pengurus KESMA. Jika terdapat masalah dalam hal pengisian data. Harap hubungi KESMA HMTC.
+		</div>
+	</div>
+</div>
+<div id="reservasi1">
+	<div id="isi">
+		<div id="judul">
+			<h1>PENYUMBANGAN</h1>
+		</div>
+		<div id="tulisan">
+			Untuk Penyumbangan kalian bisa login terlebih dahulu. Setelah itu, kalian bisa mengisi form Penyumbangan dan mengisi jadwal janjian dengan pengurus KESMA. Jika terdapat masalah dalam hal pengisian data. Harap hubungi KESMA HMTC.
+		</div>
+	</div>
+	<div id="gambar">
+		<img src="img/jpgpng/hubungi.png" style="width: 100%;">
+	</div>
+</div>
+<!-- adding jquery -->
+<script src="js/jquery-3.3.1.js"></script>
+<!-- adding bootstrap -->
+<script src="js/bootstrap.js"></script>
+<!-- adding external script -->
+<script src="js/show.js"></script>
+</body>
+</html>

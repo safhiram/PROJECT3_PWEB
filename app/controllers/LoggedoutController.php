@@ -8,12 +8,7 @@ class LoggedoutController extends Controller
     {
 
     }
-    public function howAction()
-    {
-        
-    }
-    public function charitylAction()
-    {
-
-    }
+    public function howAction(){}
+    public function charityAction(){}
+    public function callAction(){}
 }

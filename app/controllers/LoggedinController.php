@@ -4,7 +4,7 @@ use Phalcon\Mvc\Controller;
 
 class LoggedinController extends Controller
 {
-    public function historylAction()
+    public function historyAction()
     {
 
     }
@@ -12,8 +12,5 @@ class LoggedinController extends Controller
     {
 
     }
-    public function howAction()
-    {
-        
-    }
+    public function howAction(){}
 }

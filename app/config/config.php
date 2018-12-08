@@ -12,6 +12,6 @@ return new Config([
         'dbname' => 'ini_dbproject3'     
     ],     
     'url' => [         
-        'baseUrl' => 'http://localhost/bookesma/'     
+        'baseUrl' => 'http://localhost/bookesma.com/'     
     ] 
 ]); 
