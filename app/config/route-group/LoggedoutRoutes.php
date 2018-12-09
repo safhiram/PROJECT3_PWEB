@@ -16,13 +16,13 @@ class LoggedoutRoutes extends RouterGroup
             ]
         );
         $this->addGet(  //tampilan buku di semester
-            '/koleksiku/semester[1-8]',
+            '/koleksiku/(semester[1-8])',
             [
             'action'=>'time',
             ]
         );
         $this->addGet(  //tampilan buku X dari semester Y
-            '/koleksiku/semester[1-8]?id=[0-9]',
+            '/koleksiku/((semester[1-8])\.id=[0-9])',
             [
             'action'=>'book',
             ]

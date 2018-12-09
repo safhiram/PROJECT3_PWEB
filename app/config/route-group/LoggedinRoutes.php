@@ -22,13 +22,13 @@ class LoggedinRoutes extends RouterGroup
             ]
         );
         $this->addGet(  //tampilan buku di semester
-            '/users/koleksiku/semester[1-8]',
+            '/users/koleksiku/(semester[1-8])',
             [
             'action'=>'time',
             ]
         );
         $this->addGet(  //tampilan buku X dari semester Y
-            '/users/koleksiku/semester[1-8]?id=[0-9]',
+            '/users/koleksiku/(semester[1-8])/.id=[0-9]',
             [
             'action'=>'book',
             ]
