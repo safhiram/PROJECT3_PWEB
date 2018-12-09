@@ -1,0 +1,165 @@
+<!-- generate dynamic base url -->
+<?php
+    use Phalcon\Mvc\Url;
+    $url = new Url();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>booKesma &middot; Pinjam-Sumbang Buku Akademik Informatika ITS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Icon -->
+	<link rel="icon" type="icon/image" href="img/jpgpng/favicon.png">
+    <!-- adding bootstrap css-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+    <!-- adding bootstrap theme css-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-theme.css" />
+    <!-- external page css -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/show.css" />
+</head>
+<body style="background-image: url('img/svg/bg_layer1.svg')">
+    <div class="topnav" id="top-nav" style="z-index: 99;">
+        <a class="home" href="<?=$this->url->getBaseUri()?>">
+            <img src="img/svg/logo.svg" alt="booKesma">
+        </a>
+        <a href="<?=$this->url->getBaseUri().'login'?>">Masuk</a>
+        <a href="<?=$this->url->getBaseUri().'register'?>">Daftar</a>
+        <a href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
+        <a href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
+        <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a href="javascript:void(0);" class="icon" onclick="navbar()">
+            <img src="img/svg/hamburger-menu.svg" alt="menu">
+        </a>
+    </div>
+    <br><br><br><br>
+<div class="container" style="background-color: #BFDAD5; padding: 30px; border-radius:10%;">
+  <div class="row">
+    <div class="col-sm-7" style="font-family:mp; font-size: 20px;">
+        <h2 style="font-size: 40px; background-color: lightblue; padding: 3%; border-radius:5%;"><b>BUKU?</b></h2>
+        <p style="padding:3%; text-alig;n:justify">Buku yang kubaca selalu memberi sayap-sayap baru.
+Membawaku terbang ke taman-taman pengetahuan paling menawan, melintasi waktu dan peristiwa, berbagi cerita cinta, menyapa semua tokoh yang ingin kujumpai, sambil bermain di lengkung pelangi.</p>
+    </div>
+    <div class="col-sm-5">
+        <img src="img/jpgpng/ambiz-introduction.jpg" style="width: 100%;">
+    </div>
+  </div>
+</div>
+<br><br>
+<div class="container" style="background-color: #F3E8C8;padding: 30px; border-radius:10%;">
+  <div class="row">
+    <div class="col-sm-5">
+        <img src="img/jpgpng/isi2.jpg" style="width: 100%;">
+    </div>
+    <div class="col-sm-7" style="font-family:mp; font-size: 20px;">
+    <h2 style="font-size: 40px; background-color:#FAE3E9; padding: 3%; border-radius:5%;"><b>MENGAPA BOOKESMA?</b></h2>
+        <p style="padding:3%; text-alig;n:justify">booKesma menyediakan peminjaman dan penyumbangan buku bagi Mahasiswa Informatika ITS pada semua semester. Peminjaman dilakukan dengan sangat mudah begitupun dengan Penyumbangannya</p>
+    </div>
+  </div>
+</div>
+<br><br>
+<div class="container-fluid" style="background-color: #FBD4C5; padding:1%; border-radius:15% 15% 0% 0%;">
+    <h2 style="font-family: mp; font-size:40px; text-align:center;"><b>-KATEGORI BUKU-</b></h2>
+</div>
+<div class="container-fluid" style="background-color: #F3E8C8;padding: 5%;">
+  <div class="row">
+    <div class="col-sm-4">
+        <img src="img/svg/semester1.svg" style="width: 100%;">
+        <br><br>
+        <button style="margin-left:35%;" type="button" class="btn btn-primary btn-lg">Semester 1</button>
+    </div>
+    <div class="col-sm-4" style="">
+    <img src="img/svg/semester2.svg" style="width: 100%;">
+    <br><br>
+        <button style="margin-left:35%;" type="button" class="btn btn-primary btn-lg">Semester 2</button>
+    </div>
+    <div class="col-sm-4">
+        <img src="img/svg/semester3.svg" style="width: 100%;">
+        <br><br>
+        <button style="margin-left:35%;" type="button" class="btn btn-primary btn-lg">Semester 3</button>
+    </div>
+  </div>
+</div>
+<div class="container-fluid" style="background-color: #F3E8C8;padding: 5%;">
+  <div class="row">
+    <div class="col-sm-4">
+        <img src="img/svg/semester4.svg" style="width: 100%;">
+        <br><br>
+        <button style="margin-left:35%;" type="button" class="btn btn-primary btn-lg">Semester 4</button>
+    </div>
+    <div class="col-sm-4" style="">
+    <img src="img/svg/semester5.svg" style="width: 100%;">
+    <br><br>
+        <button style="margin-left:35%;" type="button" class="btn btn-primary btn-lg">Semester 5</button>
+    </div>
+    <div class="col-sm-4">
+        <img src="img/svg/semester6.svg" style="width: 100%;">
+        <br><br>
+        <button style="margin-left:35%;" type="button" class="btn btn-primary btn-lg">Semester 6</button>
+    </div>
+  </div>
+ <div class="container-fluid" style="background-color: #F3E8C8;padding: 5%; padding-left:15%;border-radius:0% 0% 15% 15%;">
+  <div class="row">
+    <div class="col-sm-6">
+        <img src="img/svg/semester7.svg" style="width: 75%;">
+        <br><br>
+        <button style="margin-left:25%;" type="button" class="btn btn-primary btn-lg">Semester 7</button>
+    </div>
+    <div class="col-sm-6" style="">
+    <img src="img/svg/semester8.svg" style="width: 75%;">
+    <br><br>
+        <button style="margin-left:25%;" type="button" class="btn btn-primary btn-lg">Semester 8</button>
+    </div>
+  </div>
+</div>
+</div>
+<br><br>
+<div class="container-fluid" style="background-color: #FBD4C5; padding:1%; border-radius:15% 15% 0% 0%;">
+    <h2 style="font-family: mp; font-size:40px; text-align:center;"><b>-BAGAIMANA-</b></h2>
+</div>
+ <div class="container-fluid" style="background-color: #F3E8C8;padding: 5%; padding-left:15%;">
+  <div class="row">
+    <div class="col-sm-4">
+        <img src="img/svg/how_reservasi.svg" style="width: 75%; height:300px;">
+        <br><br>
+        <button style="margin-left:25%;" type="button" class="btn btn-primary btn-lg">Reservasi</button>
+    </div>
+    <div class="col-sm-4" style="">
+    <img src="img/svg/how_sumbang.svg" style="width: 75%; height:300px;">
+    <br><br>
+        <button style="margin-left:15%;" type="button" class="btn btn-primary btn-lg">Penyumbangan</button>
+    </div>
+    <div class="col-sm-4" style="">
+    <img src="img/svg/how_kembali.svg" style="width: 75%; height:300px;">
+    <br><br>
+        <button style="margin-left:15%;" type="button" class="btn btn-primary btn-lg">Pengembalian</button>
+    </div>
+  </div>
+</div>
+<br><br><br>
+ <div class="container" style="background-color:#BFDAD5;padding: 5%; padding-left:15%; border-radius:10%;">
+  <div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-8" style="padding-right:10%; text-align: center;">
+    <h1 style="font-family: mp; font-size:30px;"><b>-OUR MEDIA SOCIAL-</b></h1>
+    <img src="img/jpgpng/icon-facebook.png" style="width: 5%;">
+    <img src="img/jpgpng/icon-mail.png" style="width: 5%;">
+    <img src="img/jpgpng/icon-twitter.png" style="width: 5%;">
+    <br>
+    <h3>Kategori Buku</h3>
+    <h3>Bagaimana?</h3>
+    </div>
+    <div class="col-sm-2" style="">
+    </div>
+  </div>
+</div>
+<!-- adding bootstrap -->
+<script src="js/bootstrap.js"></script>
+<!-- adding jquery -->
+<script src="js/jquery-3.3.1.js"></script>
+<!-- adding external script -->
+<script src="js/show.js"></script>
+</body>
+</html>
