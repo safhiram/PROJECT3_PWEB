@@ -14,4 +14,5 @@ class LoggedinController extends Controller
     }
     public function howAction(){}
     public function timeAction(){}
+    public function bookAction(){}
 }

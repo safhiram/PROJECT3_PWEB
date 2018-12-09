@@ -15,6 +15,18 @@ class LoggedoutRoutes extends RouterGroup
             'action'=>'cat',
             ]
         );
+        $this->addGet(  //tampilan buku di semester
+            '/koleksiku/semester[1-8]',
+            [
+            'action'=>'time',
+            ]
+        );
+        $this->addGet(  //tampilan buku X dari semester Y
+            '/koleksiku/semester[1-8]?id=[0-9]',
+            [
+            'action'=>'book',
+            ]
+        );
         $this->addGet(
             '/bagaimana',   //tampilan cara menggunakan layanan sblm login
             [
@@ -22,13 +34,19 @@ class LoggedoutRoutes extends RouterGroup
             ]
         );
         $this->addGet(
-            '/sumbang',     //tampilan form jadwal bertemu&menyumbang buku
+            '/sumbang',     //tampilan form jadwal bertemu
+            [
+            'action'=>'identity',
+            ]
+        );
+        $this->addGet(
+            '/sumbang-buku',     //tampilan form menyumbang buku
             [
             'action'=>'charity',
             ]
         );
         $this->addPost(
-            '/sumbang',     //tampilan form jadwal bertemu&menyumbang buku
+            '/sumbang',     //post form
             [
             'action'=>'call',
             ]
