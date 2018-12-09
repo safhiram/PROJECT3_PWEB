@@ -103,6 +103,58 @@ html, body{
 	font-size: 20px;
 	color: white;
 }
+#navbar{
+    width: 80%;
+	float: left;
+	text-align: left; 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 50%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#navbar ul li {
+    float: left;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 20px;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 8px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #ff66cc;
+}
+button {
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    padding: 10px 10px;
+    margin-left: 10px;
+    margin: 5px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
 
 h1{
     text-align: center;
@@ -116,14 +168,14 @@ h1{
 }
 
 #i3{
-    width: 40%;
+    width: 20%;
     float: left;
     display: inline-table;
     padding: 2%;
     background-color: lightblue;
 }
 #i2{
-    width: 40%;
+    width: 20%;
     float: left;
     display: inline-table;
     padding: 2%;
