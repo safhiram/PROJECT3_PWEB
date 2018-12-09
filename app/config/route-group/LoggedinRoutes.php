@@ -21,10 +21,16 @@ class LoggedinRoutes extends RouterGroup
             'action'=>'cat',
             ]
         );
-        $this->addGet(  //tampilan semester
-            '/users/koleksi/semester[1-8]',
+        $this->addGet(  //tampilan buku di semester
+            '/users/koleksiku/semester[1-8]',
             [
             'action'=>'time',
+            ]
+        );
+        $this->addGet(  //tampilan buku X dari semester Y
+            '/users/koleksiku/semester[1-8]?id=[0-9]',
+            [
+            'action'=>'book',
             ]
         );
         $this->addGet(  //tampilan cara menggunakan layanan

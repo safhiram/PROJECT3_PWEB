@@ -36,6 +36,7 @@ class SubmitController extends Controller
         else {
             $this->response->redirect('login');
             $this->view->disable();
+            return;
         }
     }
     public function createlAction(){}
