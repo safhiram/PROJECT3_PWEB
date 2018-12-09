@@ -15,6 +15,7 @@ class RegisterForm extends Form
             new Text(
                 'rname',
                 [
+                    'class' => "form-control",
                     'placeholder' => 'Raka',
                 ]
             )
@@ -23,6 +24,7 @@ class RegisterForm extends Form
             new Text(
                 'rnrp',
                 [
+                    'class' => "form-control",
                     'placeholder' => '05111740000120',
                 ]
             )
@@ -31,16 +33,32 @@ class RegisterForm extends Form
             new Email(
                 'remail',
                 [
+                    'class' => "form-control",
                     'placeholder'   =>  'ranggakusumad@gmail.com',
                 ]
             )
         );
-        $this->add(new Password('rpassword'));
-        $this->add(new Password('rcpassword'));
+        $this->add(
+            new Password(
+                'rpassword',
+                [
+                    'class' => "form-control",
+                ]
+            )
+        );
+        $this->add(
+            new Password(
+                'rcpassword',
+                [
+                    'class' => "form-control",
+                ]
+            )
+        );
         $this->add(
             new Submit(
                 'rsubmit',
                 [
+                    'class' => "btn btn-primary",
                     'value'   =>  'Daftar',
                 ]
             )

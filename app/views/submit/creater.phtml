@@ -17,7 +17,8 @@
     <!-- adding bootstrap theme css-->
     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-theme.css" />
     <!-- external page css -->
-    <link rel="stylesheet" type="text/css" href="css/show.css">
+	<link rel="stylesheet" type="text/css" href="css/show.css">
+	<link rel="stylesheet" type="text/css" href="css/daftar.css">
 </head>
 <body>
 	<div class="topnav" id="top-nav" style="z-index: 99;">
@@ -33,31 +34,31 @@
             <img src="img/svg/hamburger-menu.svg" alt="menu">
         </a>
     </div>
-	<br><br>
-	<div class="header">
-		<h2>Register</h2>
-	</div>
 	<div class="container">
+		<h2>Register</h2>
 		<?php echo $this->tag->form("register");?>
-		<div>
+		<div class="form-group">
 			<label>Username</label>
 			<?php echo $form->render('rname'); ?>
 		</div>
-		<div>
+		<div class="form-group">
 			<label>NRP</label>
 			<?php echo $form->render('rnrp'); ?>
 		</div>
-		<div>
+		<div class="form-group">
 			<label>Email</label>
 			<?php echo $form->render('remail'); ?>
 		</div>
-		<div>
+		<div class="form-group">
 			<label>Password</label>
 			<?php echo $form->render('rpassword'); ?>
 		</div>
-		<div>
+		<div class="form-group">
 			<label>Confirm Password</label>
 			<?php echo $form->render('rcpassword'); ?>
+		</div>
+		<div class="form-group">
+			<?php echo $form->render('rsubmit'); ?>
 		</div>
 		<div>
 		<p>

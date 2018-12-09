@@ -1,3 +1,42 @@
+/* color pallete */
+:root{
+  --oren: #dbb13b;
+  --birmud: #2dc7ff;
+  --bir: #183f9c;
+  --birtu: #2d325a;
+  --birdong: #0a0e29;
+}
+/* font template */
+@font-face{
+font-family: bi;
+src:url("../font/BahasaIndonesia.ttf");
+}
+@font-face{
+font-family: as;
+src:url("../font/Assistant.ttf");
+}
+@font-face{
+font-family: mp;
+src:url("../font/MavenPro.ttf");
+}
+html, body{
+  height: 100%;
+}
+.container{
+  background-image: url("../img/svg/bg_layer1.svg");
+  background-repeat: repeat-x;
+  background-position: center;
+  padding-top: 4em;
+  padding-right: 10vw;
+  padding-left: 10vw;
+  font-family: mp;
+  font-size: 14px;
+}
+h2{
+  font-family: as;
+  font-size: 28px;
+}
+/* 
 * {
     margin: 0px;
     padding: 0px;
@@ -66,4 +105,4 @@
     background: #dff0d8; 
     border: 1px solid #3c763d;
     margin-bottom: 20px;
-  }
+  } */
