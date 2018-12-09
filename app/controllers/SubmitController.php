@@ -27,15 +27,16 @@ class SubmitController extends Controller
         $cregis->password = $cpass;
         $cregis->role = "user";
 
+        //if session check semua attr dan syntax password==cpassword sama
+
         if ($cregis->save() === false) {
             echo "gagal";
+            //kasih flash session lihat youtube
         }
         else {
-            echo "sukses";    
+            $this->response->redirect('login');
+            $this->view->disable();
         }
-        //if session password==cpassword sama
-
-        // $this->response->redirect();
     }
     public function createlAction(){}
     public function storelAction()

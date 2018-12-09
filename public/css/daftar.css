@@ -23,9 +23,9 @@ html, body{
   height: 100%;
 }
 .container{
-  background-image: url("../img/svg/bg_layer1.svg");
+  background-image: url("../img/svg/bg_layer2.svg");
   background-repeat: repeat-x;
-  background-position: center;
+  background-position: left;
   padding-top: 4em;
   padding-right: 10vw;
   padding-left: 10vw;
@@ -35,6 +35,11 @@ html, body{
 h2{
   font-family: as;
   font-size: 28px;
+}
+div p{
+  font-size: 10px;
+  font-weight: bold;
+  font-family: as;
 }
 /* 
 * {
