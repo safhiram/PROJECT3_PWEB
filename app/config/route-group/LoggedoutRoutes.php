@@ -46,7 +46,7 @@ class LoggedoutRoutes extends RouterGroup
             ]
         );
         $this->addPost(
-            '/sumbang',     //post form
+            '/bukti-sumbang',     //post form
             [
             'action'=>'call',
             ]
