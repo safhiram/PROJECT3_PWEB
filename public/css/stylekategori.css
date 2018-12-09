@@ -103,7 +103,6 @@ html, body{
 	font-size: 20px;
 	color: white;
 }
-
 h1{
     text-align: center;
 }
@@ -116,14 +115,14 @@ h1{
 }
 
 #i3{
-    width: 40%;
+    width: 20%;
     float: left;
     display: inline-table;
     padding: 2%;
     background-color: lightblue;
 }
 #i2{
-    width: 40%;
+    width: 20%;
     float: left;
     display: inline-table;
     padding: 2%;
