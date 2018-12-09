@@ -9,20 +9,20 @@ class LoggedinRoutes extends RouterGroup
         $this->setPaths([
             'controller'=>'loggedin',
         ]);
-        $this->addGet(  //ga mau tampil
+        $this->addGet( 
             '/user',    //tampilan riwayat data user dari peminjaman dan pengembalian
             [
             'action'=>'history',
             ]
         );
         $this->addGet(  //tampilan kategori buku
-            '/user/koleksi',
+            '/users/koleksi',
             [
             'action'=>'cat',
             ]
         );
         $this->addGet(  //tampilan cara menggunakan layanan
-            '/user/bagaimana',
+            '/users/bagaimana',
             [
             'action'=>'how',
             ]
