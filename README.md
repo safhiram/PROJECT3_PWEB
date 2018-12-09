@@ -2,7 +2,7 @@
 
 ## Bekerja dengan Github
 
-Biar gampang ini caranya.
+Biar gampang ini caranya. hehe
 
 ### Menjalankan Project Phalcon dengan XAMPP Menggunakan Symlink 
  
