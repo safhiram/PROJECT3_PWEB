@@ -15,8 +15,8 @@ class LoggedinRoutes extends RouterGroup
             'action'=>'history',
             ]
         );
-        $this->addGet(  //tampilan profile user
-            '/users/profile',
+        $this->addGet(  //tampilan profile user v
+            '/user/profile',
             [
             'action'=>'profile',
             ]

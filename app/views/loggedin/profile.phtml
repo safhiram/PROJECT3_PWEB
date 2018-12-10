@@ -11,31 +11,31 @@
     <title>Profil &middot; booKesma</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Icon -->
-	<link rel="icon" type="icon/image" href="img/jpgpng/favicon.png">
+	<link rel="icon" type="icon/image" href="/bookesma.com/img/jpgpng/favicon.png">
     <!-- adding bootstrap css-->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/bookesma.com/css/bootstrap.css" />
     <!-- adding bootstrap theme css-->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/bookesma.com/css/bootstrap-theme.css" />
     <!-- external page css -->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/show.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/profile.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/bookesma.com/css/show.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/bookesma.com/css/profil.css" />
 </head>
-<body style="background-image: url('img/svg/bg_layer1.svg')">
+<body style="background-image: url('/bookesma.com/img/svg/bg_layer1.svg')">
     <div class="topnav" id="top-nav" style="z-index: 99;">
         <a class="home" href="<?=$this->url->getBaseUri()?>">
-            <img src="img/svg/logo.svg" alt="booKesma">
+            <img src="/bookesma.com/img/svg/logo.svg" alt="booKesma">
         </a>
         <a href="<?=$this->url->getBaseUri().'user'?>"><?=$this->session->get('auth')['s_name'] ?></a>
         <a href="<?=$this->url->getBaseuri().'users/koleksi'?>">Koleksi</a>
         <a href="<?=$this->url->getBaseuri().'users/bagaimana'?>">Bagaimana</a>
         <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
         <a href="javascript:void(0);" class="icon" onclick="navbar()">
-            <img src="img/svg/hamburger-menu.svg" alt="menu">
+            <img src="/bookesma.com/img/svg/hamburger-menu.svg" alt="menu">
         </a>
     </div>
-    <br><br><br><br><br>
-    <div style="width:80%; height: 25vw; background-color: white; margin-left: 10%;margin-right:10%; border: 3px solid lightblue; border-radius:25%;">
-        <div style="text-align: center;"><h3>Data Diri Anda</h3>
+    <div class="container" style="padding-top:8vw; height: 25vw;">
+        <div id="konten" style="text-align: center;">
+            <h3>Data Diri Anda</h3>
             <div class="form-group">
                 <label>Username</label>
                 <p><?=$nama?></p>
@@ -49,11 +49,10 @@
                 <p><?=$email?></p>
             </div>
         </div>
-    </div>
-    <br>
-    <div style="margin-left: 45%;">
-        <button class="btn btn-info btn-md">Edit</button>
-        <button class="btn btn-secondary btn-md">Kembali</button>
+        <div class="container" style="padding-top:2%;padding-left:44%;">
+            <a href="<?=$this->url->getBaseUri().'users/edit-profile'?>" class="btn btn-info btn-md">Edit</a>
+            <a href="<?=$this->url->getBaseUri().'user'?>" class="btn btn-default btn-md">Kembali</a>
+        </div>
     </div>
 <!-- adding bootstrap -->
 <script src="js/bootstrap.js"></script>
