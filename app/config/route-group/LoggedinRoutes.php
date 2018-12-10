@@ -22,37 +22,31 @@ class LoggedinRoutes extends RouterGroup
             ]
         );
         $this->addGet(  //tampilan edit profile user
-            '/users/edit-profile',
+            '/user/edit-profile',
             [
             'action'=>'edit',
             ]
         );
         $this->addPost(  //post update
-            '/users/profile',
+            '/user/profile',
             [
             'action'=>'update',
             ]
         );
         $this->addGet(  //tampilan kategori buku
-            '/users/koleksi',
+            '/user/koleksi',
             [
             'action'=>'cat',
             ]
         );
         $this->addGet(  //tampilan buku di semester
-            '/users/koleksiku/(semester[1-8])',
+            '/user/koleksi/(semester[1-8])',
             [
             'action'=>'time',
             ]
         );
-        $this->addGet(  //tampilan buku X dari semester Y
-            '/users/koleksiku/(semester[1-8])/.id=[0-9]',
-            [
-            'action'=>'book',
-            ]
-        );
         $this->addGet(  //tampilan cara menggunakan layanan
-            '/users/bagaimana',
+            '/user/bagaimana',
             [
             'action'=>'how',
             ]
