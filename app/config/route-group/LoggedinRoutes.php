@@ -15,6 +15,24 @@ class LoggedinRoutes extends RouterGroup
             'action'=>'history',
             ]
         );
+        $this->addGet(  //tampilan profile user
+            '/users/profile',
+            [
+            'action'=>'profile',
+            ]
+        );
+        $this->addGet(  //tampilan edit profile user
+            '/users/edit-profile',
+            [
+            'action'=>'edit',
+            ]
+        );
+        $this->addPost(  //post update
+            '/users/update-profile',
+            [
+            'action'=>'update',
+            ]
+        );
         $this->addGet(  //tampilan kategori buku
             '/users/koleksi',
             [
