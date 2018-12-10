@@ -1,6 +1,7 @@
 <?php
 
 use Phalcon\Mvc\Controller;
+use App\Forms\EditForm;
 
 class LoggedinController extends Controller
 {
@@ -12,7 +13,11 @@ class LoggedinController extends Controller
     {
 
     }
-    public function editAction(){}
+    public function editAction(){
+        
+        $this->view->form= new EditForm();
+
+    }
     public function updateAction(){}
     public function profileAction(){}
     public function howAction(){}

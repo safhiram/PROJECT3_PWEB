@@ -1,0 +1,81 @@
+<!-- generate dynamic base url -->
+<?php
+    use Phalcon\Mvc\Url;
+    $url = new Url();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edit Data Anda &middot; booKesma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Icon -->
+	<link rel="icon" type="icon/image" href="img/jpgpng/favicon.png">
+    <!-- adding bootstrap css-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+    <!-- adding bootstrap theme css-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-theme.css" />
+    <!-- external page css -->
+	<link rel="stylesheet" type="text/css" href="css/show.css">
+	<link rel="stylesheet" type="text/css" href="css/daftar.css">
+</head>
+<body>
+	<div class="topnav" id="top-nav" style="z-index: 99;">
+        <a class="home" href="<?=$this->url->getBaseUri()?>">
+            <img src="img/svg/logo.svg" alt="booKesma">
+        </a>
+        <a href="<?=$this->url->getBaseUri().'login'?>">Masuk</a>
+        <a href="<?=$this->url->getBaseUri().'register'?>">Daftar</a>
+        <a href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
+        <a href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
+        <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a href="javascript:void(0);" class="icon" onclick="navbar()">
+            <img src="img/svg/hamburger-menu.svg" alt="menu">
+        </a>
+    </div>
+	<div class="container">
+		<h2>Edit Data Anda</h2>
+		<?php echo $this->tag->form("register");?>
+		<div class="form-group">
+			<label>Username</label>
+			<?php echo $form->render('rname'); ?>
+		</div>
+		<div class="form-group">
+			<label>NRP</label>
+			<?php echo $form->render('rnrp'); ?>
+		</div>
+		<div class="form-group">
+			<label>Email</label>
+			<?php echo $form->render('remail'); ?>
+		</div>
+        <div class="form-group">
+			<label>Password Sekarang</label>
+			<p title="Sorry, but we don't do alot in security"></p>
+			<?php echo $form->render('rpasswordlama'); ?>
+		</div>
+		<div class="form-group">
+			<label>Password Baru</label>
+			<p title="Sorry, but we don't do alot in security">Gunakan kombinasi huruf kecil, kapital dan angka minimal 8 karakter!</p>
+			<?php echo $form->render('rpassword'); ?>
+		</div>
+		<div class="form-group">
+			<label>Confirm Password Sekarang</label>
+			<p title="Please, don't fill it with 'Yes, it's my password' -_-">Masukkan kembali password yang sama!</p>
+			<?php echo $form->render('rcpassword'); ?>
+		</div>
+		<div class="form-group">
+			<?php echo $form->render('rsubmit'); ?>
+            <button class="btn btn-primary btn-md">Kembali</button>
+		</div>
+
+		<div>
+		</form>
+	</div>
+<!-- adding bootstrap -->
+<script src="js/bootstrap.js"></script>
+<!-- adding jquery -->
+<script src="js/jquery-3.3.1.js"></script>
+<!-- adding external script -->
+</body>
+</html>
