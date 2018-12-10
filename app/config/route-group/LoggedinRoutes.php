@@ -51,5 +51,12 @@ class LoggedinRoutes extends RouterGroup
             'action'=>'how',
             ]
         );
+        $this->addGet(  //tampilan cara menggunakan layanan v
+            '/user/koleksi/(semester[1-8])/:int',
+            [
+            'action'=>'pesan',
+            'id' => 1,
+            ]
+        );
     }
 }
