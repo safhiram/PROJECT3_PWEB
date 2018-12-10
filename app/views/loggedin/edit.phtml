@@ -11,31 +11,31 @@
     <title>Edit Data Anda &middot; booKesma</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Icon -->
-	<link rel="icon" type="icon/image" href="img/jpgpng/favicon.png">
+	<link rel="icon" type="icon/image" href="/bookesma.com/img/jpgpng/favicon.png">
     <!-- adding bootstrap css-->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/bookesma.com/css/bootstrap.css" />
     <!-- adding bootstrap theme css-->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/bookesma.com/css/bootstrap-theme.css" />
     <!-- external page css -->
-	<link rel="stylesheet" type="text/css" href="css/show.css">
-	<link rel="stylesheet" type="text/css" href="css/daftar.css">
+	<link rel="stylesheet" type="text/css" href="/bookesma.com/css/show.css">
+	<link rel="stylesheet" type="text/css" href="/bookesma.com/css/daftar.css">
 </head>
 <body>
 	<div class="topnav" id="top-nav" style="z-index: 99;">
         <a class="home" href="<?=$this->url->getBaseUri()?>">
-            <img src="img/svg/logo.svg" alt="booKesma">
+            <img src="/bookesma.com/img/svg/logo.svg" alt="booKesma">
         </a>
         <a href="<?=$this->url->getBaseUri().'user'?>"><?=$this->session->get('auth')['s_name'] ?></a>
-        <a href="<?=$this->url->getBaseuri().'users/koleksi'?>">Koleksi</a>
-        <a href="<?=$this->url->getBaseuri().'users/bagaimana'?>">Bagaimana</a>
+        <a href="<?=$this->url->getBaseuri().'user/koleksi'?>">Koleksi</a>
+        <a href="<?=$this->url->getBaseuri().'user/bagaimana'?>">Bagaimana</a>
         <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
         <a href="javascript:void(0);" class="icon" onclick="navbar()">
-            <img src="img/svg/hamburger-menu.svg" alt="menu">
+            <img src="/bookesma.com/img/svg/hamburger-menu.svg" alt="menu">
         </a>
     </div>
 	<div class="container">
 		<h2>Edit Data Anda</h2>
-		<?php echo $this->tag->form("users/profile");?>
+		<?php echo $this->tag->form("user/profile");?>
 		<div class="form-group">
 			<label>Username</label>
 			<?php echo $form->render('rname',['value'=>$nama]); ?>
@@ -64,14 +64,14 @@
 		</div>
 		<div class="form-group">
 			<?php echo $form->render('rsubmit',["value"=>"Simpan Perubahan","class"=>"btn btn-success"]); ?>
-            <a href="<?=$this->url->getBaseUri().'users/profile'?>" class="btn btn-default btn-md">Kembali</a>
+            <a href="<?=$this->url->getBaseUri().'user/profile'?>" class="btn btn-default btn-md">Kembali</a>
 		</div>
 		</form>
 	</div>
 <!-- adding bootstrap -->
-<script src="js/bootstrap.js"></script>
+<script src="/bookesma.com/js/bootstrap.js"></script>
 <!-- adding jquery -->
-<script src="js/jquery-3.3.1.js"></script>
+<script src="/bookesma.com/js/jquery-3.3.1.js"></script>
 <!-- adding external script -->
 </body>
 </html>

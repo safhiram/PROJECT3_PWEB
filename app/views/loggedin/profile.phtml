@@ -26,8 +26,8 @@
             <img src="/bookesma.com/img/svg/logo.svg" alt="booKesma">
         </a>
         <a href="<?=$this->url->getBaseUri().'user'?>"><?=$this->session->get('auth')['s_name'] ?></a>
-        <a href="<?=$this->url->getBaseuri().'users/koleksi'?>">Koleksi</a>
-        <a href="<?=$this->url->getBaseuri().'users/bagaimana'?>">Bagaimana</a>
+        <a href="<?=$this->url->getBaseuri().'user/koleksi'?>">Koleksi</a>
+        <a href="<?=$this->url->getBaseuri().'user/bagaimana'?>">Bagaimana</a>
         <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
         <a href="javascript:void(0);" class="icon" onclick="navbar()">
             <img src="/bookesma.com/img/svg/hamburger-menu.svg" alt="menu">
@@ -50,7 +50,7 @@
             </div>
         </div>
         <div class="container" style="padding-top:2%;padding-left:44%;">
-            <a href="<?=$this->url->getBaseUri().'users/edit-profile'?>" class="btn btn-info btn-md">Edit</a>
+            <a href="<?=$this->url->getBaseUri().'user/edit-profile'?>" class="btn btn-info btn-md">Edit</a>
             <a href="<?=$this->url->getBaseUri().'user'?>" class="btn btn-default btn-md">Kembali</a>
         </div>
     </div>

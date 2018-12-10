@@ -53,7 +53,7 @@ class LoggedinController extends Controller
             //kasih flash session lihat youtube
         }
         else {
-            $this->response->redirect('users/profile'); //kasih flash session jika berhasil update
+            $this->response->redirect('user/profile'); //kasih flash session jika berhasil update
             $this->view->disable();
             return;
         }

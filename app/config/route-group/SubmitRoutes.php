@@ -22,13 +22,13 @@ class SubmitRoutes extends RouterGroup
             ]
         );
         $this->addGet(
-            '/login',   //get form login
+            '/login',   //get form login v
             [
             'action'=>'createl',
             ]
         );
         $this->addPost(
-            '/login',   //post form login
+            '/login',   //post form login v
             [
             'action'=>'storel',
             ]
