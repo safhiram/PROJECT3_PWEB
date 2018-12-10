@@ -10,13 +10,13 @@ class SubmitRoutes extends RouterGroup
             'controller'=>'submit',
         ]);
         $this->addGet(
-            '/register',    //get form regis
+            '/register',    //get form regis v
             [
             'action'=>'creater',
             ]
         );
         $this->addPost(
-            '/register',    //post form regis
+            '/register',    //post form regis v
             [
             'action'=>'storer',
             ]

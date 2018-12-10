@@ -39,9 +39,15 @@ class SubmitController extends Controller
             return;
         }
     }
-    public function createlAction(){}
+    public function createlAction()
+    {
+        // var_dump( new RegisterForm() );
+        $this->view->form = new RegisterForm();
+    }
     public function storelAction()
     {
+        $clogin = new Register();
+
         
     }
     public function destroyAction()

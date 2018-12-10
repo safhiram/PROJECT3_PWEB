@@ -23,9 +23,9 @@ html, body{
   height: 100%;
 }
 .container{
-  background-image: url("../img/svg/bg_layer2.svg");
+  background-image: url("../img/svg/bg_layer1.svg");
   background-repeat: repeat-x;
-  background-position: left;
+  background-position: center;
   padding-top: 4em;
   padding-right: 10vw;
   padding-left: 10vw;
@@ -41,6 +41,6 @@ div p{
   font-weight: bold;
   font-family: as;
 }
-#re{
+#remind{
   font-size: 20px;
 }
