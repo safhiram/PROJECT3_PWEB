@@ -1,0 +1,26 @@
+hr{
+    width: 250px;
+    border-top: 20px solid #999;
+}
+
+section{
+    min-height: 600px;
+}
+
+.thumbnail{
+    width: 50%;
+}
+
+.jumbotron{
+    background-image: url('../img/jumbotron.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 0 50px;
+    box-shadow: 1px, 1px, 10px rgba(0, 0, 0, 5);
+}
+
+.jumbotron h1, .jumbotron p{
+    color: grey;
+    text-shadow: 1px, 1px, 10px rgba(0, 0, 0, 5);
+}
+
