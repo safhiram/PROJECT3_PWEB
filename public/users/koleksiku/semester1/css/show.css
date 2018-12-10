@@ -63,7 +63,7 @@ html, body{
 @media screen and (max-width: 600px){
     .topnav.responsive{
         position: fixed;
-        z-index: 99;
+        /* z-index: 99; */
     }
     .topnav.responsive .icon{
         position: absolute;
@@ -82,45 +82,3 @@ html, body{
 	}
 }
 /* header */
-
-hr{
-    width: 250px;
-    border-top: 20px solid #999;
-}
-
-section{
-    min-height: 600px;
-}
-
-.jumbotron{
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: 0 50px;
-    box-shadow: 1px, 1px, 10px rgba(0, 0, 0, 5);
-    overflow: hidden;
-}
-
-.jumbotron h1, .jumbotron p{
-    color: grey;
-    text-shadow: 1px, 1px, 10px rgba(0, 0, 0, 5);
-}
-
-.thumbnail{
-    width: 266px;
-}
-
-.daftar .thumbnail{
-    opacity: 0;
-    transform: translate(0, -40px);
-    transition: .5s;
-}
-
-.daftar .thumbnail.muncul{
-    opacity: 1;
-    transform: translate(0,0);
-}
-
-
-.input-group{
-    overflow: hidden;
-}

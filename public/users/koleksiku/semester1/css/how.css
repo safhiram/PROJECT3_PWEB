@@ -40,7 +40,10 @@ html, body{
     font-size: 1.3vw;
     font-family: as;
 }
-.topnav a:hover:not(.home){
+.active{
+    background-color: var(--birmud);
+}
+.topnav a:hover:not(.home):not(.active){
     background-color: var(--oren);
 }
 .topnav .home{
@@ -81,46 +84,60 @@ html, body{
         float: left;
 	}
 }
-/* header */
-
-hr{
-    width: 250px;
-    border-top: 20px solid #999;
+/* content */
+#isi{
+    width: 100%;
+    display: inline-table;
+    float: left;
 }
-
-section{
-    min-height: 600px;
+#judul{
+    margin:60px;
+    padding-left: 10px;
+    text-align: center;
+    width: 70%;
+    background-color: lightblue;
+    border: 3px solid #dbb13b;
+    border-radius: 10px;
+    display: inline-table;
+    float: left;
 }
-
-.jumbotron{
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: 0 50px;
-    box-shadow: 1px, 1px, 10px rgba(0, 0, 0, 5);
-    overflow: hidden;
+#reservasi{
+    display: inline-table;
+    width: 100%;
+    float: left;
+    padding-left:50px;
+    padding-top: 20px;
+    background-color: #2d325a;
 }
-
-.jumbotron h1, .jumbotron p{
-    color: grey;
-    text-shadow: 1px, 1px, 10px rgba(0, 0, 0, 5);
+#gambar{
+    width: 30%;
+    background-color: lightblue;
+    border: 3px solid #dbb13b;
+    border-radius: 60px;
+    display: inline-table;
+    float: left;
 }
-
-.thumbnail{
-    width: 266px;
+#tulisan
+{
+    width: 65%;
+    background-color: lightblue;
+    border: 3px solid #dbb13b;
+    border-radius: 60px;
+    display: inline-table;
+    float: left;
+    margin:60px;
+    padding: 30px;
 }
-
-.daftar .thumbnail{
-    opacity: 0;
-    transform: translate(0, -40px);
-    transition: .5s;
+#isi{
+    width: 65%;
+    display: inline-table;
+    float: left;
 }
-
-.daftar .thumbnail.muncul{
-    opacity: 1;
-    transform: translate(0,0);
-}
-
-
-.input-group{
-    overflow: hidden;
+#reservasi1{
+    display: inline-table;
+    width: 100%;
+    float: left;
+    padding-left:50px;
+    padding-top: 20px;
+    background-color: #0a0e29;
 }
