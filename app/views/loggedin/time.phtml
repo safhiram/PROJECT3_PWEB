@@ -1,0 +1,208 @@
+<!-- generate dynamic base url -->
+<?php
+    use Phalcon\Mvc\Url;
+    $url = new Url();
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SEMESTER 1</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>booKesma &middot; Pinjam-Sumbang Buku Akademik Informatika ITS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Icon -->
+	<link rel="icon" type="icon/image" href="img/jpgpng/favicon.png">
+    <!-- adding bootstrap css-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+    <!-- adding bootstrap theme css-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-theme.css" />
+    <!-- external page css -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/show.css" />
+    
+	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+</head>
+<body>
+<div class="topnav" id="top-nav" style="z-index: 99;">
+        <a class="home" href="<?=$this->url->getBaseUri()?>">
+            <img src="img/svg/logo.svg" alt="booKesma">
+        </a>
+        <a style="text-decoration:none;" href="<?=$this->url->getBaseUri().'login'?>">Masuk</a>
+        <a style="text-decoration:none;" href="<?=$this->url->getBaseUri().'register'?>">Daftar</a>
+        <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
+        <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
+        <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a style="text-decoration:none;" href="javascript:void(0);" class="icon" onclick="navbar()">
+            <img src="img/svg/hamburger-menu.svg" alt="menu">
+        </a>
+</div>
+<br><br>
+<!-- jumbotron -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container text-center">
+    <h1>Koleksi Buku</h1>
+    <p>Koleksi buku semester 1</p>
+  </div>
+  <form style="margin-left:40%;" class="navbar-form navbar-left" action="/action_page.php">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+</div>
+<!-- akhir jumbotron -->
+<!-- buku -->
+<section class="daftar" id="daftar" style="background-image: url('img/svg/bg_layer3.svg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="" class="thumbnail" data-toggle="modal" data-target="#myModal">
+                    <img src="img/p1.jpg">
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="" class="thumbnail" data-toggle="modal" data-target="#myModal2">
+                    <img src="img/p2.jpg">
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="" class="thumbnail" data-toggle="modal" data-target="#myModal3">
+                    <img src="img/p3.jpg">
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="" class="thumbnail" data-toggle="modal" data-target="#myModal4">
+                    <img src="img/p4.jpg">
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="" class="thumbnail" data-toggle="modal" data-target="#myModal5">
+                    <img src="img/p5.jpg">
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="" class="thumbnail" data-toggle="modal" data-target="#myModal6">
+                    <img src="img/p6.jpg">
+                </a>
+            </div>
+        </div>
+
+        <!-- Modal content1-->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Modal Header</h4>
+                 </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+            <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+    </div>
+        <!-- Modal content2-->
+        <div id="myModal2" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Modal Header</h4>
+                 </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+            <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+        <!-- Modal content3-->
+        <div id="myModal3" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Modal Header</h4>
+                 </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+            <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+        <!-- Modal content4-->
+        <div id="myModal4" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Modal Header</h4>
+                 </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+            <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+        <!-- Modal content5-->
+        <div id="myModal5" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Modal Header</h4>
+                 </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+            <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+        <!-- Modal content6-->
+        <div id="myModal6" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Modal Header</h4>
+                 </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+            <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+    </div>
+</section>
+<br><br>
+<!-- buku -->
+</body>
+</html>

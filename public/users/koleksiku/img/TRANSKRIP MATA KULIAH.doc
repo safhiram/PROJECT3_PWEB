@@ -1,0 +1,243 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body topmargin="0" rightmargin="0" leftmargin="0" bottommargin="0"><br><br>
+			
+
+
+
+	<title>TRANSKRIP MATA KULIAH</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<style>
+		table.plainGrid
+		{
+			background: white;
+			border-collapse: collapse;
+		}
+		
+		table.plainGrid td
+		{
+			border: 1px #000 solid;
+			padding: 0.3em;
+			font-family:Verdana, Arial, Helvetica, sans-serif;
+			font-size: 11px;
+		}
+		
+		table.dataGrid tr
+		{
+			color:#000;
+		}
+		
+		
+	</style>
+
+
+<div style="padding:5px" align="center">
+<table cellspacing="0" cellpadding="4" align="center">
+	<tbody><tr>
+		<td colspan="5" align="center"><strong><font size="3">TRANSKRIP MATA KULIAH</font></strong></td>
+	</tr>
+</tbody></table>
+<br>
+<table class="plainGrid">
+	<tbody><tr>
+		<td class="EditTabLabel"><strong>NRP / Nama</strong></td>
+		<td> 05111740000159 / I NYOMAN YOGA MAHOTTAMA </td>
+    </tr>
+    <tr>
+		<td class="EditTabLabel"><strong>SKS Tempuh / SKS Lulus</strong></td>
+		<td> 59 / 33 </td>
+    </tr>
+    <tr>
+		<td class="EditTabLabel"><strong>Status </strong></td>
+		<td>  Normal</td>
+    </tr>	
+</tbody></table>
+
+<br>  
+    
+	  <table class="plainGrid">
+  		<tbody><tr> 
+			<td colspan="5" align="center"><strong>--- Tahap: Persiapan ---</strong></td>
+  		</tr>
+        <tr class="trJudul"> 
+            <td width="50" align="center">Kode</td>
+            <td width="200" align="center">Nama Mata Kuliah</td>
+            <td width="30" align="center">SKS</td>
+            <td width="100" align="center">Historis Nilai</td>
+            <td width="50" align="center">Nilai</td>
+        </tr>
+		  	 
+            <tr>		
+                <td align="center">IG141108</td>
+                <td align="left">Bahasa Inggris</td>
+                <td align="center">3</td>
+                <td align="left">2017/Gs/BC</td>
+                <td align="center">BC</td>		
+            </tr>
+				 
+            <tr>		
+                <td align="center">KI141301</td>
+                <td align="left">Dasar Pemrograman</td>
+                <td align="center">4</td>
+                <td align="left">2017/Gs/B </td>
+                <td align="center">B </td>		
+            </tr>
+				 
+            <tr>		
+                <td align="center">KI141302</td>
+                <td align="left">Matematika Diskrit</td>
+                <td align="center">3</td>
+                <td align="left">2017/Gs/AB</td>
+                <td align="center">AB</td>		
+            </tr>
+				 
+            <tr>		
+                <td align="center">KI141303</td>
+                <td align="left">Sistem dan Teknologi Informasi</td>
+                <td align="center">2</td>
+                <td align="left">2017/Gs/A </td>
+                <td align="center">A </td>		
+            </tr>
+				 
+            <tr>		
+                <td align="center">KI141304</td>
+                <td align="left">Sistem Digital </td>
+                <td align="center">3</td>
+                <td align="left">2017/Gs/C </td>
+                <td align="center">C </td>		
+            </tr>
+				 
+            <tr>		
+                <td align="center">IG141104</td>
+                <td align="left">Pendidikan Agama Hindu</td>
+                <td align="center">2</td>
+                <td align="left">2017/Gn/AB</td>
+                <td align="center">AB</td>		
+            </tr>
+				 
+            <tr>		
+                <td align="center">IG141106</td>
+                <td align="left">Wawasan Kebangsaan</td>
+                <td align="center">3</td>
+                <td align="left">2017/Gn/AB</td>
+                <td align="center">AB</td>		
+            </tr>
+				 
+            <tr>		
+                <td align="center">KI141305</td>
+                <td align="left">Aljabar Linier</td>
+                <td align="center">3</td>
+                <td align="left">2017/Gn/A </td>
+                <td align="center">A </td>		
+            </tr>
+				 
+            <tr>		
+                <td align="center">KI141306</td>
+                <td align="left">Organisasi Komputer</td>
+                <td align="center">3</td>
+                <td align="left">2017/Gn/A </td>
+                <td align="center">A </td>		
+            </tr>
+				 
+            <tr>		
+                <td align="center">KI141307</td>
+                <td align="left">Struktur Data</td>
+                <td align="center">4</td>
+                <td align="left">2017/Gn/AB</td>
+                <td align="center">AB</td>		
+            </tr>
+				 
+            <tr>		
+                <td align="center">KI141331</td>
+                <td align="left">Matematika Informatika</td>
+                <td align="center">3</td>
+                <td align="left">2017/Gn/C </td>
+                <td align="center">C </td>		
+            </tr>
+			
+			<tr>
+				<td colspan="5" align="center">Total Sks Tahap Persiapan : <strong>33</strong></td>
+			</tr>
+			<tr>
+				<td colspan="5" align="center">IP Tahap Persiapan : <strong>3.2</strong></td>
+			</tr>
+
+	  
+		</tbody></table>
+
+        <br>
+
+        <table class="plainGrid">
+			<tbody><tr> 
+				<td colspan="5" align="center"><strong>--- Tahap: Sarjana ---</strong></td>
+			</tr>
+			<tr> 
+				<td width="50" align="center">Kode</td>
+				<td width="200" align="center">Nama Mata Kuliah</td>
+				<td width="30" align="center">SKS</td>
+				<td width="100" align="center">Historis Nilai</td>
+				<td width="50" align="center">Nilai</td>
+			</tr>
+		  
+			<tr>
+				<td colspan="5" align="center">Total Sks Tahap Sarjana : <strong></strong></td>
+			</tr>
+			<tr>
+				<td colspan="5" align="center">IP Tahap Sarjana : <strong>0</strong></td>
+			</tr>
+
+		</tbody></table>
+		       
+                 
+		<br>
+			
+		<table class="plainGrid">
+  			<tbody><tr>
+				<td>Total Sks</td>
+				<td><strong>33</strong></td>
+            </tr>
+            <tr>
+				<td>IPK</td>
+				<td><strong>3.2</strong></td>
+            </tr>         
+		</tbody></table>
+        
+		<br>
+			
+        <table class="plainGrid">
+        <tbody><tr>
+			<td><div class="trSubJudul" align="center"><strong>Judul Tugas Akhir / Thesis / Disertasi </strong></div></td>
+      	</tr>
+                 </tbody></table>
+		
+        <br>
+        
+		<table class="plainGrid">
+			<tbody><tr>
+				<td><span class="Teks"><strong>CATATAN</strong> 
+		<p>Transkrip Akademik ini hanya berlaku untuk keperluan:
+		
+		</p><ol>
+			<li>Pengajuan Beasiswa</li>
+			<li>Melamar Pekerjaan</li>
+			<li>Persyaratan Yudisium</li>
+			<li>Tunjangan Gaji</li>
+			<li>........................................................... (tuliskan 
+keperluannya)</li>
+		</ol>
+		<p></p>
+				</span></td>
+			</tr>
+			<tr>
+				<td>
+					<span class="Teks"><strong>Tanggal Cetak</strong>: 10 Desember 2018 </span>
+				</td>
+			</tr>
+		</tbody></table>
+		<br>
+</div>
+
+
+
+
+
+</body></html>
