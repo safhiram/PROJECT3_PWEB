@@ -7,7 +7,7 @@ use Phalcon\Forms\Element\Email;
 use Phalcon\Forms\Element\Password;
 use Phalcon\Forms\Element\Submit;
 
-class EditForm extends Form
+class BukuForm extends Form
 {
     public function initialize()
     {

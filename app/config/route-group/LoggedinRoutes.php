@@ -28,7 +28,7 @@ class LoggedinRoutes extends RouterGroup
             ]
         );
         $this->addPost(  //post update
-            '/users/update-profile',
+            '/users/profile',
             [
             'action'=>'update',
             ]

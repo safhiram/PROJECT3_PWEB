@@ -25,10 +25,9 @@
         <a class="home" href="<?=$this->url->getBaseUri()?>">
             <img src="img/svg/logo.svg" alt="booKesma">
         </a>
-        <a href="<?=$this->url->getBaseUri().'login'?>">Masuk</a>
-        <a href="<?=$this->url->getBaseUri().'register'?>">Daftar</a>
-        <a href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
-        <a href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
+        <a href="<?=$this->url->getBaseUri().'user'?>"><?=$this->session->get('auth')['s_name'] ?></a>
+        <a href="<?=$this->url->getBaseuri().'users/koleksi'?>">Koleksi</a>
+        <a href="<?=$this->url->getBaseuri().'users/bagaimana'?>">Bagaimana</a>
         <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
         <a href="javascript:void(0);" class="icon" onclick="navbar()">
             <img src="img/svg/hamburger-menu.svg" alt="menu">
@@ -36,22 +35,21 @@
     </div>
 	<div class="container">
 		<h2>Edit Data Anda</h2>
-		<?php echo $this->tag->form("register");?>
+		<?php echo $this->tag->form("users/profile");?>
 		<div class="form-group">
 			<label>Username</label>
-			<?php echo $form->render('rname'); ?>
+			<?php echo $form->render('rname',['value'=>$nama]); ?>
 		</div>
 		<div class="form-group">
 			<label>NRP</label>
-			<?php echo $form->render('rnrp'); ?>
+			<?php echo $form->render('rnrp',['value'=>$nrp]); ?>
 		</div>
 		<div class="form-group">
 			<label>Email</label>
-			<?php echo $form->render('remail'); ?>
+			<?php echo $form->render('remail',['value'=>$email]); ?>
 		</div>
         <div class="form-group">
 			<label>Password Sekarang</label>
-			<p title="Sorry, but we don't do alot in security"></p>
 			<?php echo $form->render('rpasswordlama'); ?>
 		</div>
 		<div class="form-group">
@@ -60,16 +58,14 @@
 			<?php echo $form->render('rpassword'); ?>
 		</div>
 		<div class="form-group">
-			<label>Confirm Password Sekarang</label>
+			<label>Konfirmasi Password Baru</label>
 			<p title="Please, don't fill it with 'Yes, it's my password' -_-">Masukkan kembali password yang sama!</p>
 			<?php echo $form->render('rcpassword'); ?>
 		</div>
 		<div class="form-group">
-			<?php echo $form->render('rsubmit'); ?>
-            <button class="btn btn-primary btn-md">Kembali</button>
+			<?php echo $form->render('rsubmit',["value"=>"Simpan Perubahan","class"=>"btn btn-success"]); ?>
+            <button class="btn btn-secondary btn-md">Kembali</button>
 		</div>
-
-		<div>
 		</form>
 	</div>
 <!-- adding bootstrap -->

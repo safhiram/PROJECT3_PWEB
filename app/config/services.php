@@ -40,7 +40,8 @@ $di->set(
             "host" => $config->database->host,             
             "username" => $config->database->username,             
             "password" => $config->database->password,             
-            "dbname" => $config->database->dbname         
+            "dbname" => $config->database->dbname,
+            "options" => [PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC],
         ]);     
     }
 ); 

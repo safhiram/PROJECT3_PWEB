@@ -40,6 +40,14 @@ class RegisterForm extends Form
         );
         $this->add(
             new Password(
+                'rpasswordlama',
+                [
+                    'class' => "form-control",
+                ]
+            )
+        );
+        $this->add(
+            new Password(
                 'rpassword',
                 [
                     'class' => "form-control",

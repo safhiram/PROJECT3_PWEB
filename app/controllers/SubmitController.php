@@ -21,20 +21,21 @@ class SubmitController extends Controller
         $cpass = md5($this->request->getPost('rpassword'));
         $ccpass = md5($this->request->getPost('rcpassword'));
 
+        //if session check semua attr dan syntax password==cpassword sama
+
         $cregis->username = $cusername;
         $cregis->nrp = $cnrp;
         $cregis->email = $cemail;
         $cregis->password = $cpass;
         $cregis->role = "user";
 
-        //if session check semua attr dan syntax password==cpassword sama
-
         if ($cregis->save() === false) {
             echo "gagal";
+            return;
             //kasih flash session lihat youtube
         }
         else {
-            $this->response->redirect('login');
+            $this->response->redirect('login'); //kasih flash session jika berhasil daftar
             $this->view->disable();
             return;
         }
@@ -46,9 +47,27 @@ class SubmitController extends Controller
     }
     public function storelAction()
     {
-        $clogin = new Register();
+        $cemail = $this->request->getPost('remail');
+        $cpass = md5($this->request->getPost('rpassword'));
 
-        
+        $clogin = Register::findFirst("email='$cemail'");
+        if ($clogin) {
+            if ($cpass === $clogin->password) {
+                $this->session->set(
+                    'auth',
+                    [
+                        's_id' => $clogin->id,
+                        's_name' => $clogin->username,
+                    ]
+                );
+                $this->response->redirect('user');
+                $this->view->disable();
+                return;
+            }
+        }else{
+            //flash session kalo salah lihat yt
+            return;
+        }
     }
     public function destroyAction()
     {
