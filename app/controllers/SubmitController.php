@@ -93,5 +93,6 @@ class SubmitController extends Controller
             return;
         }
         $this->view->url = new Url();
+        $this->session->destroy();
     }
 }

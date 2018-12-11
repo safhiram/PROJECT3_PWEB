@@ -27,8 +27,9 @@
         <a class="home" href="<?=$this->url->getBaseUri()?>">
             <img src="/bookesma.com/img/svg/logo.svg" alt="booKesma">
         </a>
-        <a style="text-decoration:none;" href="<?=$this->url->getBaseUri().'login'?>">Masuk</a>
-        <a style="text-decoration:none;" href="<?=$this->url->getBaseUri().'register'?>">Daftar</a>
+        <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
+        <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
+        <a style="text-decoration:none;" href="<?=$this->url->getBaseUri().'user/profile'?>">Hai, <?=$this->session->get('auth')['s_name'] ?>!</a>
         <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
         <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
         <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>

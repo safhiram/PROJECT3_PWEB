@@ -20,7 +20,9 @@
         <a class="home" href="<?=$this->url->getBaseUri()?>">
             <img src="/bookesma.com/img/svg/logo.svg" alt="booKesma">
         </a>
-        <a href="<?=$this->url->getBaseUri().'user'?>"><?=$this->session->get('auth')['s_name'] ?></a>
+        <a href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
+        <a href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
+        <a href="<?=$this->url->getBaseUri().'user/profile'?>">Hai, <?=$this->session->get('auth')['s_name'] ?>!</a>
         <a href="<?=$this->url->getBaseuri().'user/koleksi'?>">Koleksi</a>
         <a href="<?=$this->url->getBaseuri().'user/bagaimana'?>">Bagaimana</a>
         <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
