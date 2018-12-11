@@ -3,12 +3,20 @@
 use App\Forms\RegisterForm;
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
+use Phalcon\Mvc\Url;
 
 class SubmitController extends Controller
 {
     public function createrAction()
     {
         // var_dump( new RegisterForm() );
+        if($this->session->has('auth'))
+        {
+            $this->response->redirect('home');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
         $this->view->form = new RegisterForm();
     }
     public function storerAction()
@@ -21,20 +29,21 @@ class SubmitController extends Controller
         $cpass = md5($this->request->getPost('rpassword'));
         $ccpass = md5($this->request->getPost('rcpassword'));
 
+        //if session check semua attr dan syntax password==cpassword sama
+
         $cregis->username = $cusername;
         $cregis->nrp = $cnrp;
         $cregis->email = $cemail;
         $cregis->password = $cpass;
         $cregis->role = "user";
 
-        //if session check semua attr dan syntax password==cpassword sama
-
         if ($cregis->save() === false) {
             echo "gagal";
+            return;
             //kasih flash session lihat youtube
         }
         else {
-            $this->response->redirect('login');
+            $this->response->redirect('login'); //kasih flash session jika berhasil daftar
             $this->view->disable();
             return;
         }
@@ -42,16 +51,48 @@ class SubmitController extends Controller
     public function createlAction()
     {
         // var_dump( new RegisterForm() );
+        if($this->session->has('auth'))
+        {
+            $this->response->redirect('home');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
         $this->view->form = new RegisterForm();
     }
     public function storelAction()
     {
-        $clogin = new Register();
+        $cemail = $this->request->getPost('remail');
+        $cpass = md5($this->request->getPost('rpassword'));
 
-        
+        $clogin = Register::findFirst("email='$cemail'");
+        if ($clogin) {
+            if ($cpass === $clogin->password) {
+                $this->session->set(
+                    'auth',
+                    [
+                        's_id' => $clogin->id,
+                        's_name' => $clogin->username,
+                    ]
+                );
+                $this->response->redirect('home');
+                $this->view->disable();
+                return;
+            }
+        }else{
+            //flash session kalo salah lihat yt
+            return;
+        }
     }
     public function destroyAction()
     {
-        
+        if(!$this->session->has('auth'))
+        {
+            $this->response->redirect();
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+        $this->session->destroy();
     }
 }

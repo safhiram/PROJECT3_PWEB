@@ -40,8 +40,12 @@ html, body{
     font-size: 1.3vw;
     font-family: as;
 }
+.active{
+    background-color: var(--birmud);
+}
 .topnav a:hover:not(.home){
     background-color: var(--oren);
+    color: var(--birdong);
 }
 .topnav .home{
     float: left;

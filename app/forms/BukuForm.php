@@ -7,7 +7,7 @@ use Phalcon\Forms\Element\Email;
 use Phalcon\Forms\Element\Password;
 use Phalcon\Forms\Element\Submit;
 
-class RegisterForm extends Form
+class BukuForm extends Form
 {
     public function initialize()
     {
@@ -16,7 +16,7 @@ class RegisterForm extends Form
                 'rname',
                 [
                     'class' => "form-control",
-                    'placeholder' => 'Raka',
+                    'value' => 'Raka',
                 ]
             )
         );
@@ -25,7 +25,7 @@ class RegisterForm extends Form
                 'rnrp',
                 [
                     'class' => "form-control",
-                    'placeholder' => '05111740000120',
+                    'value' => '05111740000120',
                 ]
             )
         );
@@ -34,7 +34,7 @@ class RegisterForm extends Form
                 'remail',
                 [
                     'class' => "form-control",
-                    'placeholder'   =>  'ranggakusumad@gmail.com',
+                    'value'   =>  'ranggakusumad@gmail.com',
                 ]
             )
         );
@@ -67,7 +67,7 @@ class RegisterForm extends Form
                 'rsubmit',
                 [
                     'class' => "btn btn-primary",
-                    'value'   =>  'Daftar',
+                    'value'   =>  'Edit',
                 ]
             )
         );
