@@ -7,6 +7,16 @@ use Phalcon\Mvc\Url;
 
 class LoggedinController extends Controller
 {
+    public function showAction()
+    {
+        if(!$this->session->has('auth'))
+        {
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+    }
     public function historyAction()
     {
         if(!$this->session->has('auth'))

@@ -14,7 +14,7 @@ class IndexController extends Controller
     {
         if($this->session->has('auth'))
         {
-            $this->response->redirect('user');
+            $this->response->redirect('home');
             $this->view->disable();
             return;
         }

@@ -10,6 +10,12 @@ class LoggedinRoutes extends RouterGroup
             'controller'=>'loggedin',
         ]);
         $this->addGet( 
+            '/home',    //tampilan awal v
+            [
+            'action'=>'show',
+            ]
+        );
+        $this->addGet( 
             '/user',    //tampilan riwayat data user dari peminjaman dan pengembalian v
             [
             'action'=>'history',

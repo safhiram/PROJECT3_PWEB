@@ -12,7 +12,7 @@ class SubmitController extends Controller
         // var_dump( new RegisterForm() );
         if($this->session->has('auth'))
         {
-            $this->response->redirect('user');
+            $this->response->redirect('home');
             $this->view->disable();
             return;
         }
@@ -53,7 +53,7 @@ class SubmitController extends Controller
         // var_dump( new RegisterForm() );
         if($this->session->has('auth'))
         {
-            $this->response->redirect('user');
+            $this->response->redirect('home');
             $this->view->disable();
             return;
         }
@@ -75,7 +75,7 @@ class SubmitController extends Controller
                         's_name' => $clogin->username,
                     ]
                 );
-                $this->response->redirect('user');
+                $this->response->redirect('home');
                 $this->view->disable();
                 return;
             }
