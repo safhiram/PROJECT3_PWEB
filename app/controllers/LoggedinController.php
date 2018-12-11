@@ -3,19 +3,51 @@
 use Phalcon\Mvc\Controller;
 use App\Forms\RegisterForm;
 use Phalcon\Http\Response;
+use Phalcon\Mvc\Url;
 
 class LoggedinController extends Controller
 {
     public function historyAction()
     {
-
+        if(!$this->session->has('auth'))
+        {
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
     }
-    public function catAction()
+    public function profileAction()
     {
+        if(!$this->session->has('auth'))
+        {
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
 
+        $this->view->form= new RegisterForm();
+        $sid = $this->session->get('auth')['s_id'];
+        $pregis = Register::findFirst($sid);
+        $this->view->setVars(
+            [
+                "nama" => $pregis->username,
+                "nrp" => $pregis->nrp,
+                "email" => $pregis->email,
+            ]
+        );
     }
     public function editAction()
     {    
+        if(!$this->session->has('auth'))
+        {
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+
         $this->view->form= new RegisterForm();
         $sid = $this->session->get('auth')['s_id'];
         $eregis = Register::findFirst($sid);
@@ -58,20 +90,44 @@ class LoggedinController extends Controller
             return;
         }
     }
-    public function profileAction()
+    public function catAction()
     {
-        $this->view->form= new RegisterForm();
-        $sid = $this->session->get('auth')['s_id'];
-        $pregis = Register::findFirst($sid);
-        $this->view->setVars(
-            [
-                "nama" => $pregis->username,
-                "nrp" => $pregis->nrp,
-                "email" => $pregis->email,
-            ]
-        );
+        if(!$this->session->has('auth'))
+        {
+            $this->response->redirect('koleksi');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
     }
-    public function howAction(){}
-    public function timeAction(){}
-    public function pesanAction(){}
+    public function timeAction()
+    {
+        if(!$this->session->has('auth'))
+        {
+            $this->response->redirect('koleksi/(semester[1-8])');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+    }
+    public function howAction()
+    {
+        if(!$this->session->has('auth'))
+        {
+            $this->response->redirect('bagaimana');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+    }
+    public function pesanAction()   //apa ini perlu? pikir kembali logika peminjaman
+    {
+        if(!$this->session->has('auth'))
+        {
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+    }
 }

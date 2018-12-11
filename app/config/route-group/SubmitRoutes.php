@@ -34,7 +34,7 @@ class SubmitRoutes extends RouterGroup
             ]
         );
         $this->addGet(
-            '/logout',  //get logout
+            '/logout',  //get logout v
             [
             'action'=>'destroy',
             ]

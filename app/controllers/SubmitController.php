@@ -3,12 +3,20 @@
 use App\Forms\RegisterForm;
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
+use Phalcon\Mvc\Url;
 
 class SubmitController extends Controller
 {
     public function createrAction()
     {
         // var_dump( new RegisterForm() );
+        if($this->session->has('auth'))
+        {
+            $this->response->redirect('user');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
         $this->view->form = new RegisterForm();
     }
     public function storerAction()
@@ -43,6 +51,13 @@ class SubmitController extends Controller
     public function createlAction()
     {
         // var_dump( new RegisterForm() );
+        if($this->session->has('auth'))
+        {
+            $this->response->redirect('user');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
         $this->view->form = new RegisterForm();
     }
     public function storelAction()
@@ -71,6 +86,12 @@ class SubmitController extends Controller
     }
     public function destroyAction()
     {
-        
+        if(!$this->session->has('auth'))
+        {
+            $this->response->redirect();
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
     }
 }
