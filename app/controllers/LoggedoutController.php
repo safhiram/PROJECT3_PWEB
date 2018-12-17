@@ -58,11 +58,13 @@ class LoggedoutController extends Controller
         $cjudul = $this->request->getPost('sjudulbuku');
         $ctebal = $this->request->getPost('stebalhalaman');
         $cdesk = $this->request->getPost('sdeskripsibuku');
-        $cgambar = $this->request->getUploadedFiles();
-
-        $filepath = 'buku-sumbang/'.$cjudul;
-        foreach ($cgambar as $cg) {
-            $cg->moveTo($filepath);
+        
+        $filepath = 'buku-sumbang/'.$cjudul.'.jpg';
+        if ($this->request->hasFiles()) {
+            $cgambar = $this->request->getUploadedFiles();    
+            foreach ($cgambar as $cg) {
+                $cg->moveTo($filepath);
+            }
         }
 
         $csumbang->nrp = $cnrp;
@@ -77,9 +79,10 @@ class LoggedoutController extends Controller
         $csumbang->status = 0;
         $csumbang->semester = 0;
         $csumbang->gambarsumbang = $filepath;
-        //masih gagal gatau kenapa
+        
         if ($csumbang->save() === false) {
             echo $filepath;
+            var_dump($csumbang);
             var_dump($cgambar);
             echo "gagal";
             return;
