@@ -28,7 +28,7 @@
         <a href="<?=$this->url->getBaseUri().'register'?>">Daftar</a>
         <a href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
         <a href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
-        <a class="active" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
         <a href="javascript:void(0);" class="icon" onclick="navbar()">
             <img src="img/svg/hamburger-menu.svg" alt="menu">
         </a>
@@ -41,76 +41,88 @@
 					FORM SUMBANG
 				</span>
 			</div>
+			<?=$this->tag->form(['sumbang','method'=>'post','class'=>'contact100-form validate-form','enctype'=>"multipart/form-data"]);?>
+			<!-- <form class="contact100-form validate-form"> -->
 
-			<form class="contact100-form validate-form">
-
-							<div class="wrap-input100 validate-input" data-validate="NRP is required">
+				<div class="wrap-input100 validate-input" data-validate="NRP is required">
 					<span class="label-input100">NRP:</span>
-					<input class="input100" type="text" name="nrp" placeholder="Masukkan NRP">
+					<?php echo $form->render('snrp'); ?>
+					<!-- <input class="input100" type="text" name="nrp" placeholder="Masukkan NRP"> -->
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">Nama:</span>
-					<input class="input100" type="text" name="name" placeholder="Masukkan Nama">
+					<?php echo $form->render('sname'); ?>
+					<!-- <input class="input100" type="text" name="name" placeholder="Masukkan Nama"> -->
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 					<span class="label-input100">Email:</span>
-					<input class="input100" type="text" name="email" placeholder="Masukkan Email">
+					<?php echo $form->render('semail'); ?>
+					<!-- <input class="input100" type="text" name="email" placeholder="Masukkan Email"> -->
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate="Phone is required">
+				<div class="wrap-input100 validate-input" data-validate="No HP is required">
 					<span class="label-input100">No HP:</span>
-					<input class="input100" type="text" name="phone" placeholder="Masukkan Nomer HP">
+					<?php echo $form->render('snohp'); ?>
+					<!-- <input class="input100" type="text" name="phone" placeholder="Masukkan Nomer HP"> -->
 					<span class="focus-input100"></span>
 				</div>
-				<div class="wrap-input100 validate-input" data-validate="Phone is required">
+				<div class="wrap-input100 validate-input" data-validate="Departemen is required">
 					<span class="label-input100">Departemen:</span>
-					<input class="input100" type="text" name="departemen" placeholder="Masukkan Departemen">
+					<?php echo $form->render('sdepartemen'); ?>
+					<!-- <input class="input100" type="text" name="departemen" placeholder="Masukkan Departemen"> -->
 					<span class="focus-input100"></span>
 				</div>
-				<div class="wrap-input100 validate-input" data-validate="Phone is required">
+				<div class="wrap-input100 validate-input" data-validate="Universitas is required">
 					<span class="label-input100">Universitas:</span>
-					<input class="input100" type="text" name="universitas" placeholder="Masukkan Universitas">
+					<?php echo $form->render('suniversitas'); ?>
+					<!-- <input class="input100" type="text" name="universitas" placeholder="Masukkan Universitas"> -->
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate="Judul Buku is required">
 					<span class="label-input100">Judul Buku:</span>
-					<input class="input100" type="text" name="judul" placeholder="Masukkan Judul Buku">
+					<?php echo $form->render('sjudulbuku'); ?>
+					<!-- <input class="input100" type="text" name="judul" placeholder="Masukkan Judul Buku"> -->
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate="Tebal Halaman is required">
 					<span class="label-input100">Tebal Halaman:</span>
-					<input class="input100" type="text" name="halaman" placeholder="Masukkan Tebal Halaman">
+					<?php echo $form->render('stebalhalaman'); ?>
+					<!-- <input class="input100" type="text" name="halaman" placeholder="Masukkan Tebal Halaman"> -->
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Deskripsi Buku is required">
 					<span class="label-input100">Deskripsi Buku:</span>
-					<textarea class="input100" name="desk" placeholder="Deskripsi Buku ...."></textarea>
+					<?php echo $form->render('sdeskripsibuku'); ?>
+					<!-- <textarea class="input100" name="desk" placeholder="Deskripsi Buku ...."></textarea> -->
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate="Gambar Buku is required">
 					<span class="label-input100">Gambar Buku:</span>
-					<input class="input100" type="file" name="halaman">
+					<?php echo $form->render('sgambar'); ?>
+					<!-- <input class="input100" type="file" name="halaman"> -->
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
+					<?php echo $form->render('ssubmit'); ?>
+					<!-- <button class="contact100-form-btn">
 						<span>
-							Submit
+							
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
-					</button>
+					</button> -->
 				</div>
-			</form>
+			<?= $this->tag->endForm()?>
+			<!-- </form> -->
 		</div>
 	</div>
 

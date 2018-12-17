@@ -3,6 +3,7 @@ namespace App\Forms;
 
 use Phalcon\Forms\Form;
 use Phalcon\Forms\Element\Text;
+use Phalcon\Forms\Element\TextArea;
 use Phalcon\Forms\Element\Numeric;
 use Phalcon\Forms\Element\Email;
 use Phalcon\Forms\Element\File;
@@ -12,94 +13,93 @@ class SumbangForm extends Form
 {
     public function initialize()
     {
-        $this->add(
-            new Text(
-                'nrp',
-                [
-                    'class' => "form-control",
-                ]
-            )
+        $nrp = new Text(
+            'snrp',
+            [
+                'class'=>"input100",
+                'placeholder'=>"Masukkan NRP",
+            ]
         );
-        $this->add(
-            new Text(
-                'name',
-                [
-                    'class' => "form-control",
-                ]
-            )
+        $name = new Text(
+            'sname',
+            [
+                'class' => "input100",
+                'placeholder'=> "Masukkan Nama",
+            ]
         );
-        $this->add(
-            new Email(
-                'email',
-                [
-                    'class' => "form-control",
-                ]
-            )
+        $email = new Email(
+            'semail',
+            [
+                'class' => "input100",
+                'placeholder'=> "Masukkan Email",
+            ]
         );
-        $this->add(
-            new Text(
-                'nohp',
-                [
-                    'class' => "form-control",
-                ]
-            )
+        $nohp = new Text(
+            'snohp',
+            [
+                'class' => "input100",
+                'placeholder'=> "Masukkan Nomer HP",
+            ]
         );
-        $this->add(
-            new Text(
-                'departemen',
-                [
-                    'class' => "form-control",
-                ]
-            )
+        $departemen = new Text(
+            'sdepartemen',
+            [
+                'class' => "input100",
+                'placeholder'=> "Masukkan Departemen",
+            ]
         );
-        $this->add(
-            new Text(
-                'universitas',
-                [
-                    'class' => "form-control",
-                ]
-            )
+        $universitas = new Text(
+            'suniversitas',
+            [
+                'class' => "input100",
+                'placeholder'=> "Masukkan Universitas",
+            ]
         );
-        $this->add(
-            new Text(
-                'judulbuku',
-                [
-                    'class' => "form-control",
-                ]
-            )
+        $judulbuku = new Text(
+            'sjudulbuku',
+            [
+                'class' => "input100",
+                'placeholder'=> "Masukkan Judul Buku",
+            ]
         );
-        $this->add(
-            new Numeric(
-                'tebalhalaman',
-                [
-                    'class' => "form-control",
-                ]
-            )
+        $tebalhal = new Numeric(
+            'stebalhalaman',
+            [
+                'class' => "input100",
+                'placeholder'=> "Masukkan Tebal Halaman",
+            ]
         );
-        $this->add(
-            new Text(
-                'deskripsibuku',
-                [
-                    'class' => "form-control",
-                ]
-            )
+        $deskripsibuku = new TextArea(
+            'sdeskripsibuku',
+            [
+                'class' => "input100",
+                'placeholder'=> "Deskripsi Buku ....",
+            ]
         );
-        $this->add(
-            new File(
-                'gambar',
-                [
-                    'class' => "form-control",
-                ]
-            )
+        $gambar = new File(
+            'sgambar',
+            [
+                'class' => "input100",
+            ]
         );
-        $this->add(
-            new Submit(
-                'submit',
-                [
-                    'class' => "btn btn-primary",
-                    'value'   =>  'Submit',
-                ]
-            )
+        $submit = new Submit(
+            'ssubmit',
+            [
+                'class' => "contact100-form-btn",
+                'value'   =>  'Submit',
+            ]
         );
+
+        $this->add($nrp);
+        $this->add($name);
+        $this->add($email);
+        $this->add($nohp);
+        $this->add($departemen);
+        $this->add($universitas);
+        $this->add($judulbuku);
+        $this->add($tebalhal);
+        $this->add($deskripsibuku);
+        $this->add($gambar);
+        $this->add($submit);
     }
 }
