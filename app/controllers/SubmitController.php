@@ -10,7 +10,7 @@ class SubmitController extends Controller
     public function createrAction()
     {
         // var_dump( new RegisterForm() );
-        if($this->session->has('auth'))
+        if($this->cookies->has('auth'))
         {
             $this->response->redirect('home');
             $this->view->disable();
@@ -51,7 +51,7 @@ class SubmitController extends Controller
     public function createlAction()
     {
         // var_dump( new RegisterForm() );
-        if($this->session->has('auth'))
+        if($this->cookies->has('auth'))
         {
             $this->response->redirect('home');
             $this->view->disable();
@@ -68,12 +68,13 @@ class SubmitController extends Controller
         $clogin = Register::findFirst("email='$cemail'");
         if ($clogin) {
             if ($cpass === $clogin->password) {
-                $this->session->set(
+                $this->cookies->set(
                     'auth',
                     [
                         's_id' => $clogin->id,
                         's_name' => $clogin->username,
-                    ]
+                    ],
+                    time() + 6 * 3600
                 );
                 $this->response->redirect('home');
                 $this->view->disable();
@@ -86,13 +87,13 @@ class SubmitController extends Controller
     }
     public function destroyAction()
     {
-        if(!$this->session->has('auth'))
+        if(!$this->cookies->has('auth'))
         {
             $this->response->redirect();
             $this->view->disable();
             return;
         }
         $this->view->url = new Url();
-        $this->session->destroy();
+        $this->cookies->destroy();
     }
 }
