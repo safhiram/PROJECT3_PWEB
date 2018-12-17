@@ -1,5 +1,6 @@
 <?php
 
+use App\Forms\SumbangForm;
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
 use Phalcon\Mvc\Url;
@@ -42,5 +43,13 @@ class LoggedoutController extends Controller
     {
         $this->view->url = new Url();
     }
-    public function callAction(){}
+    public function callAction()
+    {
+        $csumbang = new Sumbang();
+
+        $cnrp = $this->request->getPost('');
+        $cnama = $this->request->getPost('');
+        $cemail = $this->request->getPost('');
+        $cnohp = $this->request->getPost('');
+    }
 }

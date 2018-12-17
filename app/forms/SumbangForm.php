@@ -8,7 +8,7 @@ use Phalcon\Forms\Element\Email;
 use Phalcon\Forms\Element\File;
 use Phalcon\Forms\Element\Submit;
 
-class PenyumbangForm extends Form
+class SumbangForm extends Form
 {
     public function initialize()
     {
