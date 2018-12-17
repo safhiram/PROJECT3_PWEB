@@ -16,9 +16,10 @@ class LoggedoutRoutes extends RouterGroup
             ]
         );
         $this->addGet(  //tampilan buku di semester v
-            '/koleksi/(semester[1-8])',
+            '/koleksi/semester/[1-8]{1}',
             [
             'action'=>'time',
+            'semester'=> 1,
             ]
         );
         $this->addGet(
@@ -29,12 +30,6 @@ class LoggedoutRoutes extends RouterGroup
         );
         $this->addGet(
             '/sumbang',     //tampilan form jadwal bertemu v
-            [
-            'action'=>'identity',
-            ]
-        );
-        $this->addGet(
-            '/sumbang-buku',     //tampilan form menyumbang buku v
             [
             'action'=>'charity',
             ]

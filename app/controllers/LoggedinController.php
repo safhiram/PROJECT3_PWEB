@@ -110,7 +110,7 @@ class LoggedinController extends Controller
         }
         $this->view->url = new Url();
     }
-    public function timeAction()
+    public function timeAction($semester)
     {
         if(!$this->session->has('auth'))
         {
@@ -119,6 +119,7 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
+        $this->setVars("sem"=>$semester);
     }
     public function howAction()
     {

@@ -46,9 +46,10 @@ class LoggedinRoutes extends RouterGroup
             ]
         );
         $this->addGet(  //tampilan buku di semester v
-            '/user/koleksi/(semester[1-8])',
+            '/user/koleksi/semester/[1-8]{1}',
             [
             'action'=>'time',
+            'semester'=> 1,
             ]
         );
         $this->addGet(  //tampilan cara menggunakan layanan v
@@ -58,10 +59,11 @@ class LoggedinRoutes extends RouterGroup
             ]
         );
         $this->addGet(  //tampilan reservasi v
-            '/user/koleksi/(semester[1-8])/:int',
+            '/user/koleksi/semester/[1-8]{1}/:int',
             [
             'action'=>'pesan',
-            'id' => 1,
+            'semester'=> 1,
+            'id' => 2,
             ]
         );
     }

@@ -41,9 +41,5 @@ class LoggedoutController extends Controller
     {
         $this->view->url = new Url();
     }
-    public function identityAction()
-    {
-        $this->view->url = new Url();
-    }
     public function callAction(){}
 }
