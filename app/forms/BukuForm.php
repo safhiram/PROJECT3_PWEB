@@ -3,6 +3,7 @@ namespace App\Forms;
 
 use Phalcon\Forms\Form;
 use Phalcon\Forms\Element\Text;
+use Phalcon\Forms\Element\Numeric;
 use Phalcon\Forms\Element\Email;
 use Phalcon\Forms\Element\Password;
 use Phalcon\Forms\Element\Submit;
@@ -12,26 +13,24 @@ class BukuForm extends Form
     public function initialize()
     {
         $this->add(
-            new Text(
-                'rname',
+            new Numeric(
+                'id',
                 [
                     'class' => "form-control",
-                    'value' => 'Raka',
                 ]
             )
         );
         $this->add(
             new Text(
-                'rnrp',
+                'judul_buku',
                 [
                     'class' => "form-control",
-                    'value' => '05111740000120',
                 ]
             )
         );
         $this->add(
-            new Email(
-                'remail',
+            new Numeric(
+                'jumlah_halaman',
                 [
                     'class' => "form-control",
                     'value'   =>  'ranggakusumad@gmail.com',
@@ -39,35 +38,34 @@ class BukuForm extends Form
             )
         );
         $this->add(
-            new Password(
-                'rpasswordlama',
+            new Text(
+                'deskripsi_buku',
                 [
                     'class' => "form-control",
                 ]
             )
         );
         $this->add(
-            new Password(
-                'rpassword',
+            new Numeric(
+                'tersedia',
                 [
                     'class' => "form-control",
                 ]
             )
         );
         $this->add(
-            new Password(
-                'rcpassword',
+            new Numeric(
+                'semester',
                 [
                     'class' => "form-control",
                 ]
             )
         );
         $this->add(
-            new Submit(
-                'rsubmit',
+            new Text(
+                'gambar',
                 [
-                    'class' => "btn btn-primary",
-                    'value'   =>  'Edit',
+                    'class' => "form-control",
                 ]
             )
         );
