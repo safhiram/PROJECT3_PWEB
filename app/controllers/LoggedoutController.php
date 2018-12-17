@@ -8,7 +8,7 @@ class LoggedoutController extends Controller
 {
     public function catAction()
     {
-        if($this->cookies->has('auth'))
+        if($this->session->has('auth'))
         {
             $this->response->redirect('user/koleksi');
             $this->view->disable();
@@ -18,7 +18,7 @@ class LoggedoutController extends Controller
     }
     public function howAction()
     {
-        if($this->cookies->has('auth'))
+        if($this->session->has('auth'))
         {
             $this->response->redirect('user/bagaimana');
             $this->view->disable();
@@ -28,7 +28,7 @@ class LoggedoutController extends Controller
     }
     public function timeAction($semester)
     {
-        if($this->cookies->has('auth'))
+        if($this->session->has('auth'))
         {
             $this->response->redirect('user/koleksi');
             $this->view->disable();
