@@ -84,5 +84,6 @@ class RegisterForm extends Form
         $this->add($passold);
         $this->add($pass);
         $this->add($passconf);
+        $this->add($submit);
     }
 }

@@ -30,7 +30,7 @@ class LoggedoutController extends Controller
     {
         if($this->session->has('auth'))
         {
-            $this->response->redirect('user/koleksi/(semester[1-8])');
+            $this->response->redirect('user/koleksi');
             $this->view->disable();
             return;
         }
