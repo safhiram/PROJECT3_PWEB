@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2018 at 12:48 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.2.12
+-- Waktu pembuatan: 17 Des 2018 pada 13.45
+-- Versi server: 10.1.35-MariaDB
+-- Versi PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,13 +25,13 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservasi`
+-- Struktur dari tabel `reservasi`
 --
 
 CREATE TABLE `reservasi` (
   `id_reservasi` int(11) NOT NULL,
-  `buku-id` int(11) NOT NULL,
-  `user-id` int(11) NOT NULL,
+  `buku_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `nomorhp` varchar(25) NOT NULL,
   `tanggal_bertemu` date NOT NULL
@@ -42,33 +42,22 @@ CREATE TABLE `reservasi` (
 --
 
 --
--- Indexes for table `reservasi`
+-- Indeks untuk tabel `reservasi`
 --
 ALTER TABLE `reservasi`
   ADD PRIMARY KEY (`id_reservasi`),
-  ADD KEY `fkbook` (`buku-id`),
-  ADD KEY `fkregister` (`user-id`);
+  ADD KEY `fkbook` (`buku_id`),
+  ADD KEY `fkregister` (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `reservasi`
+-- AUTO_INCREMENT untuk tabel `reservasi`
 --
 ALTER TABLE `reservasi`
   MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `reservasi`
---
-ALTER TABLE `reservasi`
-  ADD CONSTRAINT `fkbook` FOREIGN KEY (`buku-id`) REFERENCES `book` (`id_buku`),
-  ADD CONSTRAINT `fkregister` FOREIGN KEY (`user-id`) REFERENCES `register` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
