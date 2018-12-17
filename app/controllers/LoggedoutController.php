@@ -26,7 +26,7 @@ class LoggedoutController extends Controller
         }
         $this->view->url = new Url();
     }
-    public function timeAction()
+    public function timeAction($semester)
     {
         if($this->session->has('auth'))
         {
@@ -35,6 +35,7 @@ class LoggedoutController extends Controller
             return;
         }
         $this->view->url = new Url();
+        $this->view->setVars(["sem"=>$semester]);
     }
     //belum routing
     public function charityAction()

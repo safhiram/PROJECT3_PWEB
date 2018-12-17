@@ -16,7 +16,7 @@ class LoggedoutRoutes extends RouterGroup
             ]
         );
         $this->addGet(  //tampilan buku di semester v
-            '/koleksi/semester/[1-8]{1}',
+            '/koleksi/semester/([1-8]{1})',
             [
             'action'=>'time',
             'semester'=> 1,

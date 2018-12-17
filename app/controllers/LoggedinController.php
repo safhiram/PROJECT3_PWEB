@@ -119,7 +119,7 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
-        $this->setVars("sem"=>$semester);
+        $this->view->setVars(["sem"=>$semester]);
     }
     public function howAction()
     {
@@ -131,7 +131,7 @@ class LoggedinController extends Controller
         }
         $this->view->url = new Url();
     }
-    public function pesanAction()   //apa ini perlu? pikir kembali logika peminjaman
+    public function pesanAction($semester,$id)   //apa ini perlu? pikir kembali logika peminjaman
     {
         if(!$this->session->has('auth'))
         {
@@ -140,5 +140,11 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
+        $this->view->setVars(
+            [
+                "sem"=>$semester,
+                "id_buku"=>$id,
+            ]
+        );
     }
 }
