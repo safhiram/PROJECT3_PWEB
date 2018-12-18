@@ -242,4 +242,20 @@ class LoggedinController extends Controller
             ]
         );
     }
+    public function pinjamAction($semester,$id)   //apa ini perlu? pikir kembali logika peminjaman
+    {
+        if(!$this->session->has('auth'))
+        {
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+        $this->view->setVars(
+            [
+                "sem"=>$semester,
+                "id_buku"=>$id,
+            ]
+        );
+    }
 }
