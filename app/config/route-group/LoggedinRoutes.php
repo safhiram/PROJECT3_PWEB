@@ -16,7 +16,25 @@ class LoggedinRoutes extends RouterGroup
             ]
         );
         $this->addGet(
-            '/admin',   //query buku semua
+            '/admin/list-register',   //query buku semua
+            [
+            'action'=>'register',
+            ]
+        );
+        $this->addGet(
+            '/admin/list-sumbang',   //query buku semua
+            [
+            'action'=>'sumbang',
+            ]
+        );
+        $this->addGet(
+            '/admin/list-reservasi',   //query buku semua
+            [
+            'action'=>'reservasi',
+            ]
+        );
+        $this->addGet(
+            '/admin/',   //query buku semua
             [
             'action'=>'preview',
             ]
