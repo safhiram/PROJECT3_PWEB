@@ -4,7 +4,7 @@ use Phalcon\Mvc\Model;
 
 class Buku extends Model 
 {     
-    public $id;     
+    public $id_buku;     
     public $judul_buku;
     public $jumlah_halaman;     
     public $deskripsi_buku;
