@@ -17,6 +17,44 @@ class LoggedinController extends Controller
         }
         $this->view->url = new Url();
     }
+    public function previewAction()
+    {
+        if($this->session->has('auth'))
+        {
+            $role = $this->session->get('auth')['s_role'];
+            if ($role != 'admin' ) {
+                $this->response->redirect('home');
+                $this->view->disable();
+                return;    
+            } 
+        }else{
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+    }
+    public function bookAction()
+    {
+        if($this->session->has('auth'))
+        {
+            $role = $this->session->get('auth')['s_role'];
+            if ($role != 'admin' ) {
+                $this->response->redirect('home');
+                $this->view->disable();
+                return;    
+            } 
+        }else{
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+    }
+    public function regisAction()
+    {
+        
+    }
     public function historyAction()
     {
         if(!$this->session->has('auth'))
@@ -37,7 +75,7 @@ class LoggedinController extends Controller
         }
         $this->view->url = new Url();
 
-        $this->view->form= new RegisterForm();
+        $this->view->form = new RegisterForm();
         $sid = $this->session->get('auth')['s_id'];
         $pregis = Register::findFirst($sid);
         $this->view->setVars(

@@ -16,19 +16,19 @@ class LoggedinRoutes extends RouterGroup
             ]
         );
         $this->addGet(
-            '/admin',   //query buku
+            '/admin',   //query buku semua
             [
             'action'=>'preview',
             ]
         );
         $this->addGet(
-            '/admin/buku',
+            '/admin/buku',  //form input
             [
             'action'=>'book',
             ]
         );
         $this->addPost(
-            '/admin/buku',
+            '/admin/buku', //post
             [
             'action'=>'regis',
             ]
