@@ -6,150 +6,120 @@
     <title>Bagaimana? &middot; booKesma</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Icon -->
-	  <link rel="icon" type="icon/image" href="<?=$this->url->getBaseUri()?>/img/jpgpng/favicon.png">
+	<link rel="icon" type="icon/image" href="<?=$this->url->getBaseUri()?>/img/jpgpng/favicon.png">
     <!-- adding bootstrap css-->
     <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/bootstrap.css" />
     <!-- adding bootstrap theme css-->
     <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/bootstrap-theme.css" />
     <!-- external page css -->
-	<link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/how.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/how.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/stylesheet.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/yap.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/bootstrap.min.css" />
+  <script type="text/javascript" src="<?=$this->url->getBaseUri()?>/js/efek.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/efek.css" />
+
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
 </head>
 <body style="background-image:url('<?=$this->url->getBaseUri()?>/img/svg/bg_layer2.svg'); font-family:mp;">
-    <div class="topnav" id="top-nav">
+  <div class="topnav" id="top-nav">
         <a class="home" href="<?=$this->url->getBaseUri()?>">
             <img src="<?=$this->url->getBaseUri()?>/img/svg/logo.svg" alt="booKesma">
         </a>
-        <a href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
-        <a href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
-        <a href="<?=$this->url->getBaseUri().'user/profile'?>">Hai, <?=$this->session->get('auth')['s_name'] ?>!</a>
-        <a href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
-        <a href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
-        <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseUri().'user/profile'?>">Hai, <?=$this->session->get('auth')['s_name'] ?>!</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
         <a href="javascript:void(0);" class="icon" onclick="navbar()">
             <img src="<?=$this->url->getBaseUri()?>/img/svg/hamburger-menu.svg" alt="menu">
         </a>
 	</div>
-	<br><br><br><br>
+
+          <!-- Work Section -->
+          <section id="work" class="work sections">
+            <div class="container">
+                <div class="row">
+                    <div class="main_mix_content text-center">
+                        <div class="head_title">
+                            <h1>our best work</h1>
+                        </div><!-- End of head title -->
+
+                        <div id="mixcontent" class="mixcontent text-center">
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="single_mixi_portfolio">
+                                    <img src="<?=$this->url->getBaseUri()?>/img/pf01.jpg" alt="" />
+                                    <div class="single_work_overlay">
+                                        <h4>Rangga Kusuma Dinata</h4>
+                                        <div class="separator"></div>
+                                        <p>05111740000120</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="single_mixi_portfolio">
+                                    <img src="<?=$this->url->getBaseUri()?>/img/pf5.jpg" alt="" />
+                                    <div class="single_work_overlay">
+                                        <h4>Safhira Maharani</h4>
+                                        <div class="separator"></div>
+                                        <p>05111740000027</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="single_mixi_portfolio">
+                                    <img src="<?=$this->url->getBaseUri()?>/img/pf3.png" alt="" />
+                                    <div class="single_work_overlay">
+                                        <h4>I Nyoman Yoga Mahottama</h4>
+                                        <div class="separator"></div>
+                                        <p>05111740000159</p>
+                                    </div>
+                                </div>
+                            </div>                 
+                </div>
+            </div>
+        </section> 
 <div class="container" style="background-color: #FAE3E9;">
   <!-- Trigger the modal with a button -->
   <div style="width:100%; display:inline-table; float:left;">
-	<div style="width:70%; display: inline-table; float:left;">
-		<button  style="background: url('https://www.bookabuku.com/file/frontend/images/how-thumbnail-subscribe.jpg') no-repeat; width:100%; height:450px;; background-position: center; background-size: cover; font-size: 30px; " class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" color="black">RESERVASI
+	<div style="width:70%; display: inline-table; float:left; padding:3%;">
+		<button  style="background: url('https://www.bookabuku.com/file/frontend/images/how-thumbnail-subscribe.jpg') no-repeat; width:100%; height:450px;; background-position: center; background-size: cover; font-size: 30px;" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" color="black">RESERVASI
 		</button>
 	</div>
 	<div style="width:30%; float:left;padding: 3%;">
-	<h3>Mari pelajari cara berlangganan paket dan melakukan pembayaran di platform kami.
-		Untuk berlangganan, Anda harus mempunyai akun dan login terlebih dahulu. Daftar sekarang!</h3>
+	<h3>Untuk Reservasi kalian bisa mengisi form untuk login terlebih dahulu. Setelah itu, kalian bisa memilih buku sesuai keinginan. Jika terdapat masalah dalam hal pengisian data. Harap hubungi KESMA HMTC.</h3>
 	</div>
-  </div>
-	
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog" style="border-radius:5%;">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="background-color: lightblue;">
-		  <button type="button" class="close" data-dismiss="modal" color="red">&times;</button>
-		  <img src="<?=$this->url->getBaseUri()?>/img/svg/logo.svg" width="20%;" alt="booKesma">
-		  <hr>
-          <h1 class="modal-title" style="font-family:mp ;padding: 1%; text-align:center;">RESERVASI</h1>
-        </div>
-        <div class="modal-body" style="font-family:as; font-size:20px; padding: 5%;">
-          <p>Untuk Reservasi kalian bisa mengisi form untuk login terlebih dahulu. Setelah itu, kalian bisa memilih buku sesuai keinginan. Jika terdapat masalah dalam hal pengisian data. Harap hubungi KESMA HMTC.</p>
-        </div>
-        <div class="modal-footer" style="background-color: lightblue;">
-          <button type="button" style="color:white;" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-      </div> 
-    </div>
   </div>
 </div>
 <br><br>
 <div class="container" style="background-color: #BFDAD5;">
   <!-- Trigger the modal with a button -->
-  <div style="width:100%; display:inline-table; float:left;">
+  <div style="width:100%; display:inline-table; float:left;padding:3%;">
 	<div style="width:30%; float:left; padding:3%;">
-	<h3>Mari pelajari cara pinjam buku pilihan Anda sebagai borrower. Untuk pinjam buku, Anda dibutuhkan untuk sudah berlangganan salah satu paket kami.</h3>
+	<h3>Untuk Peminjaman kalian bisa mengisi form untuk login terlebih dahulu. Setelah itu, kalian bisa memilih buku sesuai keinginan. Silahkan ambil buku sesuai jadwal janjian dengan pengurus KESMA. Jika terdapat masalah dalam hal pengisian data. Harap hubungi KESMA HMTC.</h3>
 	</div>
-	<div style="width:70%; display: inline-table;">
+	<div style="width:70%; display: inline-table; float:left;">
 		<button  style="background: url('https://www.bookabuku.com/file/frontend/images/how-thumbnail-borrow.jpg') no-repeat; width:100%; height:450px; background-position: center; background-size: cover; font-size: 30px; " class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2" color="black">PEMINJAMAN
 		</button>
 	</div>
-  </div>
-	
-  <!-- Modal -->
-  <div class="modal fade" id="myModal2" role="dialog">
-    <div class="modal-dialog" style="border-radius:5%;">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="background-color: lightblue;">
-		  <button type="button" class="close" data-dismiss="modal" color="red">&times;</button>
-		  <img src="<?=$this->url->getBaseUri()?>/img/svg/logo.svg" width="20%;" alt="booKesma">
-		  <hr>
-          <h1 class="modal-title" style="font-family:mp ;padding: 1%; text-align:center;">PEMINJAMAN</h1>
-        </div>
-        <div class="modal-body" style="font-family:as; font-size:20px; padding: 5%;">
-          <p>Untuk Peminjaman kalian bisa mengisi form untuk login terlebih dahulu. Setelah itu, kalian bisa memilih buku sesuai keinginan. Silahkan ambil buku sesuai jadwal janjian dengan pengurus KESMA. Jika terdapat masalah dalam hal pengisian data. Harap hubungi KESMA HMTC.</p>
-        </div>
-        <div class="modal-footer" style="background-color: lightblue;">
-          <button type="button" style="color:white;" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-      </div> 
-    </div>
   </div>
 </div>
 <br><br>
 <div class="container" style="background-color: #FAE3E9;">
   <!-- Trigger the modal with a button -->
   <div style="width:100%; display:inline-table; float:left;">
-  <div style="width:70%; display: inline-table; float:left;">
+  <div style="width:70%; display: inline-table; float:left;padding:3%;">
 		<button  style="background: url('https://www.bookabuku.com/file/frontend/images/how-thumbnail-lend.jpg') no-repeat; width:100%; height:450px; background-position: center; background-size: cover; font-size: 30px; " class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3" color="black">PENYUMBANGAN
 		</button>
 	</div>
 	<div style="width:30%; float:left; padding:3%;">
-	<h3>Mari pelajari cara meminjamkan buku milik Anda sebagai Lender. Untuk menjadi Lender, Anda harus mempunyai akun dan login terlebih dahulu. Daftar sekarang!</h3>
+	<h3>Untuk Penyumbangan kalian bisa login terlebih dahulu. Setelah itu, kalian bisa mengisi form Penyumbangan dan mengisi jadwal janjian dengan pengurus KESMA. Jika terdapat masalah dalam hal pengisian data. Harap hubungi KESMA HMTC.</h3>
 	</div>
-  </div>
-	
-  <!-- Modal -->
-  <div class="modal fade" id="myModal3" role="dialog">
-    <div class="modal-dialog" style="border-radius:5%;">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="background-color: lightblue;">
-		  <button type="button" class="close" data-dismiss="modal" color="red">&times;</button>
-		  <img src="<?=$this->url->getBaseUri()?>/img/svg/logo.svg" width="20%;" alt="booKesma">
-		  <hr>
-          <h1 class="modal-title" style="font-family:mp ;padding: 1%; text-align:center;">PENYUMBANGAN</h1>
-        </div>
-        <div class="modal-body" style="font-family:as; font-size:20px; padding: 5%;">
-		<p>Untuk Penyumbangan kalian bisa login terlebih dahulu. Setelah itu, kalian bisa mengisi form Penyumbangan dan mengisi jadwal janjian dengan pengurus KESMA. Jika terdapat masalah dalam hal pengisian data. Harap hubungi KESMA HMTC.</p>
-        </div>
-        <div class="modal-footer" style="background-color: lightblue;">
-          <button type="button" style="color:white;" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-      </div> 
-    </div>
   </div>
 </div>
 <br><br><br>
- <div class="container-fluid" style="background-color:#BFDAD5; padding-left:15%;">
-  <div class="row">
-    <div class="col-sm-2">
-    </div>
-    <div class="col-sm-8" style="padding-right:10%; text-align: center;">
-    <h1 style="font-family: mp; font-size:30px;"><b>-OUR MEDIA SOCIAL-</b></h1>
-    <img src="<?=$this->url->getBaseUri()?>/img/jpgpng/icon-facebook.png" style="width: 5%;">
-    <img src="<?=$this->url->getBaseUri()?>/img/jpgpng/icon-mail.png" style="width: 5%;">
-    <img src="<?=$this->url->getBaseUri()?>/img/jpgpng/icon-twitter.png" style="width: 5%;">
-    <br>
-    <h3>Kategori Buku</h3>
-    <h3>Bagaimana?</h3>
-    </div>
-    <div class="col-sm-2" style="">
-    </div>
-  </div>
-</div>
+
 <!-- adding jquery -->
 <script src="<?=$this->url->getBaseUri()?>/js/jquery-3.3.1.js"></script>
 <!-- adding bootstrap -->
