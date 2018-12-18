@@ -37,7 +37,13 @@ class LoggedoutController extends Controller
             return;
         }
         $this->view->url = new Url();
-        $this->view->setVars(["sem"=>$semester]);
+        $book = Buku::find("semester='$semester'");
+        $this->view->setVars(
+            [
+                "sem"=>$semester,
+                'buku'=>$book,
+            ]
+        );
     }
     //belum routing
     public function charityAction()
