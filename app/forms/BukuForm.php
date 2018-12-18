@@ -55,6 +55,12 @@ class BukuForm extends Form
                 'class' => 'form-control',
             ]
         );
-
+        $this->add($judul);
+        $this->add($halaman);
+        $this->add($desc);
+        $this->add($stat);
+        $this->add($sem);
+        $this->add($gmb);
+        $this->add($submit);
     }
 }
