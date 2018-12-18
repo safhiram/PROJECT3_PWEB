@@ -34,7 +34,7 @@ class LoggedinRoutes extends RouterGroup
             ]
         );
         $this->addGet(
-            '/admin/',   //query buku semua
+            '/admin',   //query buku semua
             [
             'action'=>'preview',
             ]

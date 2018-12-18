@@ -17,6 +17,57 @@ class LoggedinController extends Controller
         }
         $this->view->url = new Url();
     }
+    public function registerAction()
+    {
+        if($this->session->has('auth'))
+        {
+            $role = $this->session->get('auth')['s_role'];
+            if ($role != 'admin' ) {
+                $this->response->redirect('home');
+                $this->view->disable();
+                return;    
+            } 
+        }else{
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+    }
+    public function sumbangAction()
+    {
+        if($this->session->has('auth'))
+        {
+            $role = $this->session->get('auth')['s_role'];
+            if ($role != 'admin' ) {
+                $this->response->redirect('home');
+                $this->view->disable();
+                return;    
+            } 
+        }else{
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+    }
+    public function reservasiAction()
+    {
+        if($this->session->has('auth'))
+        {
+            $role = $this->session->get('auth')['s_role'];
+            if ($role != 'admin' ) {
+                $this->response->redirect('home');
+                $this->view->disable();
+                return;    
+            } 
+        }else{
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+    }
     public function previewAction()
     {
         if($this->session->has('auth'))
