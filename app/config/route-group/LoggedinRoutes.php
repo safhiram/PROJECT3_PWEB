@@ -40,13 +40,13 @@ class LoggedinRoutes extends RouterGroup
             ]
         );
         $this->addGet(
-            '/admin/buku',  //form input
+            '/admin/buku',
             [
             'action'=>'book',
             ]
         );
         $this->addPost(
-            '/admin/buku', //post
+            '/admin/buku',
             [
             'action'=>'regis',
             ]
@@ -98,14 +98,6 @@ class LoggedinRoutes extends RouterGroup
             '/user/koleksi/semester/([1-8]{1})/:int',
             [
             'action'=>'pesan',
-            'semester'=> 1,
-            'id' => 2,
-            ]
-        );
-        $this->addPost(  //tampilan reservasi v
-            '/user/koleksi/semester/([1-8]{1})/:int',
-            [
-            'action'=>'pinjam',
             'semester'=> 1,
             'id' => 2,
             ]
