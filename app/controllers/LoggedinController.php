@@ -2,6 +2,7 @@
 
 use Phalcon\Mvc\Controller;
 use App\Forms\RegisterForm;
+use App\Forms\BukuForm;
 use Phalcon\Http\Response;
 use Phalcon\Mvc\Url;
 
@@ -146,5 +147,30 @@ class LoggedinController extends Controller
                 "id_buku"=>$id,
             ]
         );
+    }
+    public function reservasiAction($semester,$id)  
+    {
+        $creservasi = new Reservasi();
+
+        $sid = $this->session->get('auth')['s_id'];
+        $cnomorhp = $this->request->getPost('nomorhp');
+        $ctanggal_bertemu = $this->request->getPost('tanggal_bertemu');
+
+        $creservasi->user_id=$sid;
+        $creservasi->buku_id=$id;
+        $creservasi->status = 0;
+        $creservasi->nomorhp = $cnomorhp;
+        $creservasi->tanggal_bertemu = $ctanggal_bertemu;
+        
+        if ($creservasi->save() === false) {
+            echo "gagal";
+            return;
+        }
+        else{
+            $this->response->redirect('');
+            $this->view->disable();
+            return;
+        }
+
     }
 }
