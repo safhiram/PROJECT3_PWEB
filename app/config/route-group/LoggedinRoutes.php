@@ -57,6 +57,20 @@ class LoggedinRoutes extends RouterGroup
             'action'=>'history',
             ]
         );
+        $this->addGet( 
+            '/user/kembali/:int',    //tampilan riwayat data user dari peminjaman dan pengembalian v
+            [
+            'action'=>'kembali',
+            'id'=>1,
+            ]
+        );
+        $this->addPost( 
+            '/user/kembali/:int',    //tampilan riwayat data user dari peminjaman dan pengembalian v
+            [
+            'action'=>'returned',
+            'id'=>1,
+            ]
+        );
         $this->addGet(  //tampilan profile user v
             '/user/profile',
             [

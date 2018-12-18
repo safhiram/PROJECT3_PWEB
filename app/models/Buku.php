@@ -13,6 +13,7 @@ class Buku extends Model
     public $gambar;
 
     public function initialize(){
-        $this->setSource('book'); 
+        $this->setSource('book');
+        $this->hasMany('id_buku','Reservasi','buku_id');
     }
 }

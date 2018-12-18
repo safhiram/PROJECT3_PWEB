@@ -67,3 +67,10 @@ $di->set(
         return $session;
     } 
 );
+
+$di->set(
+    'modelsManager',
+    function () {
+        return new Phalcon\Mvc\Model\Manager();
+    }
+);

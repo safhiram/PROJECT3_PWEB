@@ -13,6 +13,8 @@ class Reservasi extends Model
     public $tanggal_kembali;
 
     public function initialize(){
-        $this->setSource('reservasi'); 
+        $this->setSource('reservasi');
+        $this->belongsTo('buku_id','Buku','id_buku');
+        $this->belongsTo('user_id','Register','id');
     }
 }

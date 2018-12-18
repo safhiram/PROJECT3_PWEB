@@ -13,5 +13,6 @@ class Register extends Model
 
     public function initialize(){
         $this->setSource('register'); 
+        $this->hasMany('id','Reservasi','user_id');
     }
 }

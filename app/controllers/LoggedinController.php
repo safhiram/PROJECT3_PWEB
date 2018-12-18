@@ -1,5 +1,6 @@
 <?php
 
+use Phalcon\Mvc\Model\Manager;
 use Phalcon\Mvc\Controller;
 use App\Forms\RegisterForm;
 use App\Forms\ReservasiForm;
@@ -116,7 +117,29 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
-
+        $sid = $this->session->get('auth')['s_id'];
+        $query = $this->modelsManager->createQuery(
+            'SELECT Buku.judul_buku, Reservasi.tanggal_bertemu, Reservasi.tanggal_kembali, Reservasi.status, Reservasi.buku_id
+            FROM Reservasi JOIN Buku ON (Reservasi.buku_id=Buku.id_buku)
+            WHERE Reservasi.user_id="'.$sid.'" ORDER BY Reservasi.buku_id, Reservasi.tanggal_kembali, Reservasi.status'
+        );
+        $res = $query->execute();
+        // var_dump($res);
+        $this->view->setVars(["que"=>$res]);
+    }
+    public function kembaliAction($id)
+    {
+        if(!$this->session->has('auth'))
+        {
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+    }
+    public function returnedAction($id)
+    {
+        
     }
     public function profileAction()
     {

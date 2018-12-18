@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>booKesma &middot; Pinjam-Sumbang Buku Akademik Informatika ITS</title>
+    <title>Riwayat &middot; booKesma</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Icon -->
 	<link rel="icon" type="icon/image" href="<?=$this->url->getBaseUri()?>/img/jpgpng/favicon.png">
@@ -48,12 +48,33 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Microsoft Excel</td>
-        <td>14 April 2018</td>
-        <td>14 Desember 2018</td>
-        <td><a href="#"><span class="glyphicon glyphicon-ok"></span></a></td>
-      </tr>
+        <?php
+        // var_dump($que);    
+            if ($que) {
+                foreach ($que as $q) {
+        ?>
+        <tr>
+            <td><?=$q->judul_buku;?></td>
+            <td><?=$q->tanggal_bertemu;?></td>
+            <td><?=$q->tanggal_kembali;?></td>
+            <?php
+                // var_dump($q->status);
+                //0 sedang pinjam, 1 cancel, 2 telah kembali
+                if ($q->status == 0) {
+            ?>
+                <td><a style="text-decoration:none;" href="<?=$this->url->getBaseUri()?>user/kembali/<?=$q->buku_id?>">Buat Tanggal Pengembalian</a></td>
+            <?php
+                }else if ($q->status == 2) {
+            ?>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+            <?php
+                }
+            ?>
+        </tr>
+        <?php            
+                }        
+            }
+        ?>
     </tbody>
   </table>
         </div>
