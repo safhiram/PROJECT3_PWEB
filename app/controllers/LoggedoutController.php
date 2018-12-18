@@ -65,7 +65,10 @@ class LoggedoutController extends Controller
         $ctebal = $this->request->getPost('stebalhalaman');
         $cdesk = $this->request->getPost('sdeskripsibuku');
         
-        $filepath = 'buku-sumbang/'.$cjudul.'.jpg';
+        $date = getdate(date("U"));
+        $date = "$date[weekday], $date[month] $date[mday], $date[year], $date[hours]:$date[minutes]:$date[seconds]";
+        $hashid = md5($date);
+        $filepath = 'buku-sumbang/'.$hashid.'.jpg';
         if ($this->request->hasFiles()) {
             $cgambar = $this->request->getUploadedFiles();    
             foreach ($cgambar as $cg) {

@@ -116,6 +116,7 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
+
     }
     public function profileAction()
     {
@@ -257,6 +258,8 @@ class LoggedinController extends Controller
         $cpinjam->status = 0;
         $cpinjam->nomorhp = $cnohp;
         $cpinjam->tanggal_bertemu = $ctgl;
+        $ctgl = date('Y-m-d', strtotime($ctgl. ' + 7 months'));
+        $cpinjam->tanggal_kembali = $ctgl;
 
         if ($cpinjam->save() === false){
             var_dump($cpinjam);

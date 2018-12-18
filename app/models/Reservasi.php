@@ -10,6 +10,7 @@ class Reservasi extends Model
     public $status;
     public $nomorhp;     
     public $tanggal_bertemu;
+    public $tanggal_kembali;
 
     public function initialize(){
         $this->setSource('reservasi'); 

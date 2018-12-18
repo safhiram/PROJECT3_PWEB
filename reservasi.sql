@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Des 2018 pada 13.45
--- Versi server: 10.1.35-MariaDB
--- Versi PHP: 7.2.9
+-- Generation Time: Dec 18, 2018 at 11:02 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `reservasi`
+-- Table structure for table `reservasi`
 --
 
 CREATE TABLE `reservasi` (
@@ -34,15 +34,23 @@ CREATE TABLE `reservasi` (
   `user_id` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `nomorhp` varchar(25) NOT NULL,
-  `tanggal_bertemu` date NOT NULL
+  `tanggal_bertemu` date NOT NULL,
+  `tanggal_kembali` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reservasi`
+--
+
+INSERT INTO `reservasi` (`id_reservasi`, `buku_id`, `user_id`, `status`, `nomorhp`, `tanggal_bertemu`, `tanggal_kembali`) VALUES
+(4, 5, 11, 0, '08996569365', '2018-12-18', '2019-07-18');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `reservasi`
+-- Indexes for table `reservasi`
 --
 ALTER TABLE `reservasi`
   ADD PRIMARY KEY (`id_reservasi`),
@@ -50,14 +58,25 @@ ALTER TABLE `reservasi`
   ADD KEY `fkregister` (`user_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `reservasi`
+-- AUTO_INCREMENT for table `reservasi`
 --
 ALTER TABLE `reservasi`
-  MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `reservasi`
+--
+ALTER TABLE `reservasi`
+  ADD CONSTRAINT `fkbook` FOREIGN KEY (`buku_id`) REFERENCES `book` (`id_buku`),
+  ADD CONSTRAINT `fkregister` FOREIGN KEY (`user_id`) REFERENCES `register` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
