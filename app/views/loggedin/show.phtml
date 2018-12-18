@@ -6,13 +6,13 @@
     <title>booKesma &middot; Pinjam-Sumbang Buku Akademik Informatika ITS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Icon -->
-	<link rel="icon" type="icon/image" href="img/jpgpng/favicon.png">
+	<link rel="icon" type="icon/image" href="<?=$this->url->getBaseUri()?>/img/jpgpng/favicon.png">
     <!-- adding bootstrap css-->
-    <link rel="stylesheet" type="text/css" media="screen" href="/bookesma.com/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/bootstrap.css" />
     <!-- adding bootstrap theme css-->
-    <link rel="stylesheet" type="text/css" media="screen" href="/bookesma.com/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/bootstrap-theme.css" />
     <!-- external page css -->
-    <link rel="stylesheet" type="text/css" media="screen" href="/bookesma.com/css/show.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/show.css" />
 	<script type="text/javascript" src="js/typewriter.js"></script>
     <!-- external link   -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,13 +21,13 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/bookesma.com/js/efek.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="/bookesma.com/css/efek.css" />
+    <script type="text/javascript" src="<?=$this->url->getBaseUri()?>/js/efek.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/efek.css" />
 </head>
-<body style="background-image: url('img/svg/bg_layer1.svg')">
+<body style="background-image: url('<?=$this->url->getBaseUri()?>/img/svg/bg_layer1.svg')">
   <div class="topnav" id="top-nav" style="z-index: 99;">  
     <a class="home" href="<?=$this->url->getBaseUri()?>">
-            <img src="/bookesma.com/img/svg/logo.svg" alt="booKesma">
+            <img src="<?=$this->url->getBaseUri()?>/img/svg/logo.svg" alt="booKesma">
         </a>
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
@@ -36,7 +36,7 @@
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
         <a href="javascript:void(0);" class="icon" onclick="navbar()">
-            <img src="/bookesma.com/img/svg/hamburger-menu.svg" alt="menu">
+            <img src="<?=$this->url->getBaseUri()?>/img/svg/hamburger-menu.svg" alt="menu">
         </a>
     </div>
     <br>
@@ -50,7 +50,7 @@
             </h1><br>
         </div>
         <div>
-            <img src="img/yap.jpg" width="100%">
+            <img src="<?=$this->url->getBaseUri()?>/img/yap.jpg" width="100%">
         </div>
 
         </div>
@@ -64,7 +64,7 @@
                         <div class="col-sm-6">
                             <a href="">
                                 <div> 
-                                    <img src="img/icon-search.png" style="width: 30px; height: 30px; margin-top: 10px; margin-left: 7px; background-color:white; border-radius:50%; padding:1%;">
+                                    <img src="<?=$this->url->getBaseUri()?>/img/icon-search.png" style="width: 30px; height: 30px; margin-top: 10px; margin-left: 7px; background-color:white; border-radius:50%; padding:1%;">
                                 </div>
                             </a>
                             <h2 >Kamu ingin baca buku apa?</h2>
@@ -80,7 +80,7 @@
                             <div class="col-sm-6">
                                 <a href="">
                                     <div> 
-                                        <img src="img/icon-lend.png" style="width: 30px; height: 30px; margin-top: 10px; margin-left: 7px; background-color:white; border-radius:50%; padding:1%;">
+                                        <img src="<?=$this->url->getBaseUri()?>/img/icon-lend.png" style="width: 30px; height: 30px; margin-top: 10px; margin-left: 7px; background-color:white; border-radius:50%; padding:1%;">
                                     </div>
                                 </a>
                                 <h2 >Ingin pinjamkan bukumu?</h2>
@@ -114,7 +114,7 @@ Membawaku terbang ke taman-taman pengetahuan paling menawan, melintasi waktu dan
         </div>   
     </div>
     <div class="col-sm-5">
-        <img src="img/jpgpng/ambiz-introduction.jpg" style="width: 100%;">
+        <img src="<?=$this->url->getBaseUri()?>/img/jpgpng/ambiz-introduction.jpg" style="width: 100%;">
     </div>
   </div>
 </div>
@@ -122,7 +122,7 @@ Membawaku terbang ke taman-taman pengetahuan paling menawan, melintasi waktu dan
 <div class="has-animation animation-ltr" class="container" style="background-color: #F3E8C8;padding: 30px; border-radius:10%;">
   <div class="row">
     <div class="col-sm-5">
-        <img src="img/jpgpng/isi2.jpg" style="width: 100%;">
+        <img src="<?=$this->url->getBaseUri()?>/img/jpgpng/isi2.jpg" style="width: 100%;">
     </div>
     <div class="col-sm-7" style="font-family:mp; font-size: 20px;">
     <h2 style="font-size: 40px; background-color:#FAE3E9; padding: 3%; border-radius:5%;"><b>MENGAPA BOOKESMA?</b></h2>
@@ -137,17 +137,17 @@ Membawaku terbang ke taman-taman pengetahuan paling menawan, melintasi waktu dan
 <div class="container-fluid" style="background-color: #F3E8C8;padding: 5%;">
   <div class="row">
     <div class="col-sm-4">
-        <img src="img/svg/semester1.svg" style="width: 100%;">
+        <img src="<?=$this->url->getBaseUri()?>/img/svg/semester1.svg" style="width: 100%;">
         <br><br>
         <a style="margin-left:35%;" href="<?=$this->url->getBaseUri().'user/koleksi/semester/1'?>" type="a" class="btn btn-primary btn-lg">Semester 1</a>
     </div>
     <div class="col-sm-4" style="">
-    <img src="img/svg/semester2.svg" style="width: 100%;">
+    <img src="<?=$this->url->getBaseUri()?>/img/svg/semester2.svg" style="width: 100%;">
     <br><br>
         <a style="margin-left:35%;"  href="<?=$this->url->getBaseUri().'user/koleksi/semester/2'?>" type="a" class="btn btn-primary btn-lg">Semester 2</a>
     </div>
     <div class="col-sm-4">
-        <img src="img/svg/semester3.svg" style="width: 100%;">
+        <img src="<?=$this->url->getBaseUri()?>/img/svg/semester3.svg" style="width: 100%;">
         <br><br>
         <a style="margin-left:35%;"  href="<?=$this->url->getBaseUri().'user/koleksi/semester/3'?>" type="a" class="btn btn-primary btn-lg">Semester 3</a>
     </div>
@@ -156,17 +156,17 @@ Membawaku terbang ke taman-taman pengetahuan paling menawan, melintasi waktu dan
 <div class="container-fluid" style="background-color: #F3E8C8;padding: 5%;">
   <div class="row">
     <div class="col-sm-4">
-        <img src="img/svg/semester4.svg" style="width: 100%;">
+        <img src="<?=$this->url->getBaseUri()?>/img/svg/semester4.svg" style="width: 100%;">
         <br><br>
         <a style="margin-left:35%;"  href="<?=$this->url->getBaseUri().'user/koleksi/semester/4'?>" type="a" class="btn btn-primary btn-lg">Semester 4</a>
     </div>
     <div class="col-sm-4" style="">
-    <img src="img/svg/semester5.svg" style="width: 100%;">
+    <img src="<?=$this->url->getBaseUri()?>/img/svg/semester5.svg" style="width: 100%;">
     <br><br>
         <a style="margin-left:35%;" href="<?=$this->url->getBaseUri().'user/koleksi/semester/5'?>" type="a" class="btn btn-primary btn-lg">Semester 5</a>
     </div>
     <div class="col-sm-4">
-        <img src="img/svg/semester6.svg" style="width: 100%;">
+        <img src="<?=$this->url->getBaseUri()?>/img/svg/semester6.svg" style="width: 100%;">
         <br><br>
         <a style="margin-left:35%;"  href="<?=$this->url->getBaseUri().'user/koleksi/semester/6'?>" type="a" class="btn btn-primary btn-lg">Semester 6</a>
     </div>
@@ -174,12 +174,12 @@ Membawaku terbang ke taman-taman pengetahuan paling menawan, melintasi waktu dan
  <div class="container-fluid" style="background-color: #F3E8C8;padding: 5%; padding-left:15%;border-radius:0% 0% 15% 15%;">
   <div class="row">
     <div class="col-sm-6">
-        <img src="img/svg/semester7.svg" style="width: 75%;">
+        <img src="<?=$this->url->getBaseUri()?>/img/svg/semester7.svg" style="width: 75%;">
         <br><br>
         <a style="margin-left:25%;"  href="<?=$this->url->getBaseUri().'user/koleksi/semester/7'?>" type="a" class="btn btn-primary btn-lg">Semester 7</a>
     </div>
     <div class="col-sm-6" style="">
-    <img src="img/svg/semester8.svg" style="width: 75%;">
+    <img src="<?=$this->url->getBaseUri()?>/img/svg/semester8.svg" style="width: 75%;">
     <br><br>
         <a style="margin-left:25%;"  href="<?=$this->url->getBaseUri().'user/koleksi/semester/8'?>" type="a" class="btn btn-primary btn-lg">Semester 8</a>
     </div>
@@ -193,17 +193,17 @@ Membawaku terbang ke taman-taman pengetahuan paling menawan, melintasi waktu dan
  <div class="container-fluid" style="background-color: #F3E8C8;padding: 5%; padding-left:15%;">
   <div class="row">
     <div class="col-sm-4">
-        <img src="img/svg/how_reservasi.svg" style="width: 75%; height:300px;">
+        <img src="<?=$this->url->getBaseUri()?>/img/svg/how_reservasi.svg" style="width: 75%; height:300px;">
         <br><br>
         <a style="margin-left:25%;" href="<?=$this->url->getBaseUri().'user/bagaimana'?>" type="a" class="btn btn-primary btn-lg">Reservasi</a>
     </div>
     <div class="col-sm-4" style="">
-    <img src="img/svg/how_sumbang.svg" style="width: 75%; height:300px;">
+    <img src="<?=$this->url->getBaseUri()?>/img/svg/how_sumbang.svg" style="width: 75%; height:300px;">
     <br><br>
         <a style="margin-left:15%;" href="<?=$this->url->getBaseUri().'user/bagaimana'?>" type="a" class="btn btn-primary btn-lg">Penyumbangan</a>
     </div>
     <div class="col-sm-4" style="">
-    <img src="img/svg/how_kembali.svg" style="width: 75%; height:300px;">
+    <img src="<?=$this->url->getBaseUri()?>/img/svg/how_kembali.svg" style="width: 75%; height:300px;">
     <br><br>
         <a style="margin-left:15%;" href="<?=$this->url->getBaseUri().'user/bagaimana'?>" type="a" class="btn btn-primary btn-lg">Pengembalian</a>
     </div>
@@ -216,9 +216,9 @@ Membawaku terbang ke taman-taman pengetahuan paling menawan, melintasi waktu dan
     </div>
     <div class="col-sm-8" style="padding-right:10%; text-align: center;">
     <h1 style="font-family: mp; font-size:30px;"><b>-OUR MEDIA SOCIAL-</b></h1>
-    <img src="img/jpgpng/icon-facebook.png" style="width: 5%;">
-    <img src="img/jpgpng/icon-mail.png" style="width: 5%;">
-    <img src="img/jpgpng/icon-twitter.png" style="width: 5%;">
+    <img src="<?=$this->url->getBaseUri()?>/img/jpgpng/icon-facebook.png" style="width: 5%;">
+    <img src="<?=$this->url->getBaseUri()?>/img/jpgpng/icon-mail.png" style="width: 5%;">
+    <img src="<?=$this->url->getBaseUri()?>/img/jpgpng/icon-twitter.png" style="width: 5%;">
     <br>
     <h3>Kategori Buku</h3>
     <h3>Bagaimana?</h3>
@@ -231,10 +231,10 @@ Membawaku terbang ke taman-taman pengetahuan paling menawan, melintasi waktu dan
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- adding bootstrap -->
-<script src="js/bootstrap.js"></script>
+<script src="<?=$this->url->getBaseUri()?>/js/bootstrap.js"></script>
 <!-- adding jquery -->
-<script src="js/jquery-3.3.1.js"></script>
+<script src="<?=$this->url->getBaseUri()?>/js/jquery-3.3.1.js"></script>
 <!-- adding external script -->
-<script src="js/show.js"></script>
+<script src="<?=$this->url->getBaseUri()?>/js/show.js"></script>
 </body>
 </html>
