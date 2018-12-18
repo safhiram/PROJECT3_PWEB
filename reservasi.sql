@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2018 at 11:02 AM
+-- Generation Time: Dec 18, 2018 at 04:26 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -43,7 +43,11 @@ CREATE TABLE `reservasi` (
 --
 
 INSERT INTO `reservasi` (`id_reservasi`, `buku_id`, `user_id`, `status`, `nomorhp`, `tanggal_bertemu`, `tanggal_kembali`) VALUES
-(4, 5, 11, 0, '08996569365', '2018-12-18', '2019-07-18');
+(4, 5, 11, 0, '08996569365', '2018-12-18', '2019-07-18'),
+(5, 7, 11, 2, '08996569365', '2018-12-18', '2019-07-18'),
+(6, 5, 11, 0, '089965693650', '2018-12-18', '2019-07-18'),
+(7, 6, 11, 0, '08996569365089', '2018-12-16', '2019-07-16'),
+(8, 5, 11, 2, '08996569365066', '2018-12-03', '2019-07-03');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +69,7 @@ ALTER TABLE `reservasi`
 -- AUTO_INCREMENT for table `reservasi`
 --
 ALTER TABLE `reservasi`
-  MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

@@ -145,7 +145,27 @@ class LoggedinController extends Controller
     }
     public function returnedAction($id)
     {
+        $ckembali = new Reservasi();
+
+        $cnohp = $this->request->getPost('nohp');
+        $ctgl = $this->request->getPost('tanggal');
+
+        //query
         
+        $user = $this->session->get('auth')['s_id'];
+        $ckembali->status = 0;
+        $ckembali->tanggal_bertemu = $ctgl;
+
+        if ($ckembali->save() === false){
+            var_dump($ckembali);
+            echo 'gagal';
+            return;
+        }
+        else{
+            $this->response->redirect('user/koleksi/semester/'.$semester.'/'.$id);
+            $this->view->disable();
+            return;
+        }
     }
     public function profileAction()
     {
