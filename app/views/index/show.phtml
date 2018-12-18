@@ -13,7 +13,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/bootstrap-theme.css" />
     <!-- external page css -->
     <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/show.css" />
-	<script type="text/javascript" src="js/typewriter.js"></script>
+    <script type="text/javascript" src="js/typewriter.js"></script>
+    <script type="text/javascript" src="js/chat.js"></script>
     <!-- external link   -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
@@ -21,7 +22,8 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/efek.js"></script>
+    <script type="text/javascript" src="<?=$this->url->getBaseUri()?>/js/efek.js"></script>
+    <script type="text/javascript" src="<?=$this->url->getBaseUri()?>/js/chat.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/efek.css" />
 </head>
 <body style="background-image: url('img/svg/bg_layer1.svg')">
@@ -207,6 +209,19 @@ Membawaku terbang ke taman-taman pengetahuan paling menawan, melintasi waktu dan
         <a style="margin-left:15%;" href="<?=$this->url->getBaseUri().'bagaimana'?>" type="a" class="btn btn-primary btn-lg">Pengembalian</a>
     </div>
   </div>
+</div>
+<br><br><br>
+<div class="container" style="background-color: lightblue; border-radius:15%; width:80%; padding:5%; font-family:as; font-size: 20px;">
+<h1>BERIKAN KOMENTAR</h1>
+    <div id="boks">
+                <div id="display">
+                    <ul class="chat">
+                    </ul>
+                </div>
+                <input type="text" name="cht" id="type" placeholder="Komentar">
+                <input type="submit" name="send" id="send" value="Send">
+            </div>
+    </div>
 </div>
 <br><br><br>
 <div class="container-fluid" style="background-color:#BFDAD5; padding-left:15%;">
