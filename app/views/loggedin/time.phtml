@@ -60,6 +60,7 @@
     <div class="container">
         <div class="row">
             <?php
+                // var_dump($jumlah);
                 if ($buku) {
                     foreach ($buku as $b) {
             ?>
@@ -80,7 +81,21 @@
                             <p>Judul Buku : <br> <?=$b->judul_buku;?></p>
                             <p>Jumlah Halaman : <br> <?=$b->jumlah_halaman;?></p>
                             <p>Deskripsi Buku : <br> <?=$b->deskripsi_buku;?></p>
-                            <p>Tersedia : <br> <?=$b->tersedia;?></p>
+                            <?php
+                                $flag = 0;
+                                foreach ($que as $q) {
+                                    if ($q->id_buku === $b->id_buku) {
+                                        $flag = 1;
+                                        break;
+                                    }
+                                }
+                                if ($flag === 1) {
+                                    $jumlah = (int)$b->tersedia - (int)$q->n;
+                                }else{
+                                    $jumlah = (int)$b->tersedia;
+                                }
+                            ?>
+                            <p>Tersedia : <br> <?=$jumlah;?></p>
                         </div>
                     <div class="modal-footer">
                             <a href="<?=$this->url->getBaseuri()?>user/koleksi/semester/<?=$sem?>/<?=$b->id_buku;?>" class="btn btn-primary">Reservasi</a>

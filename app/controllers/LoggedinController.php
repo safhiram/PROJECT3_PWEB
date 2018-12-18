@@ -136,6 +136,12 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
+        $this->view->setVars(
+            [
+                "id_buku"=>$id,
+            ]
+        );
+        $this->view->form= new ReservasiForm();
     }
     public function returnedAction($id)
     {
@@ -234,10 +240,18 @@ class LoggedinController extends Controller
         }
         $this->view->url = new Url();
         $book = Buku::find("semester='$semester'");
+        $query = $this->modelsManager->createQuery(
+            'SELECT Buku.id_buku, COUNT(*) as n FROM Buku JOIN Reservasi
+            ON (Reservasi.buku_id=Buku.id_buku) WHERE Buku.semester="'.$semester.'"
+            AND Reservasi.status=0 GROUP BY Buku.id_buku'
+        );
+        $res = $query->execute();
         $this->view->setVars(
             [
                 "sem"=>$semester,
                 'buku'=>$book,
+                'que'=>$res,
+                'jumlah'=>0,
             ]
         );
     }
