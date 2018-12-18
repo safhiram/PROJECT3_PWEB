@@ -2,6 +2,7 @@
 
 use Phalcon\Mvc\Controller;
 use App\Forms\RegisterForm;
+use App\Forms\ReservasiForm;
 use Phalcon\Http\Response;
 use Phalcon\Mvc\Url;
 
@@ -241,21 +242,31 @@ class LoggedinController extends Controller
                 "id_buku"=>$id,
             ]
         );
+        $this->view->form= new ReservasiForm();
     }
     public function pinjamAction($semester,$id)   //apa ini perlu? pikir kembali logika peminjaman
     {
-        if(!$this->session->has('auth'))
-        {
-            $this->response->redirect('login');
+        $cpinjam = new Reservasi();
+
+        $cnohp = $this->request->getPost('nohp');
+        $ctgl = $this->request->getPost('tanggal');
+
+        $cpinjam->buku_id = $id;
+        $user = $this->session->get('auth')['s_id'];
+        $cpinjam->user_id = $user;
+        $cpinjam->status = 0;
+        $cpinjam->nomorhp = $cnohp;
+        $cpinjam->tanggal_bertemu = $ctgl;
+
+        if ($cpinjam->save() === false){
+            var_dump($cpinjam);
+            echo 'gagal';
+            return;
+        }
+        else{
+            $this->response->redirect('user/koleksi/semester/'.$semester.'/'.$id);
             $this->view->disable();
             return;
         }
-        $this->view->url = new Url();
-        $this->view->setVars(
-            [
-                "sem"=>$semester,
-                "id_buku"=>$id,
-            ]
-        );
     }
 }

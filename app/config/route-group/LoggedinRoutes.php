@@ -102,5 +102,13 @@ class LoggedinRoutes extends RouterGroup
             'id' => 2,
             ]
         );
+        $this->addPost(  //tampilan reservasi v
+            '/user/koleksi/semester/([1-8]{1})/:int',
+            [
+            'action'=>'pinjam',
+            'semester'=> 1,
+            'id' => 2,
+            ]
+        );
     }
 }

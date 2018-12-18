@@ -94,7 +94,7 @@ class LoggedoutController extends Controller
             return;
         }
         else{
-            $this->response->redirect('');
+            $this->response->redirect('sumbang');
             $this->view->disable();
             return;
         }
