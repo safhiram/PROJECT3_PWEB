@@ -6,21 +6,21 @@
     <title>booKesma &middot; Pinjam-Sumbang Buku Akademik Informatika ITS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Icon -->
-	<link rel="icon" type="icon/image" href="img/jpgpng/favicon.png">
+	<link rel="icon" type="icon/image" href="<?=$this->url->getBaseUri()?>/img/jpgpng/favicon.png">
     <!-- adding bootstrap css-->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/bootstrap.css" />
     <!-- adding bootstrap theme css-->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/bootstrap-theme.css" />
     <!-- external page css -->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/show.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/show.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body style="background-image: url('img/svg/bg_layer1.svg')">
+<body style="background-image: url('<?=$this->url->getBaseUri()?>/img/svg/bg_layer1.svg')">
     <div class="topnav" id="top-nav" style="z-index: 99;">
         <a class="home" href="<?=$this->url->getBaseUri()?>">
-            <img src="img/svg/logo.svg" alt="booKesma">
+            <img src="<?=$this->url->getBaseUri()?>/img/svg/logo.svg" alt="booKesma">
         </a>
         <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
         <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
@@ -29,7 +29,7 @@
         <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
         <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
         <a style="text-decoration:none;" href="javascript:void(0);" class="icon" onclick="navbar()">
-            <img src="img/svg/hamburger-menu.svg" alt="menu">
+            <img src="<?=$this->url->getBaseUri()?>/img/svg/hamburger-menu.svg" alt="menu">
         </a>
     </div>
     <br><br><br><br>
