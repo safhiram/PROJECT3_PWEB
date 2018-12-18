@@ -2,7 +2,7 @@
 
 use Phalcon\Mvc\Model; 
 
-class Register extends Model 
+class Reservasi extends Model 
 {     
     public $id_reservasi;     
     public $buku_id;
