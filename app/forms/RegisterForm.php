@@ -63,21 +63,21 @@ class RegisterForm extends Form
         );
         // here i left of
         // $cvalid = new Validation();
-        $name->addValidator(
-            new PresenceOf(
-                [
-                    'message' => 'Nama username diisi!',
-                ]
-            )
-        );
-        $name->addValidator(
-            new StringLength(
-                [
-                    'min' => 3,
-                    'messageMinimum' => 'Nama terlalu pendek!',
-                ]
-            )
-        );
+        // $name->addValidator(
+        //     new PresenceOf(
+        //         [
+        //             'message' => 'Nama username diisi!',
+        //         ]
+        //     )
+        // );
+        // $name->addValidator(
+        //     new StringLength(
+        //         [
+        //             'min' => 3,
+        //             'messageMinimum' => 'Nama terlalu pendek!',
+        //         ]
+        //     )
+        // );
         $this->add($name);
         $this->add($nrp);
         $this->add($email);

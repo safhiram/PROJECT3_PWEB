@@ -68,6 +68,20 @@ $di->set(
     } 
 );
 
+$di->set(     
+    'flash',     
+    function () {         
+        return new Phalcon\Flash\Direct();
+    } 
+);
+
+$di->set(     
+    'flashSession',     
+    function () {         
+        return new Phalcon\Flash\Session();
+    } 
+);
+
 $di->set(
     'modelsManager',
     function () {
