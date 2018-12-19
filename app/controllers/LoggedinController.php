@@ -100,7 +100,7 @@ class LoggedinController extends Controller
             GROUP BY Buku.id_buku'
         );
         //0=sdng dipesan u pinjam, 1=sdng pinjam, 2=cancel pinjam, 3=akan kembali, 4=tlh kembali
-        $re = $query->execute();
+        $res = $query->execute();
         $this->view->setVars(
             [
                 'buku'=>$bukus,
