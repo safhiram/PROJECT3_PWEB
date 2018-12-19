@@ -110,7 +110,13 @@ class LoggedinController extends Controller
     }
     public function chatAction()
     {
-        
+        if(!$this->session->has('auth'))
+        {
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
     }
     public function historyAction()
     {
