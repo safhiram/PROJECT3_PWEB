@@ -57,7 +57,7 @@ class BukuForm extends Form
         $submit = new Submit(
             'bsubmit',
             [
-                'class' => 'btn btn-primary submit',
+                'class' => 'btn btn-success submit',
                 'value' => 'Tambahkan'
             ]
         );

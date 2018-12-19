@@ -111,6 +111,104 @@ class LoggedinController extends Controller
             ]
         );
     }
+    public function bookeditAction($id)
+    {
+        if($this->session->has('auth'))
+        {
+            $role = $this->session->get('auth')['s_role'];
+            if ($role != 'admin' ) {
+                $this->response->redirect('home');
+                $this->view->disable();
+                return;    
+            }
+        }else{
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $this->view->url = new Url();
+        $this->view->form = new BukuForm();
+        $buku = Buku::findFirst($id);
+        $this->view->setVars(
+            [
+                'id_buku'=>$id,
+                'book'=>$buku
+            ]
+        );
+    }
+    public function bookupdateAction($id)
+    {
+        $cjud = $this->request->getPost('bjudul');
+        $cjum = $this->request->getPost('bjumhal');
+        $cter = $this->request->getPost('btersedia');
+        $csem = $this->request->getPost('bsemester');
+        $cdesk = $this->request->getPost('bdeskbuk');
+
+        $cup = Buku::findFirst($id);
+
+        if ($cup) {
+            $cup->judul_buku = $cjud;
+            $cup->jumlah_halaman = $cjum;
+            $cup->deskripsi_buku = $cdesk; 
+            $cup->tersedia = $cter;
+            $cup->semester = $csem;
+            if ($this->request->hasFiles()) {
+                $date = getdate(date("U"));
+                $date = "$date[weekday], $date[month] $date[mday], $date[year], $date[hours]:$date[minutes]:$date[seconds]";
+                $hashid = md5($date);
+                $filepath = 'buku/'.$hashid.'.jpg';
+                $cgambar = $this->request->getUploadedFiles();    
+                foreach ($cgambar as $cg) {
+                    $cg->moveTo($filepath);
+                }
+                $cup->gambar = $filepath;
+            }
+        }
+
+        if ($cup->save() === false) {
+            echo "gagal";
+            return;
+            //kasih flash session lihat youtube
+        }
+        else {
+            $this->response->redirect('admin'); //kasih flash session jika berhasil update
+            $this->view->disable();
+            return;
+        }
+    }
+    public function bookdeleteAction($id)
+    {
+        if($this->session->has('auth'))
+        {
+            $role = $this->session->get('auth')['s_role'];
+            if ($role != 'admin' ) {
+                $this->response->redirect('home');
+                $this->view->disable();
+                return;    
+            }
+        }else{
+            $this->response->redirect('login');
+            $this->view->disable();
+            return;
+        }
+        $cup = Buku::findFirst($id);
+        var_dump("uiu");
+        var_dump($cup);
+        if ($cup) {
+            if ($cup->delete() === false) {
+                var_dump($cup);
+                echo "gagal";
+                return;
+                //kasih flash session lihat youtube
+            }
+            else {
+                var_dump('hai');
+                $this->response->redirect('admin'); //kasih flash session jika berhasil update
+                $this->view->disable();
+                return;
+            }
+        }
+    }
     public function bookAction()
     {
         if($this->session->has('auth'))
@@ -120,7 +218,7 @@ class LoggedinController extends Controller
                 $this->response->redirect('home');
                 $this->view->disable();
                 return;    
-            } 
+            }
         }else{
             $this->response->redirect('login');
             $this->view->disable();

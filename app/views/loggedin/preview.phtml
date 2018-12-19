@@ -25,7 +25,7 @@
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
-        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user/chat'?>">Chatting</a>
+
         <?php
             $role = $this->session->get('auth')['s_role'];
             if ($role==="admin") {
@@ -54,6 +54,8 @@
         <table class="table table-striped" style="padding-left:5%;">
     <thead>
       <tr>
+        <th>Aksi</th>
+        <th>ID Buku</th>
         <th>Judul Buku</th>
         <th>Jumlah Halaman</th>
         <th>Deskripsi Buku</th>
@@ -68,6 +70,8 @@
         foreach ($buku as $b) {
     ?>
     <tr>
+        <td><a href="<?=$this->url->getBaseUri().'admin/edit/'.$b->id_buku?>" class="btn btn-info btn-md">Edit</a></td>
+        <td><?=$b->id_buku?></td>
         <td><?=$b->judul_buku?></td>
         <td><?=$b->jumlah_halaman?></td>
         <td><?=$b->deskripsi_buku?></td>
@@ -96,7 +100,7 @@
   </table>
         </div>
     </div>
-    <a href="<?=$this->url->getBaseuri().'admin/buku'?>" style="margin-left:83%; margin-top:2%;" type="button" class="btn btn-primary btn-lg">Kembali</a>
+    <a href="<?=$this->url->getBaseuri().'admin/buku'?>" style="margin-left:83%; margin-top:2%;" type="button" class="btn btn-primary btn-lg">Tambah Buku</a>
     <br><br>
 <!-- adding jquery -->
 <script src="<?=$this->url->getBaseUri()?>/js/jquery-3.3.1.js"></script>

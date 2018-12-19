@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Form Buku &middot; booKesma</title>
+    <title>Edit Buku &middot; booKesma</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Icon -->
 	  <link rel="icon" type="icon/image" href="<?=$this->url->getBaseUri()?>/img/jpgpng/favicon.png">
@@ -41,44 +41,46 @@
         </a>
 </div>
 	<br><br><br><br>
-    <div class="container" style="backgroung-color:white; border: 3px solid darkblue; border-radius:10%;">
+    <div class="container" style="background-color:white; border: 3px solid darkblue; border-radius:0%;">
     <section id="contact" style="border-radius:10%;">
 			<div class="section-content">
-				<span class="content-header">Form Buku Admin</span>
+				<span class="content-header">Edit Buku Admin</span>
 			</div>
 			<div class="contact-section">
 			<div class="container">
-				<?php echo $this->tag->form(["admin/buku",'method'=>'post','class'=>'contact100-form validate-form','enctype'=>"multipart/form-data"])?>
+				<?php echo $this->tag->form([$this->url->getBaseUri().'admin/update/'.$id_buku,'method'=>'post','class'=>'contact100-form validate-form','enctype'=>"multipart/form-data"])?>
 					<div class="col-md-6 form-line">
 			  			<div class="form-group">
 			  				<label>Judul Buku</label>
-							<?php echo $form->render('bjudul')?>
+							<?php echo $form->render('bjudul',['value'=>$book->judul_buku])?>
 				  		</div>
 				  		<div class="form-group">
 					    	<label>Jumlah Halaman</label>
-					    	<?php echo $form->render('bjumhal')?>
+					    	<?php echo $form->render('bjumhal',['value'=>$book->jumlah_halaman])?>
 					  	</div>	
 					  	<div class="form-group">
 					    	<label>Tersedia</label>
-					    	<?php echo $form->render('btersedia')?>
+					    	<?php echo $form->render('btersedia',['value'=>$book->tersedia])?>
 			  			</div>
 			  			<div class="form-group">
 					    	<label>Semester</label>
-					    	<?php echo $form->render('bsemester')?>
+					    	<?php echo $form->render('bsemester',['value'=>$book->semester])?>
 			  			</div>
 			  		</div>
 			  		<div class="col-md-6">
 			  			<div class="form-group">
 			  				<label for ="description">Deskripsi</label>
-							  <?php echo $form->render('bdeskbuk')?>
+							  <?php echo $form->render('bdeskbuk',['value'=>$book->deskripsi_buku])?>
 			  			</div>
 			  			<div class="form-group">
-					    	<label>Gambar</label>
-					    	<?php echo $form->render('bgambar')?>
+					    	<label>Gambar</label><br>
+                            <?php echo $form->render('bgambar')?>
+                            <img src="<?=$this->url->getBaseUri().$book->gambar?>" alt="<?=$book->gambar?>">
 			  			</div>
 			  			<div class="form-group">
-						  <a href="<?=$this->url->getBaseUri().'admin'?>" class="btn btn-default btn-md">Kembali</a>
-							<?php echo $form->render('bsubmit')?>
+						    <a href="<?=$this->url->getBaseUri().'admin'?>" class="btn btn-default btn-md">Kembali</a>
+							<a href="<?=$this->url->getBaseUri().'admin/delete/'.$id_buku?>" class="btn btn-danger btn-md">Hapus</a>
+                            <?php echo $form->render('bsubmit',['value'=>'Simpan Perubahan'])?>
 			  			</div>
 					</div>
 					<?= $this->tag->endForm()?>

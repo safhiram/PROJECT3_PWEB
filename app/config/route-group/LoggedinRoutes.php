@@ -43,18 +43,21 @@ class LoggedinRoutes extends RouterGroup
             '/admin/edit/:int',   //edit form
             [
             'action'=>'bookedit',
+            'id'=>1,
             ]
         );
         $this->addPost(
             '/admin/update/:int',   //update POST
             [
             'action'=>'bookupdate',
+            'id'=>1,
             ]
         );
-        $this->addPost(
+        $this->addGet(
             '/admin/delete/:int',   //deleting POST
             [
             'action'=>'bookdelete',
+            'id'=>1,
             ]
         );
         $this->addGet(
