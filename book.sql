@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2018 at 07:55 AM
+-- Generation Time: Dec 19, 2018 at 09:07 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -57,7 +57,6 @@ INSERT INTO `book` (`id_buku`, `judul_buku`, `jumlah_halaman`, `deskripsi_buku`,
 (12, 'Beginning C++ Through Game Programming (Third Edition))#4', 1200, 'When it comes to game programming, C++ is the name of the game. If you aspire to move from game player to game creator, it all starts with learning the fundamentals of C++ and game-programming basics.\r\n', 10, 4, 'buku/q6.jpg'),
 (13, 'The C++ Programming Language (Fourth Edition)#5', 1000, 'The C++ Programming Language, Fourth Edition, delivers meticulous, richly explained, and integrated coverage of the entire language—its facilities, abstraction mechanisms, standard libraries, and key design techniques. Throughout, Stroustrup presents', 10, 5, 'buku/r1.jpg'),
 (14, 'C++ Primer Plus (Sixth Edition)#5', 1200, 'C++ Primer Plus is a carefully crafted, complete tutorial on one of the most significant and widely used programming languages today. An accessible and easy-to-use self-study guide, this book is appropriate for both serious students of programming as', 10, 5, 'buku/r2.jpg'),
-(15, 'Beginning C++ Through Game Programming (Third Edition))#5', 1200, 'When it comes to game programming, C++ is the name of the game. If you aspire to move from game player to game creator, it all starts with learning the fundamentals of C++ and game-programming basics.\r\n', 10, 5, 'buku/r3.jpg'),
 (16, 'The C++ Programming Language (Fourth Edition)#6', 1000, 'The C++ Programming Language, Fourth Edition, delivers meticulous, richly explained, and integrated coverage of the entire language—its facilities, abstraction mechanisms, standard libraries, and key design techniques. Throughout, Stroustrup presents', 10, 6, 'buku/r4.jpg'),
 (17, 'C++ Primer Plus (Sixth Edition)#6', 1200, 'C++ Primer Plus is a carefully crafted, complete tutorial on one of the most significant and widely used programming languages today. An accessible and easy-to-use self-study guide, this book is appropriate for both serious students of programming as', 10, 6, 'buku/r5.jpg'),
 (18, 'Beginning C++ Through Game Programming (Third Edition))#6', 1200, 'When it comes to game programming, C++ is the name of the game. If you aspire to move from game player to game creator, it all starts with learning the fundamentals of C++ and game-programming basics.\r\n', 10, 6, 'buku/r6.jpg'),
@@ -66,7 +65,8 @@ INSERT INTO `book` (`id_buku`, `judul_buku`, `jumlah_halaman`, `deskripsi_buku`,
 (21, 'Beginning C++ Through Game Programming (Third Edition))#7', 1200, 'When it comes to game programming, C++ is the name of the game. If you aspire to move from game player to game creator, it all starts with learning the fundamentals of C++ and game-programming basics.\r\n', 10, 7, 'buku/s3.jpg'),
 (22, 'The C++ Programming Language (Fourth Edition)#8', 1000, 'The C++ Programming Language, Fourth Edition, delivers meticulous, richly explained, and integrated coverage of the entire language—its facilities, abstraction mechanisms, standard libraries, and key design techniques. Throughout, Stroustrup presents', 10, 8, 'buku/s4.jpg'),
 (23, 'C++ Primer Plus (Sixth Edition)#8', 1200, 'C++ Primer Plus is a carefully crafted, complete tutorial on one of the most significant and widely used programming languages today. An accessible and easy-to-use self-study guide, this book is appropriate for both serious students of programming as', 10, 8, 'buku/s5.jpg'),
-(24, 'Beginning C++ Through Game Programming (Third Edition))#8', 1200, 'When it comes to game programming, C++ is the name of the game. If you aspire to move from game player to game creator, it all starts with learning the fundamentals of C++ and game-programming basics.\r\n', 10, 8, 'buku/s6.jpg');
+(24, 'Beginning C++ Through Game Programming (Third Edition))#8', 1200, 'When it comes to game programming, C++ is the name of the game. If you aspire to move from game player to game creator, it all starts with learning the fundamentals of C++ and game-programming basics.\r\n', 10, 8, 'buku/s6.jpg'),
+(27, 'Phalcon', 143, 'Framework PHP', 5, 3, 'buku/fe425c15eee42db937c7156f89c6f7d7.jpg');
 
 --
 -- Indexes for dumped tables
@@ -86,7 +86,7 @@ ALTER TABLE `book`
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
