@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Data Buku &middot; booKesma</title>
+    <title>Data Register &middot; booKesma</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Icon -->
 	  <link rel="icon" type="icon/image" href="<?=$this->url->getBaseUri()?>/img/jpgpng/favicon.png">
@@ -30,7 +30,7 @@
         </a>
 	</div>
 	<br><br><br><br>
-    <div style="width:80%; height:500px; margin-left:10%; background-color: white; border: 3px solid lightblue; font-family:mp;">
+    <div style="width:80%; height:auto; margin-left:10%; background-color: white; border: 3px solid lightblue; font-family:mp;">
         <h1 style="text-align: center;">DATA REGISTER</h1>
         <hr>
         <div style="padding-left:5%; padding-right:5%;">
@@ -45,12 +45,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+    <?php
+        foreach ($res as $r) {
+    ?>
+    <tr>
+        <td><?=$r->id?></td>
+        <td><?=$r->username?></td>
+        <td><?=$r->nrp?></td>
+        <td><?=$r->email?></td>
+        <td><?=$r->role?></td>
+    </tr>
+    <?php
+        }
+    ?>
     </tbody>
   </table>
         </div>

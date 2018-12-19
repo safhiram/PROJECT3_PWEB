@@ -30,7 +30,7 @@
         </a>
 	</div>
 	<br><br><br><br>
-    <div style="width:80%; height:500px; margin-left:10%; background-color: white; border: 3px solid lightblue; font-family:mp;">
+    <div style="width:80%; height:auto; margin-left:10%; background-color: white; border: 3px solid lightblue; font-family:mp;">
         <h1 style="text-align: center;">DATA RESERVASI</h1>
         <hr>
         <div style="padding-left:5%; padding-right:5%;">
@@ -43,15 +43,47 @@
         <th>Status</th>
         <th>Nomor HP</th>
         <th>Tanggal Bertemu</th>
+        <th>Tanggal Kembali</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+    <?php
+        foreach ($res as $r) {
+    ?>
+    <tr>
+        <td><?=$r->id_reservasi?></td>
+        <td><?=$r->buku_id?></td>
+        <td><?=$r->user_id?></td>
+    <?php
+        if ($r->status==0) {
+    ?>
+        <td>Sedang dipesan peminjaman</td>
+    <?php
+        }else if ($r->status==1) {
+    ?>
+        <td>Sedang dipinjam</td>
+    <?php
+        }else if ($r->status==2) {
+    ?>
+        <td>Batal dipinjam</td>
+    <?php
+        }else if ($r->status==3) {
+    ?>
+        <td>Akan mengembalikan</td>
+    <?php
+        }else if ($r->status==4) {
+    ?>
+        <td>Telah mengembalikan</td>
+    <?php
+        }
+    ?>
+        <td><?=$r->nomorhp?></td>
+        <td><?=$r->tanggal_bertemu?></td>
+        <td><?=$r->tanggal_kembali?></td>
+    </tr>
+    <?php
+        }
+    ?>
     </tbody>
   </table>
         </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Data Buku &middot; booKesma</title>
+    <title>Data Sumbang &middot; booKesma</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Icon -->
 	  <link rel="icon" type="icon/image" href="<?=$this->url->getBaseUri()?>/img/jpgpng/favicon.png">
@@ -30,7 +30,7 @@
         </a>
 	</div>
 	<br><br><br><br>
-    <div style="width:80%; height:500px; margin-left:10%; background-color: white; border: 3px solid lightblue; font-family:mp;">
+    <div style="width:80%; height:auto; margin-left:10%; background-color: white; border: 3px solid lightblue; font-family:mp;">
         <h1 style="text-align: center;">DATA SUMBANG</h1>
         <hr>
         <div style="padding-left:5%; padding-right:5%;">
@@ -47,16 +47,51 @@
         <th>Judul Buku</th>
         <th>Status</th>
         <th>Semester</th>
-        <th>Gambar</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+    <?php
+        foreach ($cha as $c) {
+    ?>
+    <tr>
+        <td><?=$c->id_sumbang?></td>
+        <td><?=$c->nrp?></td>
+        <td><?=$c->nama?></td>
+        <td><?=$c->email?></td>
+        <td><?=$c->no_hp?></td>
+        <td><?=$c->departemen?></td>
+        <td><?=$c->universitas?></td>
+        <td><?=$c->judul_bukusumbang?></td>
+        <?php
+            if ($c->status==0) {
+        ?>
+                <td>Belum diproses</td>
+        <?php
+            }else if ($c->status==1){
+        ?>  
+                <td>Sudah diterima belum dipindah</td>
+        <?php
+            }else {
+        ?>
+                <td>Sudah diterima dan dipindah</td>
+        <?php
+            }
+        ?>
+        <?php
+            if ($c->semester==0) {
+        ?>
+                <td>Belum diproses</td>
+        <?php
+            }else{
+        ?>
+                <td><?=$c->semester?></td>
+        <?php
+            }
+        ?>
+    </tr>
+    <?php
+        }
+    ?>
     </tbody>
   </table>
         </div>

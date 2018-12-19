@@ -35,6 +35,8 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
+        $reg = Register::find();
+        $this->view->setVars(['res'=>$reg]);
     }
     public function sumbangAction()
     {
@@ -52,6 +54,8 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
+        $sum = Sumbang::find();
+        $this->view->setVars(['cha'=>$sum]);
     }
     public function reservasiAction()
     {
@@ -69,6 +73,8 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
+        $reserv = Reservasi::find();
+        $this->view->setVars(['res'=>$reserv]);
     }
     public function previewAction()
     {
@@ -86,6 +92,9 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
+
+        $bukus = Buku::find();
+        $this->view->setVars(['buku'=>$bukus]);
     }
     public function bookAction()
     {

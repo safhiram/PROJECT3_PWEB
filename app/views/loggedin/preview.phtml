@@ -30,7 +30,7 @@
         </a>
 	</div>
 	<br><br><br><br>
-    <div style="width:80%; height:500px; margin-left:10%; background-color: white; border: 3px solid lightblue; font-family:mp;">
+    <div style="width:80%; height:auto; margin-left:10%; background-color: white; border: 3px solid lightblue; font-family:mp;">
         <h1 style="text-align: center;">DATA BUKU</h1>
         <hr>
         <div style="padding-left:5%; padding-right:5%;">
@@ -46,12 +46,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+    <?php
+        foreach ($buku as $b) {
+    ?>
+    <tr>
+        <td><?=$b->judul_buku?></td>
+        <td><?=$b->jumlah_halaman?></td>
+        <td><?=$b->deskripsi_buku?></td>
+        <td><?=$b->tersedia?></td>
+        <td><?=$b->semester?></td>
+        <td><?=$b->gambar?></td>
+    </tr>
+    <?php
+        }
+    ?>
     </tbody>
   </table>
         </div>
