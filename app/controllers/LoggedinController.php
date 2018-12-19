@@ -106,6 +106,10 @@ class LoggedinController extends Controller
     }
     public function regisAction()
     {
+        //postnya buku
+    }
+    public function chatAction()
+    {
         
     }
     public function historyAction()
@@ -150,7 +154,11 @@ class LoggedinController extends Controller
         $cnohp = $this->request->getPost('nohp');
         $ctgl = $this->request->getPost('tanggal');
 
-        //query
+        $query = $this->modelsManager->createQuery(
+            'SELECT Reservasi.id_reservasi FROM Reservasi WHERE Reservasi.user_id="'.$id.'"
+            AND Reservasi.status=0'
+        );
+        $res = $query->execute();
         
         $user = $this->session->get('auth')['s_id'];
         $ckembali->status = 0;

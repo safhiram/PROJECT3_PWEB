@@ -58,6 +58,12 @@ class LoggedinRoutes extends RouterGroup
             ]
         );
         $this->addGet( 
+            '/user/chat',    //tampilan riwayat data user dari peminjaman dan pengembalian v
+            [
+            'action'=>'chat',
+            ]
+        );
+        $this->addGet( 
             '/user/kembali/:int',    //tampilan riwayat data user dari peminjaman dan pengembalian v
             [
             'action'=>'kembali',
