@@ -94,7 +94,7 @@ input::-ms-input-placeholder {
     top: 0; 
     left: 0; 
     right: 0; 
-    z-index: 300;
+    z-index: 6;
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     background-color:#fff;
@@ -160,12 +160,6 @@ input::-ms-input-placeholder {
 .dropdown-menu>li>a{
     line-height: 4;
 }
-/*.navbar-nav>li>.dropdown-menu{
-    margin-top:20px;
-}*/
-
-
-/*home section*/
 .main_home{
     margin-top:85px;
     padding: 140px 0px;
@@ -240,21 +234,12 @@ service section css
     font-size:1rem;
 }
 
-
-/*=======================================================================
-                        Work sectin style
-=========================================================================*/
 .main_mix_content{
     overflow: hidden;
 }
 .main_mix_content .single_mixi_portfolio{
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
-
-
-/*====================================================================
- Team section Style
-======================================================================*/
 
 .main_team_area .single_team .team img{
     margin-bottom:20px;
@@ -470,7 +455,7 @@ service section css
     position: relative;
 }
 .single_work_overlay{
-    background: #FFE1BD;
+    background:lightblue;
     width:80%;
     height: 80%;
     left:10%;
@@ -531,7 +516,7 @@ service section css
 }
 
 .work_socail a:hover i{
-    background: #FFE1BD;
+    background: lightblue;
     color:#fff;
 }
 
