@@ -21,38 +21,37 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="<?=$this->url->getBaseUri()?>/js/js.js"></script>
 </head>
-<body>
-<div class="topnav" id="top-nav" style="z-index: 99;">
-        <a class="home" href="<?=$this->url->getBaseUri()?>">
+<body style="background-image: url('<?=$this->url->getBaseUri()?>/img/svg/bg_layer1.svg')">
+<div class="topnav" id="top-nav" style="z-index: 99;">  
+    <a class="home" href="<?=$this->url->getBaseUri()?>">
             <img src="<?=$this->url->getBaseUri()?>/img/svg/logo.svg" alt="booKesma">
         </a>
-        <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
-        <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
-        <a style="text-decoration:none;" href="<?=$this->url->getBaseUri().'user/profile'?>">Hai, <?=$this->session->get('auth')['s_name'] ?>!</a>
-        <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'user/koleksi'?>">Koleksi</a>
-        <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
-        <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
-        <a style="text-decoration:none;" href="javascript:void(0);" class="icon" onclick="navbar()">
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseUri().'user/profile'?>">Hai, <?=$this->session->get('auth')['s_name'] ?>!</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user/chat'?>">Chatting</a>
+        <?php
+            $role = $this->session->get('auth')['s_role'];
+            if ($role==="admin") {
+        ?>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'admin'?>">Admin</a>
+        <?php
+            }
+        ?>
+        <a href="javascript:void(0);" class="icon" onclick="navbar()">
             <img src="<?=$this->url->getBaseUri()?>/img/svg/hamburger-menu.svg" alt="menu">
         </a>
 </div>
 <br><br>
 <!-- jumbotron -->
-<div class="jumbotron jumbotron-fluid">
-  <div class="container text-center">
-    <h1>Koleksi Buku</h1>
-    <p>Koleksi Buku Semester-<?=$sem?></p>
+<div style="background-image:url('<?=$this->url->getBaseUri()?>/img/backkategori.jpg'); background-size:100%; height:300px;" class="jumbotron jumbotron-fluid">
+  <div style="padding-left:5%;padding-top:2%;font-family:as;color:white;" class="container text-center">
+    <h1><b>Koleksi Buku</b></h1>
+    <p style="color:black;">Koleksi Buku Semester-<?=$sem?></p>
   </div>
-  <form style="margin-left:40%;" class="navbar-form navbar-left" action="/action_page.php">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
 </div>
 <!-- akhir jumbotron -->
 <!-- buku -->
@@ -60,7 +59,6 @@
     <div class="container">
         <div class="row">
             <?php
-                // var_dump($jumlah);
                 if ($buku) {
                     foreach ($buku as $b) {
             ?>
@@ -70,17 +68,16 @@
                     </a>
                 </div>
                 <!-- Modal content-->
-                <div id="modal<?=$b->id_buku;?>" class="modal fade" role="dialog">
+                <div style="background-image: url('<?=$this->url->getBaseUri()?>/img/svg/bg_layer3.svg')" id="modal<?=$b->id_buku;?>" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div style="background-color:lightblue;" class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title"><?=$b->judul_buku;?></h4>
+                            <h4 class="modal-title" style="font-size:25px;text-align:center;padding:5%;"><b><?=$b->judul_buku;?></b></h4>
                         </div>
-                        <div class="modal-body">
-                            <p>Judul Buku : <br> <?=$b->judul_buku;?></p>
-                            <p>Jumlah Halaman : <br> <?=$b->jumlah_halaman;?></p>
-                            <p>Deskripsi Buku : <br> <?=$b->deskripsi_buku;?></p>
+                        <div style="font-family:as; font-size:20px; padding:5%;" class="modal-body">
+                            <p><b>Jumlah Halaman : </b><br> <?=$b->jumlah_halaman;?></p>
+                            <p style="text-align:justify;"><b>Deskripsi Buku : </b><br> <?=$b->deskripsi_buku;?></p>
                             <?php
                                 $flag = 0;
                                 foreach ($que as $q) {
@@ -97,7 +94,7 @@
                             ?>
                             <p>Tersedia : <br> <?=$jumlah;?></p>
                         </div>
-                    <div class="modal-footer">
+                    <div style="background-color:lightblue;" class="modal-footer">
                             <a href="<?=$this->url->getBaseuri()?>user/koleksi/semester/<?=$sem?>/<?=$b->id_buku;?>" class="btn btn-primary">Reservasi</a>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>

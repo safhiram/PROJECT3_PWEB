@@ -12,25 +12,42 @@
     <!-- adding bootstrap theme css-->
     <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/bootstrap-theme.css" />
     <!-- external page css -->
-	<link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/how.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/how.css" />
 </head>
 <body style="background-image:url('<?=$this->url->getBaseUri()?>/img/svg/bg_layer2.svg'); font-family:mp;">
-    <div class="topnav" id="top-nav">
-        <a class="home" href="<?=$this->url->getBaseUri()?>">
+<div class="topnav" id="top-nav" style="z-index: 99;">  
+    <a class="home" href="<?=$this->url->getBaseUri()?>">
             <img src="<?=$this->url->getBaseUri()?>/img/svg/logo.svg" alt="booKesma">
         </a>
-        <a href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
-        <a href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
-        <a href="<?=$this->url->getBaseUri().'user/profile'?>">Hai, <?=$this->session->get('auth')['s_name'] ?>!</a>
-        <a href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
-        <a href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
-        <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseUri().'user/profile'?>">Hai, <?=$this->session->get('auth')['s_name'] ?>!</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user/chat'?>">Chatting</a>
+        <?php
+            $role = $this->session->get('auth')['s_role'];
+            if ($role==="admin") {
+        ?>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'admin'?>">Admin</a>
+        <?php
+            }
+        ?>
         <a href="javascript:void(0);" class="icon" onclick="navbar()">
             <img src="<?=$this->url->getBaseUri()?>/img/svg/hamburger-menu.svg" alt="menu">
         </a>
-	</div>
-	<br><br><br><br>
-    <div style="width:80%; height:500px; margin-left:10%; background-color: white; border: 3px solid lightblue; font-family:mp;">
+</div>
+    <br><br><br><br>
+<div style="margin-left:32%;">               
+  <ul class="pagination" style="margin:0%;">
+    <li><a style="color:white; background-color:#87CEEB; border:2px solid white;" href="<?=$this->url->getBaseuri().'admin'?>">DATA BUKU</a></li>
+    <li><a style="color:white; background-color:#87CEEB;border:2px solid white;" href="<?=$this->url->getBaseuri().'admin/list-register'?>">DATA REGISTER</a></li>
+    <li><a style="color:white; background-color:#87CEEB;border:2px solid white;" href="<?=$this->url->getBaseuri().'admin/list-sumbang'?>">DATA SUMBANG</a></li>
+    <li><a style="color:white; background-color:#87CEEB; border:2px solid white;" href="<?=$this->url->getBaseuri().'admin/list-reservasi'?>">DATA RESERVASI</a></li>
+  </ul>
+</div>
+    <div style="width:80%; height:auto; margin-left:10%; background-color: white; border: 3px solid lightblue; font-family:mp;">
         <h1 style="text-align: center;">DATA BUKU</h1>
         <hr>
         <div style="padding-left:5%; padding-right:5%;">
@@ -46,16 +63,40 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+    <?php
+        foreach ($buku as $b) {
+    ?>
+    <tr>
+        <td><?=$b->judul_buku?></td>
+        <td><?=$b->jumlah_halaman?></td>
+        <td><?=$b->deskripsi_buku?></td>
+        <?php
+            $flag = 0;
+            foreach ($re as $r) {
+                if ($r->id_buku === $b->id_buku) {
+                    $flag = 1;
+                    break;
+                }
+            }
+            if ($flag === 1) {
+                $jumlah = (int)$b->tersedia - (int)$r->n;
+            }else{
+                $jumlah = (int)$b->tersedia;
+            }
+        ?>
+        <td><?=$jumlah?></td>
+        <td><?=$b->semester?></td>
+        <td><?=$b->gambar?></td>
+    </tr>
+    <?php
+        }
+    ?>
     </tbody>
   </table>
         </div>
     </div>
+    <a href="<?=$this->url->getBaseuri().'admin/buku'?>" style="margin-left:83%; margin-top:2%;" type="button" class="btn btn-primary btn-lg">Kembali</a>
+    <br><br>
 <!-- adding jquery -->
 <script src="<?=$this->url->getBaseUri()?>/js/jquery-3.3.1.js"></script>
 <!-- adding bootstrap -->

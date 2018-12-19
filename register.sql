@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2018 at 12:47 PM
+-- Generation Time: Dec 19, 2018 at 05:02 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -50,7 +50,8 @@ INSERT INTO `register` (`id`, `username`, `nrp`, `email`, `password`, `role`) VA
 (7, 'asdas', 'asda', 'asdas@asdwe', 'adbf5a778175ee757c34d0eba4e932bc', 'user'),
 (8, 'Olo', 'ytu', 'tyu@sdfsf', '36f3af6226e0b5303e19b824e7442272', 'user'),
 (9, 'yoga', '05111740000169', 'yoga@gmail.com', '807659cd883fc0a63f6ce615893b3558', 'admin'),
-(10, 'safhira', '05111740000027', 'safhira@gmail.com', '671013584f385cac85afed86e0a6ad0e', 'admin');
+(10, 'safhira', '05111740000027', 'safhira@gmail.com', '671013584f385cac85afed86e0a6ad0e', 'admin'),
+(11, 'User', '05111740000120', 'raka@raka.com', 'db26ee047a4c86fbd2fba73503feccb6', 'user');
 
 --
 -- Indexes for dumped tables
@@ -70,7 +71,7 @@ ALTER TABLE `register`
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

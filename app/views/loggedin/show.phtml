@@ -35,6 +35,15 @@
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user/chat'?>">Chatting</a>
+        <?php
+            $role = $this->session->get('auth')['s_role'];
+            if ($role==="admin") {
+        ?>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'admin'?>">Admin</a>
+        <?php
+            }
+        ?>
         <a href="javascript:void(0);" class="icon" onclick="navbar()">
             <img src="<?=$this->url->getBaseUri()?>/img/svg/hamburger-menu.svg" alt="menu">
         </a>
@@ -209,21 +218,16 @@ Membawaku terbang ke taman-taman pengetahuan paling menawan, melintasi waktu dan
     </div>
   </div>
 </div>
-<br><br><br>
 <div class="container-fluid" style="background-color:#BFDAD5; padding-left:15%;">
   <div class="row">
     <div class="col-sm-2">
     </div>
-    <div class="col-sm-8" style="padding-right:10%; text-align: center;">
-    <h1 style="font-family: mp; font-size:30px;"><b>-OUR MEDIA SOCIAL-</b></h1>
+    <div class="col-sm-8" style="padding-right:10%; text-align: center; padding-bottom:2%; padding-top:2%;">
+    <h1 style="font-family: as; font-size:35px;"><b>OUR MEDIA SOCIAL</b></h1>
+    <hr style="width:50%; border:1px solid white;">
     <img src="<?=$this->url->getBaseUri()?>/img/jpgpng/icon-facebook.png" style="width: 5%;">
     <img src="<?=$this->url->getBaseUri()?>/img/jpgpng/icon-mail.png" style="width: 5%;">
     <img src="<?=$this->url->getBaseUri()?>/img/jpgpng/icon-twitter.png" style="width: 5%;">
-    <br>
-    <h3>Kategori Buku</h3>
-    <h3>Bagaimana?</h3>
-    </div>
-    <div class="col-sm-2" style="">
     </div>
   </div>
 </div>

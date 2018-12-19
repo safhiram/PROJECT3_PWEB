@@ -35,6 +35,8 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
+        $reg = Register::find();
+        $this->view->setVars(['res'=>$reg]);
     }
     public function sumbangAction()
     {
@@ -52,6 +54,8 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
+        $sum = Sumbang::find();
+        $this->view->setVars(['cha'=>$sum]);
     }
     public function reservasiAction()
     {
@@ -69,6 +73,8 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
+        $reserv = Reservasi::find();
+        $this->view->setVars(['res'=>$reserv]);
     }
     public function previewAction()
     {
@@ -86,6 +92,22 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
+
+        $bukus = Buku::find();
+        $query = $this->modelsManager->createQuery(
+            'SELECT Buku.id_buku, COUNT(*) as n FROM Buku JOIN Reservasi
+            ON (Reservasi.buku_id=Buku.id_buku) WHERE (Reservasi.status=0 OR Reservasi.status=1)
+            GROUP BY Buku.id_buku'
+        );
+        //0=sdng dipesan u pinjam, 1=sdng pinjam, 2=cancel pinjam, 3=akan kembali, 4=tlh kembali
+        $res = $query->execute();
+        $this->view->setVars(
+            [
+                'buku'=>$bukus,
+                're'=>$res,
+                'jumlah'=>0,
+            ]
+        );
     }
     public function bookAction()
     {
@@ -131,8 +153,11 @@ class LoggedinController extends Controller
         $query = $this->modelsManager->createQuery(
             'SELECT Buku.judul_buku, Reservasi.tanggal_bertemu, Reservasi.tanggal_kembali, Reservasi.status, Reservasi.buku_id
             FROM Reservasi JOIN Buku ON (Reservasi.buku_id=Buku.id_buku)
-            WHERE Reservasi.user_id="'.$sid.'" ORDER BY Reservasi.buku_id, Reservasi.tanggal_kembali, Reservasi.status'
+            WHERE Reservasi.user_id="'.$sid.'" AND (Reservasi.status=1 OR Reservasi.status=3 OR Reservasi.status=4)
+            ORDER BY Reservasi.buku_id, Reservasi.tanggal_kembali, Reservasi.status'
         );
+        //output hanya 
+        //0=sdng dipesan u pinjam, 1=sdng pinjam, 2=cancel pinjam, 3=akan kembali, 4=tlh kembali
         $res = $query->execute();
         // var_dump($res);
         $this->view->setVars(["que"=>$res]);
@@ -155,28 +180,23 @@ class LoggedinController extends Controller
     }
     public function returnedAction($id)
     {
-        $ckembali = new Reservasi();
-
         $cnohp = $this->request->getPost('nohp');
         $ctgl = $this->request->getPost('tanggal');
-
+        $user = $this->session->get('auth')['s_id'];
+        //0=sdng dipesan u pinjam, 1=sdng pinjam, 2=cancel pinjam, 3=akan kembali, 4=tlh kembali
         $query = $this->modelsManager->createQuery(
-            'SELECT Reservasi.id_reservasi FROM Reservasi WHERE Reservasi.user_id="'.$id.'"
-            AND Reservasi.status=0'
+            'UPDATE Reservasi SET Reservasi.status=3, Reservasi.tanggal_bertemu="'.$ctgl.'", Reservasi.nomorhp="'.$cnohp.'"
+            WHERE Reservasi.buku_id="'.$id.'" AND Reservasi.status=1 AND Reservasi.user_id="'.$user.'"'
         );
         $res = $query->execute();
-        
-        $user = $this->session->get('auth')['s_id'];
-        $ckembali->status = 0;
-        $ckembali->tanggal_bertemu = $ctgl;
 
-        if ($ckembali->save() === false){
-            var_dump($ckembali);
+        if (!$res){
+            var_dump($res);
             echo 'gagal';
             return;
         }
         else{
-            $this->response->redirect('user/koleksi/semester/'.$semester.'/'.$id);
+            $this->response->redirect('user');
             $this->view->disable();
             return;
         }
@@ -277,8 +297,9 @@ class LoggedinController extends Controller
         $query = $this->modelsManager->createQuery(
             'SELECT Buku.id_buku, COUNT(*) as n FROM Buku JOIN Reservasi
             ON (Reservasi.buku_id=Buku.id_buku) WHERE Buku.semester="'.$semester.'"
-            AND Reservasi.status=0 GROUP BY Buku.id_buku'
+            AND (Reservasi.status=0 OR Reservasi.status=1) GROUP BY Buku.id_buku'
         );
+        //0=sdng dipesan u pinjam, 1=sdng pinjam, 2=cancel pinjam, 3=akan kembali, 4=tlh kembali
         $res = $query->execute();
         $this->view->setVars(
             [

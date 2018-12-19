@@ -30,12 +30,21 @@
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user/chat'?>">Chatting</a>
+        <?php
+            $role = $this->session->get('auth')['s_role'];
+            if ($role==="admin") {
+        ?>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'admin'?>">Admin</a>
+        <?php
+            }
+        ?>
         <a href="javascript:void(0);" class="icon" onclick="navbar()">
             <img src="<?=$this->url->getBaseUri()?>/img/svg/hamburger-menu.svg" alt="menu">
         </a>
-    </div>
+</div>
 	<div class="container-contact100" >
-		<div class="wrap-contact100">
+		<div style="border:3px solid lightblue;" class="wrap-contact100">
 			<div class="contact100-form-title" style="background-image: url('<?=$this->url->getBaseUri()?>/img/2.jpg');">
 				<span class="contact100-form-title-1">
 					FORM PENGEMBALIAN
@@ -44,8 +53,8 @@
 			<?=$this->tag->form([$this->url->getBaseUri().'user/kembali/'.$id_buku,'method'=>'post','class'=>'contact100-form validate-form']);?>
 			<!-- <form class="contact100-form validate-form"> -->
 
-				<div class="wrap-input100 validate-input" data-validate="Tanggal mengaembalikan is required">
-					<span class="label-input100">Tanggal Mengaembalikan Buku:</span>
+				<div class="wrap-input100 validate-input" data-validate="Tanggal mengembalikan is required">
+					<span class="label-input100">Tanggal Mengembalikan Buku:</span>
 					<?php echo $form->render('tanggal'); ?>
 					<!-- <input class="input100" type="date" name="tanggal_bertemu" placeholder="Masukkan Tanggal Kembali"> -->
 					<span class="focus-input100"></span>

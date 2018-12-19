@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Data Buku &middot; booKesma</title>
+    <title>Data Sumbang &middot; booKesma</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Icon -->
 	  <link rel="icon" type="icon/image" href="<?=$this->url->getBaseUri()?>/img/jpgpng/favicon.png">
@@ -15,22 +15,39 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/how.css" />
 </head>
 <body style="background-image:url('<?=$this->url->getBaseUri()?>/img/svg/bg_layer2.svg'); font-family:mp;">
-    <div class="topnav" id="top-nav">
-        <a class="home" href="<?=$this->url->getBaseUri()?>">
+<div class="topnav" id="top-nav" style="z-index: 99;">  
+    <a class="home" href="<?=$this->url->getBaseUri()?>">
             <img src="<?=$this->url->getBaseUri()?>/img/svg/logo.svg" alt="booKesma">
         </a>
-        <a href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
-        <a href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
-        <a href="<?=$this->url->getBaseUri().'user/profile'?>">Hai, <?=$this->session->get('auth')['s_name'] ?>!</a>
-        <a href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
-        <a href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
-        <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseUri().'user/profile'?>">Hai, <?=$this->session->get('auth')['s_name'] ?>!</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user/chat'?>">Chatting</a>
+        <?php
+            $role = $this->session->get('auth')['s_role'];
+            if ($role==="admin") {
+        ?>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'admin'?>">Admin</a>
+        <?php
+            }
+        ?>
         <a href="javascript:void(0);" class="icon" onclick="navbar()">
             <img src="<?=$this->url->getBaseUri()?>/img/svg/hamburger-menu.svg" alt="menu">
         </a>
-	</div>
-	<br><br><br><br>
-    <div style="width:80%; height:500px; margin-left:10%; background-color: white; border: 3px solid lightblue; font-family:mp;">
+</div>
+    <br><br><br><br>
+    <div style="margin-left:32%;">               
+  <ul class="pagination" style="margin:0%;">
+    <li><a style="color:white; background-color:#87CEEB; border:2px solid white;" href="<?=$this->url->getBaseuri().'admin'?>">DATA BUKU</a></li>
+    <li><a style="color:white; background-color:#87CEEB;border:2px solid white;" href="<?=$this->url->getBaseuri().'admin/list-register'?>">DATA REGISTER</a></li>
+    <li><a style="color:white; background-color:#87CEEB;border:2px solid white;" href="<?=$this->url->getBaseuri().'admin/list-sumbang'?>">DATA SUMBANG</a></li>
+    <li><a style="color:white; background-color:#87CEEB; border:2px solid white;" href="<?=$this->url->getBaseuri().'admin/list-reservasi'?>">DATA RESERVASI</a></li>
+  </ul>
+</div> 
+    <div style="width:80%; height:auto; margin-left:10%; background-color: white; border: 3px solid lightblue; font-family:mp;">
         <h1 style="text-align: center;">DATA SUMBANG</h1>
         <hr>
         <div style="padding-left:5%; padding-right:5%;">
@@ -47,20 +64,56 @@
         <th>Judul Buku</th>
         <th>Status</th>
         <th>Semester</th>
-        <th>Gambar</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+    <?php
+        foreach ($cha as $c) {
+    ?>
+    <tr>
+        <td><?=$c->id_sumbang?></td>
+        <td><?=$c->nrp?></td>
+        <td><?=$c->nama?></td>
+        <td><?=$c->email?></td>
+        <td><?=$c->no_hp?></td>
+        <td><?=$c->departemen?></td>
+        <td><?=$c->universitas?></td>
+        <td><?=$c->judul_bukusumbang?></td>
+        <?php
+            if ($c->status==0) {
+        ?>
+                <td>Belum diproses</td>
+        <?php
+            }else if ($c->status==1){
+        ?>  
+                <td>Sudah diterima belum dipindah</td>
+        <?php
+            }else {
+        ?>
+                <td>Sudah diterima dan dipindah</td>
+        <?php
+            }
+        ?>
+        <?php
+            if ($c->semester==0) {
+        ?>
+                <td>Belum diproses</td>
+        <?php
+            }else{
+        ?>
+                <td><?=$c->semester?></td>
+        <?php
+            }
+        ?>
+    </tr>
+    <?php
+        }
+    ?>
     </tbody>
   </table>
         </div>
     </div>
+    <br><br>
 <!-- adding jquery -->
 <script src="<?=$this->url->getBaseUri()?>/js/jquery-3.3.1.js"></script>
 <!-- adding bootstrap -->
