@@ -62,7 +62,21 @@
         <td><?=$b->judul_buku?></td>
         <td><?=$b->jumlah_halaman?></td>
         <td><?=$b->deskripsi_buku?></td>
-        <td><?=$b->tersedia?></td>
+        <?php
+            $flag = 0;
+            foreach ($re as $r) {
+                if ($r->id_buku === $b->id_buku) {
+                    $flag = 1;
+                    break;
+                }
+            }
+            if ($flag === 1) {
+                $jumlah = (int)$b->tersedia - (int)$r->n;
+            }else{
+                $jumlah = (int)$b->tersedia;
+            }
+        ?>
+        <td><?=$jumlah?></td>
         <td><?=$b->semester?></td>
         <td><?=$b->gambar?></td>
     </tr>

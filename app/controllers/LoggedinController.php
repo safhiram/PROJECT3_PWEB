@@ -94,7 +94,20 @@ class LoggedinController extends Controller
         $this->view->url = new Url();
 
         $bukus = Buku::find();
-        $this->view->setVars(['buku'=>$bukus]);
+        $query = $this->modelsManager->createQuery(
+            'SELECT Buku.id_buku, COUNT(*) as n FROM Buku JOIN Reservasi
+            ON (Reservasi.buku_id=Buku.id_buku) WHERE (Reservasi.status=0 OR Reservasi.status=1)
+            GROUP BY Buku.id_buku'
+        );
+        //0=sdng dipesan u pinjam, 1=sdng pinjam, 2=cancel pinjam, 3=akan kembali, 4=tlh kembali
+        $re = $query->execute();
+        $this->view->setVars(
+            [
+                'buku'=>$bukus,
+                're'=>$res,
+                'jumlah'=>0,
+            ]
+        );
     }
     public function bookAction()
     {
