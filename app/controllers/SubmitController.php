@@ -21,31 +21,46 @@ class SubmitController extends Controller
     }
     public function storerAction()
     {
-        $cregis = new Register();
-
-        $cusername = $this->request->getPost('rname');
-        $cnrp = $this->request->getPost('rnrp');
-        $cemail = $this->request->getPost('remail');
-        $cpass = md5($this->request->getPost('rpassword'));
-        $ccpass = md5($this->request->getPost('rcpassword'));
-
-        //if session check semua attr dan syntax password==cpassword sama
-
-        $cregis->username = $cusername;
-        $cregis->nrp = $cnrp;
-        $cregis->email = $cemail;
-        $cregis->password = $cpass;
-        $cregis->role = "user";
-
-        if ($cregis->save() === false) {
-            echo "gagal";
-            return;
-            //kasih flash session lihat youtube
+        $form = new RegisterForm();
+        $flag = 0;
+        if(!$form->isValid($this->request->getPost())){
+            foreach($form->getMessages() as $m){
+                echo $m;
+                $flag=1;
+            }
+            die();
         }
-        else {
-            $this->response->redirect('login'); //kasih flash session jika berhasil daftar
-            $this->view->disable();
-            return;
+        else if(!$flag)
+        {
+
+            $cregis = new Register();
+
+            $cusername = $this->request->getPost('rname');
+            $cnrp = $this->request->getPost('rnrp');
+            $cemail = $this->request->getPost('remail');
+            $cpass = md5($this->request->getPost('rpassword'));
+            $ccpass = md5($this->request->getPost('rcpassword'));
+    
+     
+    
+            //if session check semua attr dan syntax password==cpassword sama
+    
+            $cregis->username = $cusername;
+            $cregis->nrp = $cnrp;
+            $cregis->email = $cemail;
+            $cregis->password = $cpass;
+            $cregis->role = "user";
+    
+            if ($cregis->save() === false) {
+                echo "gagal";
+                return;
+                //kasih flash session lihat youtube
+            }
+            else {
+                $this->response->redirect('login'); //kasih flash session jika berhasil daftar
+                $this->view->disable();
+                return;
+            }
         }
     }
     public function createlAction()
