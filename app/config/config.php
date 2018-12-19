@@ -22,6 +22,6 @@ return new Config([
     'url' => [         
         'baseUrl' => 'http://localhost/bookesma.com/'     
         //DEPLOY SERVER LP2
-        // 'baseUrl' => 'http://10.151.62.127/FP_PWEB_F/3/'     
+        // 'baseUrl' => 'http://10.151.62.127/FP_PWEB_F/FP_PWEB_F/3/'     
     ] 
 ]); 
