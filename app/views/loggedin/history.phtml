@@ -59,12 +59,12 @@
             <td><?=$q->tanggal_kembali;?></td>
             <?php
                 // var_dump($q->status);
-                //0 sedang pinjam, 1 cancel, 2 telah kembali
-                if ($q->status == 0) {
+                //0=sdng dipesan u pinjam, 1=sdng pinjam, 2=cancel pinjam, 3=akan kembali, 4=tlh kembali
+                if ($q->status == 1 || $q->status == 3) {
             ?>
                 <td><a style="text-decoration:none;" href="<?=$this->url->getBaseUri()?>user/kembali/<?=$q->buku_id?>">Buat Tanggal Pengembalian</a></td>
             <?php
-                }else if ($q->status == 2) {
+                }else if ($q->status == 4) {
             ?>
                 <td><span class="glyphicon glyphicon-ok"></span></td>
             <?php
