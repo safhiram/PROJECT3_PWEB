@@ -86,7 +86,7 @@ class SumbangForm extends Form
             'ssubmit',
             [
                 'class' => "contact100-form-btn",
-                'value'   =>  'Submit',
+                'value'   =>  'Sumbang',
             ]
         );
 

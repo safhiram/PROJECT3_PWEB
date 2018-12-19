@@ -19,21 +19,21 @@ class RegisterForm extends Form
             'rname',
             [
                 'class' => "form-control",
-                'placeholder' => 'Raka',
+                'placeholder' => 'Username',
             ]
         );
         $nrp = new Text(
             'rnrp',
             [
                 'class' => "form-control",
-                'placeholder' => '05111740000120',
+                'placeholder' => '0511xxxxxxxxxx',
             ]
         );
         $email = new Email(
             'remail',
             [
                 'class' => "form-control",
-                'placeholder'   =>  'ranggakusumad@gmail.com',
+                'placeholder'   =>  'example@mail.com',
             ]
         );
         $passold = new Password(
