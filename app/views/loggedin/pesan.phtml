@@ -30,7 +30,6 @@
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
-        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user/chat'?>">Chatting</a>
         <?php
             $role = $this->session->get('auth')['s_role'];
             if ($role==="admin") {
@@ -44,7 +43,7 @@
         </a>
 </div>
 	<div class="container-contact100" >
-		<div class="wrap-contact100">
+		<div style="border:3px solid lightblue;" class="wrap-contact100">
 			<div class="contact100-form-title" style="background-image: url('<?=$this->url->getBaseUri()?>/img/2.jpg');">
 				<span class="contact100-form-title-1">
 					FORM RESERVASI

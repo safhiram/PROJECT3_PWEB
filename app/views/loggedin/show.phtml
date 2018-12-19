@@ -23,6 +23,8 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="<?=$this->url->getBaseUri()?>/js/efek.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/efek.css" />
+    <script type="text/javascript" src="js/chat.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
 </head>
 <body style="background-image: url('<?=$this->url->getBaseUri()?>/img/svg/bg_layer1.svg')">
   <div class="topnav" id="top-nav" style="z-index: 99;">  
@@ -35,7 +37,7 @@
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
         <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
-        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user/chat'?>">Chatting</a>
+        
         <?php
             $role = $this->session->get('auth')['s_role'];
             if ($role==="admin") {
@@ -217,6 +219,21 @@ Membawaku terbang ke taman-taman pengetahuan paling menawan, melintasi waktu dan
         <a style="margin-left:15%;" href="<?=$this->url->getBaseUri().'user/bagaimana'?>" type="a" class="btn btn-primary btn-lg">Pengembalian</a>
     </div>
   </div>
+</div>
+<br><br><br>
+<div class="container-fluid" style="background-color: lightblue; padding:0% 0% 5% 5%;font-family:as; font-size: 20px;">
+<h1 style="text-align:center; font-family: 'Oleo Script', cursive;" ><b>CATATANKU</b></h1>
+<hr style="width:50%; border:1px solid white;">
+<br>
+    <div style="padding-left:10%;" id="boks">
+                <div id="display">
+                    <ul class="chat">
+                    </ul>
+                </div>
+                <input type="text" name="cht" id="type" placeholder="Catat disini">
+                <input type="submit" name="send" id="send" value="Send">
+            </div>
+    </div>
 </div>
 <div class="container-fluid" style="background-color:#BFDAD5; padding-left:15%;">
   <div class="row">
