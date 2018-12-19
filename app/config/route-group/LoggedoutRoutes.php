@@ -34,11 +34,19 @@ class LoggedoutRoutes extends RouterGroup
             'action'=>'charity',
             ]
         );
+        // $this->addGet(
+        //     '/bukti-sumbang/:namespace',     //tampilan bukti jadwal bertemu v
+        //     [
+        //     'action'=>'bukti',
+        //     'id'=>1,
+        //     ]
+        // );
         $this->addPost(
             '/sumbang',     //post form
             [
             'action'=>'call',
             ]
         );
+
     }
 }

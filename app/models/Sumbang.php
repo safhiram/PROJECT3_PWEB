@@ -17,6 +17,7 @@ class Sumbang extends Model
     public $status;
     public $semester;
     public $gambarsumbang;
+    public $tanggal;
 
     public function initialize(){
         $this->setSource('sumbang'); 

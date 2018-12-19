@@ -8,6 +8,7 @@ use Phalcon\Forms\Element\Numeric;
 use Phalcon\Forms\Element\Email;
 use Phalcon\Forms\Element\File;
 use Phalcon\Forms\Element\Submit;
+use Phalcon\Forms\Element\Date;
 
 class SumbangForm extends Form
 {
@@ -89,6 +90,13 @@ class SumbangForm extends Form
                 'value'   =>  'Sumbang',
             ]
         );
+        $tgl = new Date(
+            'tanggal',
+            [
+                'class' => "input100",
+                'placeholder'=>"Masukkan Tanggal Bertemu di Sekretariat HMTC",
+            ]
+        );
 
         $this->add($nrp);
         $this->add($name);
@@ -101,5 +109,6 @@ class SumbangForm extends Form
         $this->add($deskripsibuku);
         $this->add($gambar);
         $this->add($submit);
+        $this->add($tgl);
     }
 }

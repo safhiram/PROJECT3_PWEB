@@ -73,6 +73,7 @@ class LoggedoutController extends Controller
         $cjudul = $this->request->getPost('sjudulbuku');
         $ctebal = $this->request->getPost('stebalhalaman');
         $cdesk = $this->request->getPost('sdeskripsibuku');
+        $ctgl = $this->request->getPost('tanggal');
         
         $date = getdate(date("U"));
         $date = "$date[weekday], $date[month] $date[mday], $date[year], $date[hours]:$date[minutes]:$date[seconds]";
@@ -97,7 +98,8 @@ class LoggedoutController extends Controller
         $csumbang->status = 0;
         $csumbang->semester = 0;
         $csumbang->gambarsumbang = $filepath;
-        
+        $csumbang->tanggal = $ctgl;
+
         if ($csumbang->save() === false) {
             echo $filepath;
             var_dump($csumbang);
@@ -106,9 +108,43 @@ class LoggedoutController extends Controller
             return;
         }
         else{
-            $this->response->redirect('sumbang');
-            $this->view->disable();
+            $date = getdate(date("U"));
+            $date = "$date[weekday], $date[month] $date[mday], $date[year], $date[hours]:$date[minutes]:$date[seconds]";
+            $id = md5($date);
+            // $this->session->set(
+            //     'sumbang',
+            //     [
+            //         'c_id' => $id,
+            //     ]
+            // );
+            // $this->buktiAction($id);
+            
+            // $this->response->redirect('bukti-sumbang/'.$id);
+            // $this->view->disable();
+            $this->view->setVars(
+                [
+                    'id'=>$id,
+                    'sum'=>$csumbang,
+                ]
+            );
             return;
         }
     }
+    // public function buktiAction($id)
+    // {
+    //     if(!$this->session->has('sumbang'))
+    //     {
+    //         $this->response->redirect('');
+    //         $this->view->disable();
+    //         return;
+    //     }
+    //     $this->view->url = new Url();
+    //     $this->view->disable();
+    //     $this->session->remove('sumbang');
+    //     $this->view->setVars(
+    //         [
+    //             'id'=>$id,
+    //         ]
+    //     );
+    // }
 }

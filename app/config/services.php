@@ -71,14 +71,28 @@ $di->set(
 $di->set(     
     'flash',     
     function () {         
-        return new Phalcon\Flash\Direct();
+        return new Phalcon\Flash\Direct(
+            [
+                'error'   => 'alert alert-danger',
+                'success' => 'alert alert-success',
+                'notice'  => 'alert alert-info',
+                'warning' => 'alert alert-warning',
+            ]
+        );
     } 
 );
 
 $di->set(     
     'flashSession',     
     function () {         
-        return new Phalcon\Flash\Session();
+        return new Phalcon\Flash\Session(
+            [
+                'error'   => 'alert alert-danger',
+                'success' => 'alert alert-success',
+                'notice'  => 'alert alert-info',
+                'warning' => 'alert alert-warning',
+            ]
+        );
     } 
 );
 

@@ -1,0 +1,35 @@
+<?php
+	// header("Content-Type: application/octet-stream");
+	var_dump($this->url->getBaseUri().'views/loggedout/call.phtml');
+	header("makepdf.php?url='APP_PATH.'/views/loggedout/call.phtml''");
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/show.css" />
+</head>
+<body>
+	<br>
+<div style="background-image:url('<?=$this->url->getBaseUri()?>/img/back.jpg'); font-family: mp; padding:5% 10% 5% 10%;margin:5%; background-size:cover;">
+    <h1 style=" text-align: center;padding:5%; border-radius:10%;">
+    <img style="width:250px; height:auto;" src="<?=$this->url->getBaseUri()?>/img/svg/logo.svg" alt="booKesma">
+    <b>BUKTI RESERVASI</b></h1>
+	<h4>Judul Buku:</h4>
+	<?=$sum->judul_bukusumbang?>
+	<h4>Deskripsi Buku:</h4>
+	<?=$sum->deskripsi_bukusumbang?>
+	<h4>Gambar Buku:</h4>	
+	<img src="<?=$this->url->getBaseUri()?><?=$sum->gambarsumbang?>" alt="gambar">
+	<h4>Tanggal Pengumpulan:</h4>
+	<?=$sum->tanggal?>
+	<h3>Buku ini disumbangkan oleh: </h3>
+	<h4>Nama: </h4>
+	<?=$sum->nama?>
+    <h4>NRP: </h4>
+	<?=$sum->nrp?>
+    <h4>Ini adalah bukti kamu melakukan sumbang, simpan baik-baik buktinya ya!</h4>
+    <h4>Code: </h4>
+	<?=$id?>
+</div>
+</body>
+</html>
