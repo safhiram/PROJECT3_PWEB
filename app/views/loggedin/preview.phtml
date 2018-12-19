@@ -15,20 +15,29 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/how.css" />
 </head>
 <body style="background-image:url('<?=$this->url->getBaseUri()?>/img/svg/bg_layer2.svg'); font-family:mp;">
-    <div class="topnav" id="top-nav">
-        <a class="home" href="<?=$this->url->getBaseUri()?>">
+<div class="topnav" id="top-nav" style="z-index: 99;">  
+    <a class="home" href="<?=$this->url->getBaseUri()?>">
             <img src="<?=$this->url->getBaseUri()?>/img/svg/logo.svg" alt="booKesma">
         </a>
-        <a href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
-        <a href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
-        <a href="<?=$this->url->getBaseUri().'user/profile'?>">Hai, <?=$this->session->get('auth')['s_name'] ?>!</a>
-        <a href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
-        <a href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
-        <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'logout'?>">Keluar</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user'?>">Riwayat</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseUri().'user/profile'?>">Hai, <?=$this->session->get('auth')['s_name'] ?>!</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'user/chat'?>">Chatting</a>
+        <?php
+            $role = $this->session->get('auth')['s_role'];
+            if ($role==="admin") {
+        ?>
+        <a style="text-decoration: none;" href="<?=$this->url->getBaseuri().'admin'?>">Admin</a>
+        <?php
+            }
+        ?>
         <a href="javascript:void(0);" class="icon" onclick="navbar()">
             <img src="<?=$this->url->getBaseUri()?>/img/svg/hamburger-menu.svg" alt="menu">
         </a>
-	</div>
+</div>
 	<br><br><br><br>
     <div style="width:80%; height:500px; margin-left:10%; background-color: white; border: 3px solid lightblue; font-family:mp;">
         <h1 style="text-align: center;">DATA BUKU</h1>

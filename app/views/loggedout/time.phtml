@@ -10,29 +10,29 @@
     <!-- adding bootstrap css-->
     <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/bootstrap.css" />
     <!-- adding bootstrap theme css-->
-    <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/bootstrap-theme.css" />
     <!-- external page css -->
-    <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>css/show.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/show.css" />
     
-	<link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>css/time.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="<?=$this->url->getBaseUri()?>/css/time.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" src="<?=$this->url->getBaseUri()?>js/js.js"></script>
+	<script type="text/javascript" src="<?=$this->url->getBaseUri()?>/js/js.js"></script>
 </head>
-<body>
+<body style="background-image: url('<?=$this->url->getBaseUri()?>/img/svg/bg_layer1.svg')">
 <div class="topnav" id="top-nav" style="z-index: 99;">
         <a class="home" href="<?=$this->url->getBaseUri()?>">
-            <img src="<?=$this->url->getBaseUri()?>img/svg/logo.svg" alt="booKesma">
+            <img src="<?=$this->url->getBaseUri()?>/img/svg/logo.svg" alt="booKesma">
         </a>
-        <a style="text-decoration:none;" href="<?=$this->url->getBaseUri().'login'?>">Masuk</a>
-        <a style="text-decoration:none;" href="<?=$this->url->getBaseUri().'register'?>">Daftar</a>
-        <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
-        <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
-        <a style="text-decoration:none;" href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
-        <a style="text-decoration:none;" href="javascript:void(0);" class="icon" onclick="navbar()">
-            <img src="<?=$this->url->getBaseUri()?>img/svg/hamburger-menu.svg" alt="menu">
+        <a href="<?=$this->url->getBaseUri().'login'?>">Masuk</a>
+        <a href="<?=$this->url->getBaseUri().'register'?>">Daftar</a>
+        <a href="<?=$this->url->getBaseuri().'koleksi'?>">Koleksi</a>
+        <a href="<?=$this->url->getBaseuri().'bagaimana'?>">Bagaimana</a>
+        <a href="<?=$this->url->getBaseuri().'sumbang'?>">Sumbang</a>
+        <a href="javascript:void(0);" class="icon" onclick="navbar()">
+            <img src="<?=$this->url->getBaseUri()?>/img/svg/hamburger-menu.svg" alt="menu">
         </a>
 </div>
 <br><br>
@@ -66,9 +66,23 @@
                             <h4 class="modal-title" style="font-size:25px;text-align:center;padding:5%;"><b><?=$b->judul_buku;?></b></h4>
                         </div>
                         <div style="font-family:as; font-size:20px; padding:5%;" class="modal-body">
-                            <p><b>Jumlah Halaman :</b> <br> <?=$b->jumlah_halaman;?></p>
-                            <p style="text-align:justify;"><b>Deskripsi Buku :</b> <br> <?=$b->deskripsi_buku;?></p>
-                            <p><b>Tersedia :</b> <br> <?=$b->tersedia;?></p>
+                            <p><b>Jumlah Halaman : </b><br> <?=$b->jumlah_halaman;?></p>
+                            <p style="text-align:justify;"><b>Deskripsi Buku : </b><br> <?=$b->deskripsi_buku;?></p>
+                            <?php
+                                $flag = 0;
+                                foreach ($que as $q) {
+                                    if ($q->id_buku === $b->id_buku) {
+                                        $flag = 1;
+                                        break;
+                                    }
+                                }
+                                if ($flag === 1) {
+                                    $jumlah = (int)$b->tersedia - (int)$q->n;
+                                }else{
+                                    $jumlah = (int)$b->tersedia;
+                                }
+                            ?>
+                            <p>Tersedia : <br> <?=$jumlah;?></p>
                         </div>
                     <div style="background-color:lightblue;" class="modal-footer">
                             <a href="<?=$this->url->getBaseuri()?>user/koleksi/semester/<?=$sem?>/<?=$b->id_buku;?>" class="btn btn-primary">Reservasi</a>
@@ -85,6 +99,5 @@
     </div>
 </section>
 <br><br>
-<!-- buku -->
 </body>
 </html>

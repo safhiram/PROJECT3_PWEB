@@ -38,10 +38,19 @@ class LoggedoutController extends Controller
         }
         $this->view->url = new Url();
         $book = Buku::find("semester='$semester'");
+        $query = $this->modelsManager->createQuery(
+            'SELECT Buku.id_buku, COUNT(*) as n FROM Buku JOIN Reservasi
+            ON (Reservasi.buku_id=Buku.id_buku) WHERE Buku.semester="'.$semester.'"
+            AND (Reservasi.status=0 OR Reservasi.status=1) GROUP BY Buku.id_buku'
+        );
+        //0=sdng dipesan u pinjam, 1=sdng pinjam, 2=cancel pinjam, 3=akan kembali, 4=tlh kembali
+        $res = $query->execute();
         $this->view->setVars(
             [
                 "sem"=>$semester,
                 'buku'=>$book,
+                'que'=>$res,
+                'jumlah'=>0,
             ]
         );
     }
