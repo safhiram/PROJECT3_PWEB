@@ -2,9 +2,11 @@
 
 use Phalcon\Mvc\Model\Manager;
 use Phalcon\Mvc\Controller;
+use App\Forms\BukuForm;
 use App\Forms\RegisterForm;
 use App\Forms\ReservasiForm;
 use Phalcon\Http\Response;
+use Phalcon\Http\Request\File;
 use Phalcon\Mvc\Url;
 
 class LoggedinController extends Controller
@@ -100,7 +102,7 @@ class LoggedinController extends Controller
             GROUP BY Buku.id_buku'
         );
         //0=sdng dipesan u pinjam, 1=sdng pinjam, 2=cancel pinjam, 3=akan kembali, 4=tlh kembali
-        $re = $query->execute();
+        $res = $query->execute();
         $this->view->setVars(
             [
                 'buku'=>$bukus,
@@ -125,10 +127,48 @@ class LoggedinController extends Controller
             return;
         }
         $this->view->url = new Url();
+        $this->view->form = new BukuForm();
     }
     public function regisAction()
     {
-        //postnya buku
+        $cbuku = new Buku();
+
+        $cjudul = $this->request->getPost('bjudul');
+        $cjum = $this->request->getPost('bjumhal');
+        $cdesk = $this->request->getPost('bdeskbuk');
+        $cter = $this->request->getPost('btersedia');
+        $csem = $this->request->getPost('bsemester');
+
+        $date = getdate(date("U"));
+        $date = "$date[weekday], $date[month] $date[mday], $date[year], $date[hours]:$date[minutes]:$date[seconds]";
+        $hashid = md5($date);
+        $filepath = 'buku/'.$hashid.'.jpg';
+        if ($this->request->hasFiles()) {
+            $cgmbr = $this->request->getUploadedFiles();    
+            foreach ($cgmbr as $cg) {
+                $cg->moveTo($filepath);
+            }
+        }
+
+        $cbuku->judul_buku = $cjudul;
+        $cbuku->jumlah_halaman = $cjum;
+        $cbuku->deskripsi_buku = $cdesk;
+        $cbuku->tersedia = $cter;
+        $cbuku->semester = $csem;
+        $cbuku->gambar = $filepath;
+
+        if ($cbuku->save() === false) {
+            echo $filepath;
+            var_dump($cbuku);
+            var_dump($cgmbr);
+            echo "gagal";
+            return;
+        }
+        else{
+            $this->response->redirect('admin/buku');
+            $this->view->disable();
+            return;
+        }
     }
     public function chatAction()
     {

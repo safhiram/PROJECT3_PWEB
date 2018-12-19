@@ -3,8 +3,10 @@ namespace App\Forms;
 
 use Phalcon\Forms\Form;
 use Phalcon\Forms\Element\Text;
+use Phalcon\Forms\Element\TextArea;
 use Phalcon\Forms\Element\Numeric;
 use Phalcon\Forms\Element\Email;
+use Phalcon\Forms\Element\File;
 use Phalcon\Forms\Element\Submit;
 
 class BukuForm extends Form
@@ -12,39 +14,42 @@ class BukuForm extends Form
     public function initialize()
     {
         $judul = new Text(
-            'judul',
+            'bjudul',
             [
                 'class' => "form-control",
+                'placeholder'=>"Masukkan Judul Buku",
             ]
         );
         $halaman = new Numeric(
-            'jumhal',
+            'bjumhal',
             [
                 'class' => "form-control",
-                'value'   =>  'ranggakusumad@gmail.com',
+                'placeholder'=>"Masukkan Jumlah Halaman",
             ]
         );
-        $desc = new Text(
-            'deskbuk',
+        $desc = new TextArea(
+            'bdeskbuk',
             [
                 'class' => "form-control",
+                'placeholder'=>"Masukkan Deskripsi",
             ]
         );
-        
         $stat = new Numeric(
-            'tersedia',
+            'btersedia',
             [
                 'class' => "form-control",
+                'placeholder'=>" Masukkan Jumlah Buku"
             ]
         );
         $sem = new Numeric(
-            'semester',
+            'bsemester',
             [
                 'class' => "form-control",
+                'placeholder'=>" Masukkan Semester",
             ]
         );
-        $gmb = new Text(
-            'gambar',
+        $gmb = new File(
+            'bgambar',
             [
                 'class' => "form-control",
             ]
@@ -52,7 +57,8 @@ class BukuForm extends Form
         $submit = new Submit(
             'bsubmit',
             [
-                'class' => 'form-control',
+                'class' => 'btn btn-primary submit',
+                'value' => 'Tambahkan'
             ]
         );
         $this->add($judul);

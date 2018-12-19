@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Data Buku &middot; booKesma</title>
+    <title>Form Buku &middot; booKesma</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Icon -->
 	  <link rel="icon" type="icon/image" href="<?=$this->url->getBaseUri()?>/img/jpgpng/favicon.png">
@@ -48,41 +48,39 @@
 			</div>
 			<div class="contact-section">
 			<div class="container">
-				<form>
+				<?php echo $this->tag->form(["admin/buku",'method'=>'post','class'=>'contact100-form validate-form','enctype'=>"multipart/form-data"])?>
 					<div class="col-md-6 form-line">
 			  			<div class="form-group">
 			  				<label>Judul Buku</label>
-					    	<input type="text" class="form-control" placeholder="Masukkan Judul Buku">
+							<?php echo $form->render('bjudul')?>
 				  		</div>
 				  		<div class="form-group">
 					    	<label>Jumlah Halaman</label>
-					    	<input type="text" class="form-control" placeholder="Masukkan Jumlah Halaman">
+					    	<?php echo $form->render('bjumhal')?>
 					  	</div>	
 					  	<div class="form-group">
 					    	<label>Tersedia</label>
-					    	<input type="tel" class="form-control" placeholder=" Masukkan Jumlah Buku">
+					    	<?php echo $form->render('btersedia')?>
 			  			</div>
 			  			<div class="form-group">
 					    	<label>Semester</label>
-					    	<input type="tel" class="form-control" placeholder=" Masukkan Semester">
+					    	<?php echo $form->render('bsemester')?>
 			  			</div>
 			  		</div>
 			  		<div class="col-md-6">
 			  			<div class="form-group">
 			  				<label for ="description">Deskripsi</label>
-			  			 	<textarea  class="form-control" id="description" placeholder="Masukkan Deskripsi"></textarea>
+							  <?php echo $form->render('bdeskbuk')?>
 			  			</div>
 			  			<div class="form-group">
 					    	<label>Gambar</label>
-					    	<input type="file" >
+					    	<?php echo $form->render('bgambar')?>
 			  			</div>
 			  			<div>
-
-			            	<button type="button" class="btn btn-primary submit"> Send</button>
+							<?php echo $form->render('bsubmit')?>
 			  			</div>
-			  			
 					</div>
-				</form>
+					<?= $this->tag->endForm()?>
 			</div>
 		</section>
     </div>

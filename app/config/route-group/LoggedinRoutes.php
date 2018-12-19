@@ -39,20 +39,32 @@ class LoggedinRoutes extends RouterGroup
             'action'=>'preview',
             ]
         );
-        $this->addPost(
-            '/admin/del/:int',   //query buku semua
+        $this->addGet(
+            '/admin/edit/:int',   //edit form
             [
-            'action'=>'deleting',
+            'action'=>'bookedit',
+            ]
+        );
+        $this->addPost(
+            '/admin/update/:int',   //update POST
+            [
+            'action'=>'bookupdate',
+            ]
+        );
+        $this->addPost(
+            '/admin/delete/:int',   //deleting POST
+            [
+            'action'=>'bookdelete',
             ]
         );
         $this->addGet(
-            '/admin/buku',
+            '/admin/buku',  //form masukin
             [
             'action'=>'book',
             ]
         );
         $this->addPost(
-            '/admin/buku',
+            '/admin/buku',  //form post
             [
             'action'=>'regis',
             ]
